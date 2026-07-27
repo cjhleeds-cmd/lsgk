@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>广东题库转换工具</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;max-width:900px;margin:40px auto;padding:0 20px;background:#f5f0e8;color:#3e2723}
+h1{color:#8b4513}
+.box{background:#fffaf1;border:1px solid #cdbeb2;border-radius:12px;padding:20px;margin:16px 0}
+.box h3{margin-top:0;color:#8b4513}
+button{background:#8b4513;color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-size:15px}
+button:disabled{background:#cdbeb2;cursor:not-allowed}
+textarea{width:100%;min-height:200px;font-family:monospace;font-size:12px;border:1px solid #cdbeb2;border-radius:8px;padding:10px;box-sizing:border-box}
+.status{margin-top:10px;color:#47752b;font-size:13px}
+.error{color:#b3261e}
+</style>
+</head>
+<body>
+<h1>广东题库 → 历史长河 转换工具</h1>
+
+<div class="box">
+<h3>1. 选择广东题库文件</h3>
+<p>请选择你上传的 <code>广东题库.js</code> 文件</p>
+<input type="file" id="sourceFile" accept=".js">
+</div>
+
+<div class="box">
+<h3>2. 点击转换</h3>
+<button id="convertBtn" disabled>开始转换</button>
+<div class="status" id="status"></div>
+</div>
+
+<div class="box">
+<h3>3. 复制结果，替换 <code>data/题库.js</code></h3>
+<textarea id="output" readonly></textarea>
+</div>
+
+<script>
+// 上传文件的 unitId → 项目 mapIndex, unitIndex 映射
+const UNIT_MAP = {
+  1:  [0,0],   // 中华文明起源与早期国家 → 纲要上 unit0
+  2:  [0,0],   // 夏商周与春秋战国变革 → 纲要上 unit0
+  3:  [0,0],   // 秦汉统一国家的建立 → 纲要上 unit0
+  4:  [0,1],   // 魏晋南北朝与民族交融 → 纲要上 unit1
+  5:  [0,1],   // 隋唐制度成熟与盛衰 → 纲要上 unit1
+  6:  [0,2],   // 辽宋夏金元与多民族国家发展 → 纲要上 unit2
+  7:  [0,3],   // 明清社会转型与中外交流 → 纲要上 unit3
+  8:  [0,4],   // 两次鸦片战争与传统社会变动 → 纲要上 unit4
+  9:  [0,4],   // 救亡图存与近代化探索 → 纲要上 unit4
+  10: [0,5],   // 辛亥革命与民国社会转型 → 纲要上 unit5
+  11: [0,6],   // 中国共产党成立与革命道路探索 → 纲要上 unit6
+  12: [0,7],   // 抗日战争与人民解放战争 → 纲要上 unit7
+  13: [0,8],   // 新中国成立与社会主义建设 → 纲要上 unit8
+  14: [0,9],   // 改革开放与新时代 → 纲要上 unit9
+  15: [1,0],   // 古代文明与帝国治理 → 纲要下 unit0
+  16: [1,1],   // 中古世界与区域文明 → 纲要下 unit1
+  17: [1,2],   // 走向整体世界 → 纲要下 unit2
+  18: [1,3],   // 启蒙运动与资本主义制度确立 → 纲要下 unit3
+  19: [1,4],   // 工业革命与殖民体系 → 纲要下 unit4
+  20: [1,5],   // 马克思主义与社会主义实践 → 纲要下 unit5
+  21: [1,6],   // 世界战争、冷战与全球化 → 纲要下 unit6
+};
+
+let sourceJS = '';
+
+document.getElementById('sourceFile').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    sourceJS = ev.target.result;
+    document.getElementById('convertBtn').disabled = false;
+    document.getElementById('status').textContent = '已加载: ' + file.name + ' (' + sourceJS.length + ' 字节)';
+  };
+  reader.readAsText(file);
+});
+
+document.getElementById('convertBtn').addEventListener('click', function() {
+  if (!sourceJS) return;
+  const statusEl = document.getElementById('status');
+  statusEl.textContent = '正在转换...';
+  statusEl.className = 'status';
+
+  try {
+    // 在新 iframe 中执行源文件，提取全局变量
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    const win = iframe.contentWindow;
+
+    // 注入必要函数和变量
+    win.eval(sourceJS);
+
+    const allQuestions = [];
+    if (win.GUANGDONG_TRUE_QUESTION_RECORDS) allQuestions.push(...win.GUANGDONG_TRUE_QUESTION_RECORDS);
+    if (win.GUANGDONG_MOCK_QUESTION_RECORDS) allQuestions.push(...win.GUANGDONG_MOCK_QUESTION_RECORDS);
+    if (win.GUANGDONG_2026_SUPPLEMENT_QUESTIONS) allQuestions.push(...win.GUANGDONG_2026_SUPPLEMENT_QUESTIONS);
+
+    // 按项目格式转换
+    const converted = allQuestions.map(q => ({
+      q: q.q || '',
+      opts: (q.opts || []).slice(0, 4),
+      ans: typeof q.ans === 'number' ? q.ans : 0,
+      explanation: q.explanation || '',
+      source: q.source || '',
+      type: q.type || 'material',
+      _mapIndex: q.mapIndex,
+      _unitIndex: q.unitIndex,
+      _unitId: q.unitId
+    }));
+
+    // 按项目单元分组
+    const groups = {};
+    for (const q of converted) {
+      const unitId = q._unitId;
+      const mapped = UNIT_MAP[unitId];
+      if (!mapped) {
+        console.warn('未映射的 unitId:', unitId, q.q.substring(0, 30));
+        continue;
+      }
+      const [mapIdx, unitIdx] = mapped;
+      const key = mapIdx + '-' + unitIdx;
+      if (!groups[key]) groups[key] = [];
+      // 去掉内部字段
+      const clean = { q: q.q, opts: q.opts, ans: q.ans, explanation: q.explanation, source: q.source, type: q.type };
+      groups[key].push(clean);
+    }
+
+    // 构建 MAPS 结构（使用项目现有框架，填入题目）
+    const maps = [
+      { id:"gangyao-shang", name:"中外历史纲要（上）", icon:"📜", bgClass:"map-bg-ancient", nodeClass:"map-ancient", pathColor:"#C4956A", pathColorLight:"rgba(196,149,106,.25)",
+        units:[
+          {name:"从中华文明起源到秦汉统一多民族封建国家的建立与巩固", questions: groups['0-0']||[]},
+          {name:"三国两晋南北朝的民族交融与隋唐统一多民族封建国家的发展", questions: groups['0-1']||[]},
+          {name:"辽宋夏金多民族政权的并立与元朝的统一", questions: groups['0-2']||[]},
+          {name:"明清中国版图的奠定与面临的挑战", questions: groups['0-3']||[]},
+          {name:"晚清时期的内忧外患与救亡图存", questions: groups['0-4']||[]},
+          {name:"辛亥革命与中华民国的建立", questions: groups['0-5']||[]},
+          {name:"中国共产党成立与新民主主义革命兴起", questions: groups['0-6']||[]},
+          {name:"中华民族的抗日战争和人民解放战争", questions: groups['0-7']||[]},
+          {name:"中华人民共和国成立和社会主义革命与建设", questions: groups['0-8']||[]},
+          {name:"改革开放与社会主义现代化建设新时期", questions: groups['0-9']||[]},
+          {name:"中国特色社会主义新时代", questions: groups['0-10']||[]}
+        ]},
+      { id:"gangyao-xia", name:"中外历史纲要（下）", icon:"🌍", bgClass:"map-bg-world", nodeClass:"map-world", pathColor:"#6B8E9F", pathColorLight:"rgba(107,142,159,.25)",
+        units:[
+          {name:"古代文明的产生与发展", questions: groups['1-0']||[]},
+          {name:"中古时期的世界", questions: groups['1-1']||[]},
+          {name:"走向整体的世界", questions: groups['1-2']||[]},
+          {name:"资本主义制度的确立", questions: groups['1-3']||[]},
+          {name:"工业革命与马克思主义的诞生", questions: groups['1-4']||[]},
+          {name:"世界殖民体系与亚非拉民族独立运动", questions: groups['1-5']||[]},
+          {name:"两次世界大战、十月革命与国际秩序的演变", questions: groups['1-6']||[]},
+          {name:"20世纪下半叶世界的新变化", questions: groups['1-7']||[]},
+          {name:"当代世界发展的特点与主要趋势", questions: groups['1-8']||[]}
+        ]},
+      { id:"xuanbi1", name:"选择性必修1", icon:"⚖️", bgClass:"map-bg-modern", nodeClass:"map-modern", pathColor:"#8B9A6B", pathColorLight:"rgba(139,154,107,.25)",
+        units:[
+          {name:"政治制度", questions: []},
+          {name:"官员的选拔与管理", questions: []},
+          {name:"法律与教化", questions: []},
+          {name:"民族关系与国家关系", questions: []},
+          {name:"货币与赋税制度", questions: []},
+          {name:"基层治理与社会保障", questions: []}
+        ]},
+      { id:"xuanbi2", name:"选择性必修2", icon:"🏭", bgClass:"map-bg-ancient", nodeClass:"map-ancient", pathColor:"#A080A0", pathColorLight:"rgba(160,128,160,.25)",
+        units:[
+          {name:"食物生产与社会生活", questions: []},
+          {name:"生产工具与劳作方式", questions: []},
+          {name:"商业贸易与日常生活", questions: []},
+          {name:"村落、城镇与居住环境", questions: []},
+          {name:"交通与社会变迁", questions: []},
+          {name:"医疗与公共卫生", questions: []}
+        ]},
+      { id:"xuanbi3", name:"选择性必修3", icon:"🎭", bgClass:"map-bg-world", nodeClass:"map-world", pathColor:"#D4A060", pathColorLight:"rgba(212,160,96,.25)",
+        units:[
+          {name:"源远流长的中华文化", questions: []},
+          {name:"丰富多样的世界文化", questions: []},
+          {name:"人口迁徙、文化交融与认同", questions: []},
+          {name:"商路、贸易与文化交流", questions: []},
+          {name:"战争与文化交锋", questions: []},
+          {name:"文化的传承与保护", questions: []}
+        ]}
+    ];
+
+    // 统计
+    let total = 0;
+    const stats = [];
+    for (const m of maps) {
+      let mapTotal = 0;
+      for (const u of m.units) { mapTotal += u.questions.length; }
+      total += mapTotal;
+      stats.push(`${m.name}: ${mapTotal}题`);
+    }
+
+    // 生成输出
+    const outline = {
+      title: "统编版高中历史教材（广东高考适用）",
+      sourceFile: "documents/教材目录.md",
+      maps: maps.map(m => ({ name: m.name, units: m.units.map(u => u.name) }))
+    };
+
+    const output = `/* 历史长河题库（广东版）— 由广东题库转换工具生成 */\n` +
+      `const IMG_DATA = ${JSON.stringify({
+        "unit-0-0":"assets/古代史/中华文明起源.webp","unit-0-1":"assets/古代史/隋唐.webp","unit-0-2":"assets/古代史/宋元时期.webp","unit-0-3":"assets/古代史/明清.webp","unit-0-4":"assets/近代史/两次鸦片战争.webp","unit-0-5":"assets/近代史/武昌起义清帝退位.webp","unit-0-6":"assets/近代史/五四运动中共一大.webp","unit-0-7":"assets/近代史/抗日战争.webp","unit-0-8":"assets/近代史/开国大典抗美援朝.webp","unit-0-9":"assets/近代史/十一届三中全会和香港回归.webp","unit-0-10":"assets/近代史/南京国民政府的统治和中共开辟革命新道路.webp",
+        "unit-1-0":"assets/世界史/古代文明.webp","unit-1-1":"assets/世界史/中古时期的世界.webp","unit-1-2":"assets/世界史/走向整体的世界.webp","unit-1-3":"assets/世界史/资本主义制度的确立.webp","unit-1-4":"assets/世界史/工业革命与马克思主义诞生.webp","unit-1-5":"assets/世界史/世界殖民体系的形成与亚非拉民族独立运动.webp","unit-1-6":"assets/世界史/两次世界大战、十月革命与国际秩序的演变.webp","unit-1-7":"assets/世界史/20世纪下半叶世界的新变化.webp","unit-1-8":"assets/世界史/现代.webp",
+        "unit-2-0":"assets/历史现场/郡县制与分封制辩论.webp","unit-2-1":"assets/历史现场/科举制演变.webp","unit-2-2":"assets/历史现场/赋税改革因果链.webp","unit-2-3":"assets/历史现场/边疆治理比较.webp","unit-2-4":"assets/历史现场/赋税改革因果链.webp","unit-2-5":"assets/历史现场/编户齐民户籍制度.webp",
+        "unit-3-0":"assets/历史现场/哥伦布大交换.webp","unit-3-1":"assets/历史现场/工厂制度革命.webp","unit-3-2":"assets/历史现场/丝绸之路贸易网.webp","unit-3-3":"assets/历史现场/城市化代价.webp","unit-3-4":"assets/历史现场/铁路时代.webp","unit-3-5":"assets/历史现场/公共卫生革命.webp",
+        "unit-4-0":"assets/历史现场/儒家文化传播.webp","unit-4-1":"assets/历史现场/希腊化时代.webp","unit-4-2":"assets/历史现场/移民与文化认同.webp","unit-4-3":"assets/历史现场/丝路文化交流.webp","unit-4-4":"assets/历史现场/殖民文化扩张.webp","unit-4-5":"assets/历史现场/文化遗产保护.webp"
+      }, null, 2)};\n\n` +
+      `const EXAM_OUTLINE = ${JSON.stringify(outline, null, 2)};\n\n` +
+      `const PAPERS = [];\n\n` +
+      `const MAPS = ${JSON.stringify(maps, null, 2)};\n`;
+
+    document.getElementById('output').value = output;
+    statusEl.textContent = `转换完成！共 ${total} 道选择题。${stats.join('；')}`;
+
+    document.body.removeChild(iframe);
+  } catch (err) {
+    statusEl.textContent = '转换失败: ' + err.message;
+    statusEl.className = 'status error';
+    console.error(err);
+  }
+});
+</script>
+</body>
+</html>

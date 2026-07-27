@@ -18,7 +18,9 @@ return getGameMapConfig(mapIndex)?.units?.find(unit=>unit.unitIndex===unitIndex)
 function getUnitQuizQuestionCount(mapIndex,unitIndex){
 const configured=getGameUnitConfig(mapIndex,unitIndex)?.quizQuestionCount;
 const fallback=HISTORY_GAME_CONFIG?.quiz?.defaultQuestionCount||3;
-return Number.isInteger(configured)&&configured>0?configured:fallback;
+const desired=Number.isInteger(configured)&&configured>0?configured:fallback;
+const poolSize=MAPS[mapIndex]?.units?.[unitIndex]?.questions?.length||0;
+return Math.min(desired,poolSize);
 }
 
 function getUnitScenes(mapIndex,unitIndex){
@@ -363,8 +365,8 @@ const status = getUnitStatus(state.currentMap, i);
 const stars = p.units[i].stars;
 const quizQuestionCount=getUnitQuizQuestionCount(state.currentMap,i);
 const focusQuestionCount=HISTORY_GAME_CONFIG?.quiz?.focusQuestionCount||5;
-const focusSuffix=status!=='empty'&&quizQuestionCount>=focusQuestionCount?` · 重点${quizQuestionCount}题`:'';
-const statusText = (status==='empty'?'暂无可追溯无图题':status==='completed'?(gameMap?'长河已修复':'已完成'):'当前可学')+focusSuffix;
+const countSuffix=status!=='empty'?(quizQuestionCount>=focusQuestionCount?` · 重点${quizQuestionCount}题`:quizQuestionCount<3?` · ${quizQuestionCount}题`:''):'';
+const statusText = (status==='empty'?'暂无题目':status==='completed'?(gameMap?'长河已修复':'已完成'):'当前可学')+countSuffix;
 const statusClass=status==='empty'?'locked empty':status;
 const unitScenes=getUnitScenes(state.currentMap,i);
 const stampedUnitScenes=unitScenes.filter(scene=>teachStamps[scene.id]);
