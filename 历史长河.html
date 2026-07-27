@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史长河 - 高考历史闯关（广东版）</title>
+<link rel="icon" href="assets/首页/中国古代史.webp" type="image/webp">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="texture-overlay"></div>
+<div class="app" id="app">
+<!-- Main Menu -->
+<div class="screen main-menu active" id="screen-menu">
+<div class="menu-title">
+<h1 class="heading">历史长河</h1>
+<div class="subtitle">高考历史闯关<span class="province-inline">
+<select id="province-select" onchange="switchProvince(this.value)">
+<option value="guangdong" selected>广东（统编版）</option>
+</select>
+</span></div>
+</div>
+<div class="menu-deco"><div class="diamond"></div></div>
+<div class="map-cards" id="map-cards"></div>
+<div class="overall-progress">
+<div class="label">总体进度</div>
+<div class="progress-bar"><div class="progress-fill" id="overall-fill"></div></div>
+<div class="progress-text" id="overall-text"></div>
+</div>
+<div class="menu-actions">
+<button class="btn-mistakes menu-action-control" onclick="showScreen('mistakes')">错题记录 <span id="mistake-count">0</span></button>
+
+<button class="btn-reset menu-action-control" onclick="resetProgress()">重置所有进度</button>
+</div>
+<div class="teach-home-entries">
+<button class="teach-scenes-entry" onclick="openTeachCatalog('all','menu')">
+<span class="teach-records-mark">境</span>
+<span class="teach-records-copy"><strong>历史现场</strong><small><span id="teach-scene-count">0</span> 段沉浸体验，换个身份走进历史</small></span>
+<span class="teach-records-arrow">进入 ›</span>
+</button>
+<button class="teach-records-entry" onclick="showScreen('teach-records')">
+<span class="teach-records-mark">讲</span>
+<span class="teach-records-copy"><strong>口述记录</strong><small id="teach-record-count">还没有保存讲述</small></span>
+<span class="teach-records-arrow">回看 ›</span>
+</button>
+</div>
+</div>
+<!-- Map View -->
+<div class="screen map-view" id="screen-map">
+<div class="map-header">
+<button class="btn-back" onclick="showScreen('menu')">返回</button>
+<h2 class="heading" id="map-title"></h2>
+<div class="map-header-actions">
+<button class="btn-teach-pilot" id="btn-teach-pilot" hidden>历史现场</button>
+<div class="map-progress" id="map-progress-text"></div>
+</div>
+</div>
+<div class="map-container" id="map-container"></div>
+</div>
+<!-- Quiz Screen -->
+<div class="screen quiz-screen" id="screen-quiz">
+<button class="btn-back quiz-back" onclick="exitQuiz()">返回</button>
+<div class="quiz-header">
+<h2 class="heading" id="quiz-title"></h2>
+<div class="quiz-counter" id="quiz-counter"></div>
+<div class="quiz-dots" id="quiz-dots"></div>
+</div>
+<div class="quiz-card" id="quiz-card">
+<div class="question-text" id="question-text"></div>
+</div>
+<div class="options" id="options-container"></div>
+<div class="answer-explanation" id="answer-explanation"></div>
+<button class="btn-next" id="btn-next" disabled onclick="nextQuestion()">下一题</button>
+</div>
+<!-- Historical Scene Catalog -->
+<div class="screen teach-catalog-screen" id="screen-teach-catalog">
+<div class="teach-catalog-header">
+<button class="btn-back" onclick="closeTeachCatalog()">返回</button>
+<div><h2 class="heading">历史现场</h2><p>挑选一个身份，亲历历史转折，看看你会怎样判断</p></div>
+<span id="teach-catalog-total">0 段体验</span>
+</div>
+<section class="teach-catalog-intro">
+<div><span>沉浸式历史体验</span><h3>换一个身份，亲历历史转折</h3><p>这一刻，你不再只是旁观者。走进古城、战场或会场，听见现场、翻开线索，在历史人物尚不知道结局时，说出你的判断。</p></div>
+<ol><li><b>1</b>进入角色</li><li><b>2</b>探索现场</li><li><b>3</b>开口推演</li><li><b>4</b>解锁回响</li></ol>
+</section>
+<nav class="teach-catalog-filters" aria-label="历史类别筛选">
+<button data-teach-filter="all" onclick="setTeachCatalogFilter('all')">全部</button>
+<button data-teach-filter="gangyao-shang" onclick="setTeachCatalogFilter('gangyao-shang')">纲要（上）</button>
+<button data-teach-filter="gangyao-xia" onclick="setTeachCatalogFilter('gangyao-xia')">纲要（下）</button>
+<button data-teach-filter="xuanbi1" onclick="setTeachCatalogFilter('xuanbi1')">选必1</button>
+<button data-teach-filter="xuanbi2" onclick="setTeachCatalogFilter('xuanbi2')">选必2</button>
+<button data-teach-filter="xuanbi3" onclick="setTeachCatalogFilter('xuanbi3')">选必3</button>
+</nav>
+<div class="teach-catalog-grid" id="teach-catalog-grid"></div>
+</div>
+<!-- Feynman Teach-back Screen -->
+<div class="screen teach-screen" id="screen-teach">
+<div class="teach-topbar">
+<button class="btn-back" onclick="exitTeach()">返回</button>
+<div class="teach-step" id="teach-step">历史现场</div>
+<div class="teach-local-note">仅保存在当前浏览器</div>
+</div>
+<main class="teach-shell" data-stage="briefing">
+<section class="teach-hero">
+<div class="teach-image-frame">
+<img id="teach-image" src="" alt="">
+<div class="teach-hero-shade"></div>
+</div>
+<div class="teach-hero-copy">
+<div class="teach-eyebrow" id="teach-period">讲历史 · 进入现场</div>
+<h2 class="heading" id="teach-title"></h2>
+<p id="teach-scene"></p>
+</div>
+</section>
+<nav class="teach-journey" aria-label="历史现场体验进度">
+<span data-journey="briefing"><b>1</b><em>进入角色</em></span><i></i>
+<span data-journey="archives"><b>2</b><em>探索现场</em></span><i></i>
+<span data-journey="report"><b>3</b><em>开口推演</em></span><i></i>
+<span data-journey="feedback"><b>4</b><em>解锁回响</em></span>
+</nav>
+<section class="teach-stage teach-briefing-stage" id="teach-briefing-stage" data-teach-stage="briefing">
+<div class="teach-stage-heading"><span>1</span><div><small id="teach-briefing-kicker">一封急信</small><h2 id="teach-briefing-headline">报馆需要你的帮助</h2></div></div>
+<div class="teach-sound-cue">
+<button id="btn-teach-sound" onclick="playTeachSoundCue()" aria-label="播放现场声音线索"><span>声</span><b id="teach-sound-label">听现场线索</b></button>
+<p id="teach-sound-text"></p>
+</div>
+<div class="teach-briefing-letter">
+<div class="teach-role-seal"><span>你的身份</span><strong id="teach-role-title">京城青年记录员</strong></div>
+<p id="teach-role-text"></p>
+<div class="teach-mission-copy"><span>此刻，你要查清</span><p id="teach-mission-text"></p></div>
+<p class="teach-next-copy" id="teach-next-text"></p>
+</div>
+<div class="teach-stage-actions"><button class="teach-stage-primary" id="teach-accept-button" onclick="acceptTeachMission()">进入角色，探索现场</button></div>
+</section>
+<section class="teach-stage teach-archive-stage" id="teach-archive-stage" data-teach-stage="archives" hidden>
+<div class="teach-stage-heading"><span>2</span><div><small>收集线索</small><h2>查看现场，找出你的判断依据</h2></div></div>
+<div class="teach-archive-head">
+<div><span>现场线索</span><strong id="teach-archive-instruction">查看全部线索，标记至少一份“我的依据”</strong></div>
+<output id="teach-archive-count" aria-live="polite">已标记 0 份</output>
+</div>
+<div class="teach-archive-grid" id="teach-archive-grid"></div>
+<div class="teach-archive-status" id="teach-archive-status" aria-live="polite">所有线索都可以查看。把至少一份重要线索标记为“我的依据”。</div>
+<div class="teach-stage-actions split"><button class="teach-stage-secondary" onclick="showTeachStage('briefing')">返回角色现场</button><button class="teach-stage-primary" id="btn-teach-to-report" onclick="openTeachReport()" disabled>至少标记 1 份依据</button></div>
+</section>
+<section class="teach-stage teach-workspace" id="teach-workspace" data-teach-stage="report" hidden>
+<div class="teach-stage-heading"><span>3</span><div><small id="teach-report-kicker">现在轮到你</small><h2 id="teach-report-headline">请作出你的判断</h2></div></div>
+<div class="teach-report-brief"><small>请回答一个问题</small><div class="teach-prompt" id="teach-prompt"></div><p id="teach-prompt-hint"></p></div>
+<div class="teach-guidance" id="teach-guidance"></div>
+<div class="teach-carrying"><span>我的判断依据</span><div id="teach-selected-archives"></div><button onclick="showTeachStage('archives')">调整线索</button></div>
+<label class="teach-text-label" for="teach-transcript"><b>说出你的判断</b><span>自然讲述即可，不用背标准答案</span></label>
+<textarea id="teach-transcript" rows="7" placeholder="点击“开始讲述”，也可以直接在这里输入……"></textarea>
+<div class="teach-compose-footer">
+<div class="teach-mic-group">
+<button class="btn-teach-mic" id="btn-teach-mic" onclick="toggleTeachMic()"><span class="mic-dot"></span><span id="teach-mic-label">开始讲述</span></button>
+<span class="teach-timer" id="teach-timer">00:00 / 01:30</span>
+</div>
+<button class="btn-teach-analyze" id="btn-teach-analyze" onclick="analyzeTeachAttempt()">说完了，看看历史回响</button>
+</div>
+<div class="teach-status" id="teach-status">请用自己的话说明，不需要一次讲得完美。</div>
+</section>
+<section class="teach-stage teach-feedback" id="teach-feedback" data-teach-stage="feedback" hidden aria-live="polite"></section>
+</main>
+</div>
+<!-- Mistakes Screen -->
+<div class="screen mistakes-screen" id="screen-mistakes">
+<div class="mistakes-header">
+<button class="btn-back" onclick="showScreen('menu')">返回</button>
+<div class="mistakes-heading"><h2 class="heading">错题记录</h2><p>重新作答并订正错误，保留你的复习轨迹</p></div>
+<button class="btn-clear-mistakes" onclick="clearMistakes()">清空记录</button>
+</div>
+<div class="repair-summary" id="repair-summary"></div>
+<div class="mistakes-list" id="mistakes-list"></div>
+</div>
+<!-- Teach-back Records Screen -->
+<div class="screen teach-records-screen" id="screen-teach-records">
+<div class="teach-records-header">
+<button class="btn-back" onclick="showScreen('menu')">返回</button>
+<div class="teach-records-heading">
+<h2 class="heading">口述记录</h2>
+<p>回看你的讲述、已涉及主题和思考问题</p>
+</div>
+<button class="btn-clear-records" onclick="clearTeachRecords()">清空</button>
+</div>
+<div class="teach-records-list" id="teach-records-list"></div>
+</div>
+<!-- Results Screen -->
+<div class="screen results-screen" id="screen-results">
+<div class="results-card">
+<div class="results-title" class="heading" id="results-title"></div>
+<div class="stars-display" id="stars-display"></div>
+<div class="results-score" id="results-score"></div>
+<div class="results-message" id="results-message"></div>
+<div class="results-reward" id="results-reward"></div>
+<button class="btn-continue" onclick="backToMap()">继续</button>
+</div>
+</div>
+</div>
+<div class="teach-stamp-overlay" id="teach-stamp-overlay" hidden></div>
+<div class="confetti-container" id="confetti-container"></div>
+<footer class="global-footer">内容由网络公开资料及AI辅助生成，仅供学习参考，请以官方教材为准。© 学科融合David</footer>
+
+<script src="data/题库.js"></script>
+<!-- 省份题库数据：切换省份时更换此文件即可 -->
+<script src="data/province-guangdong.js"></script>
+<script src="data/讲历史.js"></script>
+<script src="data/游戏机制.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

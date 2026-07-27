@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>历史长河 · 题库编辑器</title>
+<link rel="icon" href="assets/首页/中国古代史.webp" type="image/webp">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#f5f0e8;--card:#fffaf1;--ink:#3e2723;--muted:#745f55;--line:#cdbeb2;--primary:#8b4513;--gold:#b78623;--danger:#b3261e;--ok:#47752b}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+button,input,select,textarea{font:inherit}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(245,240,232,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.topbar-inner{max-width:1120px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand h1{margin:0;color:var(--primary);font-size:25px;font-family:serif}.brand p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.header-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.btn,.link-btn{border:1px solid var(--line);border-radius:8px;padding:9px 15px;background:#fffaf1;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn:hover,.link-btn:hover{border-color:var(--primary)}.btn-primary{background:var(--primary);border-color:var(--primary);color:white}.btn-danger{color:var(--danger);border-color:#d8aaa6;background:#fff8f7}
+.layout{max-width:1120px;margin:0 auto;padding:22px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:22px}
+.sidebar{position:sticky;top:104px;align-self:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 16px rgba(62,39,35,.08)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:15px}.field label{font-size:13px;color:var(--muted);font-weight:650}
+.field select,.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:white;padding:9px 10px;color:var(--ink)}
+.field textarea{min-height:82px;resize:vertical;line-height:1.55}
+.summary{margin:14px 0;padding:12px;background:#f2e8d9;border-radius:9px;color:var(--muted);font-size:13px;line-height:1.7}
+.status{font-size:12px;color:var(--ok);min-height:18px;margin-top:9px}.sidebar .btn{width:100%;margin-top:8px}
+.main-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:2px 0 16px}.main-head h2{margin:0;color:var(--primary);font-size:24px}.main-head .count{color:var(--muted);font-size:13px}
+.question-list{display:flex;flex-direction:column;gap:16px}
+.question-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 3px 12px rgba(62,39,35,.07)}
+.question-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.question-index{font-weight:750;color:var(--primary)}
+.question-actions{display:flex;gap:8px}.mini-btn{border:1px solid var(--line);border-radius:7px;background:white;padding:5px 10px;cursor:pointer;font-size:12px}.mini-btn.delete{color:var(--danger)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin-bottom:14px}
+.option-row{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:7px}.option-letter{width:28px;height:28px;border-radius:50%;background:#eee3d5;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
+.option-row input{width:100%;border:1px solid var(--line);border-radius:8px;background:white;padding:9px}
+.empty{padding:80px 20px;text-align:center;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:12px}
+.help{max-width:1120px;margin:0 auto 30px;padding:0 22px;color:var(--muted);font-size:13px;line-height:1.8}.help code{background:#eee3d5;padding:2px 5px;border-radius:4px;color:var(--primary)}
+.batch-dialog{width:min(1060px,calc(100vw - 28px));max-height:calc(100vh - 28px);border:1px solid var(--line);border-radius:16px;padding:0;background:var(--bg);color:var(--ink);box-shadow:0 18px 70px rgba(48,28,22,.28)}
+.batch-dialog::backdrop{background:rgba(35,22,18,.5);backdrop-filter:blur(3px)}
+.dialog-head,.dialog-foot{position:sticky;z-index:3;background:rgba(245,240,232,.97);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.dialog-head{top:0;border-bottom:1px solid var(--line)}.dialog-foot{bottom:0;border-top:1px solid var(--line);justify-content:flex-end;flex-wrap:wrap}
+.dialog-head h2{margin:0;color:var(--primary);font-size:22px}.dialog-body{padding:20px}
+.close-btn{border:0;background:transparent;font-size:28px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+.upload-zone{border:2px dashed var(--line);border-radius:13px;padding:20px;background:var(--card);text-align:center}.upload-zone.dragover{border-color:var(--primary);background:#fff7e8}
+.upload-zone input[type=file]{max-width:100%;margin:10px 0}.upload-zone p{margin:4px 0;color:var(--muted);font-size:13px;line-height:1.65}
+.batch-summary{margin:16px 0;padding:12px 14px;border-radius:9px;background:#efe4d5;color:var(--muted);line-height:1.7;font-size:13px}
+.paper-preview,.archive-panel{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:12px 0;overflow:hidden}.paper-preview>summary,.archive-panel>summary{cursor:pointer;padding:14px 16px;font-weight:700;color:var(--primary)}
+.paper-tools{padding:0 16px 14px;display:grid;grid-template-columns:minmax(230px,1fr) auto;gap:10px;align-items:end}.paper-tools .field{margin:0}.paper-question-list{padding:0 12px 12px}
+.import-question{border-top:1px solid #dfd3c8;padding:12px 4px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(130px,.7fr) minmax(170px,.9fr) 96px;gap:10px;align-items:start}
+.import-stem{font-size:13px;line-height:1.55}.import-stem strong{color:var(--primary)}.import-stem small{display:block;margin-top:4px;color:var(--muted)}
+.import-question select{width:100%;border:1px solid var(--line);border-radius:7px;background:white;padding:7px}.warning{color:#a34c17!important}
+.archive-items{padding:0 16px 14px}.archive-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid #e5dad0;font-size:13px}.archive-item span{color:var(--muted)}
+.subjective-note{margin:0 16px 14px;padding:10px 12px;border-radius:8px;background:#eef3e8;color:#506341;font-size:13px}
+@media(max-width:880px){.import-question{grid-template-columns:1fr 1fr}.import-stem{grid-column:1/-1}.paper-tools{grid-template-columns:1fr}}
+@media(max-width:800px){.topbar-inner{align-items:flex-start;flex-direction:column}.header-actions{justify-content:flex-start}.layout{grid-template-columns:1fr}.sidebar{position:static}.options-grid,.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <div class="brand"><h1>历史长河 · 题库编辑器</h1><p>修改会自动保存为浏览器草稿，导出后才会生成正式题库文件</p></div>
+  <div class="header-actions"><a class="link-btn" href="历史长河.html">打开游戏</a><button class="btn" id="batch-open">批量导入试卷</button><button class="btn btn-danger" id="clear-draft">清除草稿</button><button class="btn btn-primary" id="export-bank">导出题库.js</button></div>
+</div></header>
+
+<main class="layout">
+  <aside class="sidebar">
+    <div class="field"><label for="map-select">历史地图</label><select id="map-select"></select></div>
+    <div class="field"><label for="unit-select">章节</label><select id="unit-select"></select></div>
+    <div class="field"><label for="search">搜索当前章节</label><input id="search" placeholder="输入题干、选项或解析"></div>
+    <div class="summary" id="summary"></div>
+    <button class="btn" id="add-question">＋ 添加一道题</button>
+    <div class="status" id="status"></div>
+  </aside>
+
+  <section>
+    <div class="main-head"><div><h2 id="unit-title"></h2><div class="count" id="question-count"></div></div></div>
+    <div class="question-list" id="question-list"></div>
+  </section>
+</main>
+
+<div class="help">
+  导出后会得到一个新的 <code>题库.js</code>。请用它替换项目中 <code>data/题库.js</code>，再重新打开游戏。批量导入支持 Markdown 整卷；选择题进入练习题库，材料题和问答题会随整卷保存在试卷档案中。
+</div>
+
+<dialog class="batch-dialog" id="batch-dialog">
+  <div class="dialog-head"><div><h2>批量导入整份试卷</h2><div class="count">可一次选择多份 .md 文件，并在导入前核对答案与章节</div></div><button class="close-btn" id="batch-close" aria-label="关闭">×</button></div>
+  <div class="dialog-body">
+    <div class="upload-zone" id="upload-zone">
+      <strong>选择或拖入 Markdown 试卷</strong><br>
+      <input id="paper-files" type="file" accept=".md,.markdown,text/markdown,text/plain" multiple>
+      <p>识别格式：<code>### 1</code> 题号，随后是题干和 <code>- A. 选项</code>。如果原卷没有答案，可在下方用 20 位答案串快速补录，例如 <code>BCDAC...</code>。</p>
+    </div>
+    <div class="batch-summary" id="batch-summary">尚未选择文件。当前题库已保存 <span id="archive-count">0</span> 份试卷档案。</div>
+    <div id="batch-list"></div>
+    <details class="archive-panel"><summary>已保存的试卷档案</summary><div class="archive-items" id="archive-list"></div></details>
+  </div>
+  <div class="dialog-foot"><button class="btn" id="archive-only">仅保存整卷档案</button><button class="btn btn-primary" id="import-ready">归档并导入已填答案的选择题</button></div>
+</dialog>
+
+<script src="data/题库.js"></script>
+<script>
+const TYPE_LABELS={basic:'基础题',material:'材料题',visual:'图表/时空题',thinking:'历史思维题'};
+const DRAFT_KEY='historyQuizEditorDraftV3';
+const STALE_DRAFT_KEY='historyQuizEditorDraftV2';
+const LEGACY_DRAFT_KEY='historyQuizEditorDraftV1';
+const clone=value=>JSON.parse(JSON.stringify(value));
+const basePapers=typeof PAPERS==='undefined'?[]:PAPERS;
+const editorOutline=typeof EXAM_OUTLINE==='undefined'?{title:'历史考试大纲',maps:[],raw:''}:clone(EXAM_OUTLINE);
+let editorMaps=clone(MAPS),editorPapers=clone(basePapers),stagedPapers=[];
+let currentMap=0,currentUnit=0,saveTimer=null;
+
+try{
+  const saved=JSON.parse(localStorage.getItem(DRAFT_KEY));
+  if(saved?.maps){editorMaps=saved.maps;editorPapers=saved.papers||[];}
+  else{const legacy=JSON.parse(localStorage.getItem(LEGACY_DRAFT_KEY));if(Array.isArray(legacy))editorMaps=legacy;}
+}catch(e){}
+
+const mapSelect=document.getElementById('map-select');
+const unitSelect=document.getElementById('unit-select');
+const searchInput=document.getElementById('search');
+const list=document.getElementById('question-list');
+const statusEl=document.getElementById('status');
+const batchDialog=document.getElementById('batch-dialog');
+const batchList=document.getElementById('batch-list');
+const batchSummary=document.getElementById('batch-summary');
+const paperFiles=document.getElementById('paper-files');
+const uploadZone=document.getElementById('upload-zone');
+
+function make(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
+function normalize(text=''){return text.normalize('NFKC').replace(/[\s`*_>“”‘’"'，。！？；：、（）()《》〈〉·—…]/g,'').toLowerCase();}
+function draftPayload(){return{maps:editorMaps,papers:editorPapers};}
+function scheduleSave(message='草稿已自动保存'){
+  statusEl.textContent='正在保存草稿…';clearTimeout(saveTimer);
+  saveTimer=setTimeout(()=>{try{localStorage.setItem(DRAFT_KEY,JSON.stringify(draftPayload()));statusEl.textContent=message;}catch(e){statusEl.textContent='草稿保存失败，请及时导出题库';}},250);
+}
+function fillMaps(){mapSelect.innerHTML='';editorMaps.forEach((m,i)=>{const o=make('option','',m.name);o.value=i;mapSelect.appendChild(o);});mapSelect.value=currentMap;}
+function fillUnits(){unitSelect.innerHTML='';editorMaps[currentMap].units.forEach((u,i)=>{const o=make('option','',`${i+1}. ${u.name}`);o.value=i;unitSelect.appendChild(o);});if(currentUnit>=editorMaps[currentMap].units.length)currentUnit=0;unitSelect.value=currentUnit;}
+function allQuestionCount(){return editorMaps.reduce((sum,m)=>sum+m.units.reduce((s,u)=>s+u.questions.length,0),0);}
+function renderSummary(){const map=editorMaps[currentMap],unit=map.units[currentUnit];document.getElementById('summary').innerHTML=`当前地图：${map.units.length} 个章节<br>当前章节：${unit.questions.length} 道题<br>全部题库：${allQuestionCount()} 道题<br>整卷档案：${editorPapers.length} 份`;}
+function labeled(label,control){const wrap=make('div','field');wrap.append(make('label','',label),control);return wrap;}
+function textInput(value,onInput){const e=make('input');e.value=value||'';e.addEventListener('input',()=>{onInput(e.value);scheduleSave();});return e;}
+function textArea(value,onInput){const e=make('textarea');e.value=value||'';e.addEventListener('input',()=>{onInput(e.value);scheduleSave();});return e;}
+function selectInput(options,value,onChange){const e=make('select');options.forEach(([v,t])=>{const o=make('option','',t);o.value=v;e.appendChild(o);});e.value=String(value);e.addEventListener('change',()=>{onChange(e.value);scheduleSave();});return e;}
+
+function questionCard(q,index){
+  if(!Array.isArray(q.opts))q.opts=[];while(q.opts.length<4)q.opts.push('');
+  const card=make('article','question-card');
+  const head=make('div','question-head');head.appendChild(make('div','question-index',`第 ${index+1} 题`));
+  const actions=make('div','question-actions');
+  const duplicate=make('button','mini-btn','复制');duplicate.type='button';duplicate.onclick=()=>{const unit=editorMaps[currentMap].units[currentUnit];unit.questions.splice(index+1,0,clone(q));scheduleSave();renderQuestions();};
+  const del=make('button','mini-btn delete','删除');del.type='button';del.onclick=()=>{if(confirm(`确定删除第 ${index+1} 题吗？`)){editorMaps[currentMap].units[currentUnit].questions.splice(index,1);scheduleSave();renderQuestions();}};
+  actions.append(duplicate,del);head.appendChild(actions);card.appendChild(head);
+  card.appendChild(labeled('题干',textArea(q.q,v=>q.q=v)));
+  const options=make('div','options-grid');['A','B','C','D'].forEach((letter,i)=>{const row=make('div','option-row');row.append(make('span','option-letter',letter),textInput(q.opts[i],v=>q.opts[i]=v));options.appendChild(row);});card.appendChild(options);
+  const meta=make('div','grid-2');
+  meta.appendChild(labeled('正确答案',selectInput([['0','A'],['1','B'],['2','C'],['3','D']],Number.isInteger(q.ans)?q.ans:0,v=>q.ans=Number(v))));
+  meta.appendChild(labeled('题目类型',selectInput(Object.entries(TYPE_LABELS),q.type||'basic',v=>q.type=v)));
+  card.appendChild(meta);
+  card.appendChild(labeled('答案解析',textArea(q.explanation||'',v=>q.explanation=v)));
+  card.appendChild(labeled('题目来源（可留空）',textInput(q.source||'',v=>q.source=v)));
+  return card;
+}
+
+function renderQuestions(){
+  const unit=editorMaps[currentMap].units[currentUnit];const key=searchInput.value.trim().toLowerCase();list.innerHTML='';
+  const matches=unit.questions.map((q,index)=>({q,index})).filter(({q})=>!key||[q.q,...(q.opts||[]),q.explanation,q.source].join(' ').toLowerCase().includes(key));
+  document.getElementById('unit-title').textContent=unit.name;document.getElementById('question-count').textContent=key?`找到 ${matches.length} / ${unit.questions.length} 道题`:`共 ${unit.questions.length} 道题`;
+  if(!matches.length)list.appendChild(make('div','empty','没有找到符合条件的题目。'));else matches.forEach(({q,index})=>list.appendChild(questionCard(q,index)));
+  renderSummary();
+}
+
+const CLASSIFY_RULES=[
+  [1,12,/改革开放|十一届三中|经济特区|市场经济|家庭联产|一国两制|香港回归|个体工商|企业改革/],
+  [1,11,/新中国|中华人民共和国|开国大典|抗美援朝|一五计划|三大改造|社会主义建设|两弹一星|中美关系|恢复联合国|农村电话/],
+  [1,10,/解放战争|三大战役|辽沈|淮海|平津|渡江|人民解放军|刘邓|七届二中/],
+  [1,9,/抗日|日本侵略|九一八|一二.?九|西安事变|八路军|新四军|延安|南泥湾|台儿庄|太原会战|百团大战/],
+  [1,8,/南京国民政府|井冈山|红军|长征|遵义|中华苏维埃|农村革命|工农武装割据/],
+  [1,7,/国民革命|北伐|黄埔|国共合作|中共三大|中共四大/],
+  [1,6,/五四|新文化运动|中共一大|中国共产党创立|新民主主义革命开端/],
+  [1,5,/北洋|袁世凯|护国|护法|段祺瑞|军阀混战/],
+  [1,4,/辛亥|武昌起义|清帝退位|临时约法|孙中山|同盟会|三民主义|共和体制/],
+  [1,3,/戊戌|百日维新|康有为|梁启超|义和团|辛丑条约|清末新政|预备立宪/],
+  [1,2,/甲午|马关条约|瓜分中国|中法战争|台湾民众|列强侵略加剧/],
+  [1,1,/太平天国|天朝田亩|洪仁玕|洋务|自强|求富|民族工业|左宗棠|李鸿章/],
+  [1,0,/鸦片战争|南京条约|天津条约|北京条约|林则徐|海国图志/],
+  [2,8,/当代世界|全球化|逆全球化|信息化|多极化|人类命运共同体|小红书|TikTok/],
+  [2,7,/冷战|铁幕|杜鲁门|马歇尔计划|两极格局|欧洲共同体|欧盟|苏联解体|布雷顿森林|日本经济/],
+  [2,6,/第一次世界大战|第二次世界大战|十月革命|巴黎和会|凡尔赛|华盛顿会议|国际联盟|慕尼黑|轴心国|新经济政策/],
+  [2,5,/殖民体系|民族独立|民族解放|瓜分非洲|马赫迪|埃塞俄比亚|印度民族|凯末尔|曼德拉/],
+  [2,4,/工业革命|蒸汽机|瓦特|第二次工业革命|马克思|共产党宣言|巴黎公社|第一国际|黑格尔/],
+  [2,3,/文艺复兴|宗教改革|启蒙|英国资产阶级革命|美国独立|法国大革命|1787|光荣革命|孟德斯鸠|伽利略/],
+  [2,2,/新航路|哥伦布|麦哲伦|整体的世界|物种交流|殖民扩张|葡萄牙|西班牙/],
+  [2,1,/中古|中世纪|拜占庭|阿拉伯帝国|封君封臣|庄园|古代非洲|美洲文明/],
+  [2,0,/古埃及|两河流域|古印度|古希腊|古罗马|印加|玛雅|古代文明/],
+  [0,6,/明朝|清朝|康熙|雍正|乾隆|八股|黄宗羲|李贽|王阳明|番薯|玉米|黄册|闭关锁国/],
+  [0,5,/五代|北宋|南宋|辽朝|金朝|西夏|元朝|蒙古|王安石|交子|枢密|理学/],
+  [0,4,/隋朝|唐朝|贞观|开元|安史|科举|三省六部|颜真卿|民族交往/],
+  [0,3,/三国|曹魏|西晋|东晋|南北朝|北魏|孝文帝|江南开发|士族|玄学/],
+  [0,2,/秦朝|秦始皇|汉朝|汉武帝|郡县|刺史|丝绸之路|诸侯王|察举/],
+  [0,1,/夏朝|商朝|西周|春秋|战国|青铜|分封|宗法|商鞅|孔子|百家争鸣|铁制农具/],
+  [0,0,/新石器|旧石器|炎帝|黄帝|良渚|仰韶|河姆渡|中华文明起源/]
+];
+
+function guessLocation(text){for(const [mapIndex,unitIndex,pattern] of CLASSIFY_RULES){if(pattern.test(text))return{mapIndex,unitIndex};}return{mapIndex:currentMap,unitIndex:currentUnit};}
+function guessType(text){if(/下图|图\s*\d|图表|示意图|壁画|书法作品|表\s*\d/.test(text))return'visual';if(/据|材料|记载|指出|认为|表明|反映|说明|可知|主要原因|主要目的是/.test(text))return'material';if(/影响|意义|本质|根本|共同|变化/.test(text))return'thinking';return'basic';}
+
+function parseMarkdownPaper(raw,filename){
+  raw=raw.replace(/\r/g,'');
+  const headings=[...raw.matchAll(/^###\s+(\d+)\s*$/gm)];
+  const title=(raw.match(/^#\s+(.+)$/m)?.[1]||filename).trim();
+  const subtitle=(raw.match(/^##\s+(历史[^\n]*)$/m)?.[1]||'历史试题').trim();
+  const answerMap={};
+  const answerSection=raw.match(/(?:^|\n)#{1,4}\s*(?:选择题)?参考答案[^\n]*\n([\s\S]*)/i)?.[1]||'';
+  for(const match of answerSection.matchAll(/(?:^|[\s,，;；])([1-9]|1\d|20)\s*[.．、:：\-]?\s*([A-D])(?=$|[\s,，;；])/gi))answerMap[Number(match[1])]=match[2].toUpperCase();
+  const questions=headings.map((heading,index)=>{
+    const number=Number(heading[1]);const start=heading.index+heading[0].length;const end=headings[index+1]?.index??raw.length;const body=raw.slice(start,end).trim();
+    const options=[...body.matchAll(/^-\s*([A-D])[.．、]\s*(.+)$/gm)];const first=options[0]?.index??-1;const q=(first>=0?body.slice(0,first):body).trim();
+    const inlineAnswer=body.match(/(?:正确答案|答案)\s*[:：]\s*([A-D])/i)?.[1]?.toUpperCase();
+    const opts=options.map(item=>item[2].trim());const kind=opts.length===4?'choice':'subjective';const guess=guessLocation(`${q}\n${opts.join('\n')}`);
+    return{number,kind,q,opts,body,ans:kind==='choice'?'ABCD'.indexOf(inlineAnswer||answerMap[number]||''):-1,...guess};
+  });
+  return{id:`upload-${normalize(filename+'-'+title).slice(0,70)}`,filename,title:`${title}·${subtitle}`,raw,questions};
+}
+
+async function stageFiles(files){
+  const parsed=[];
+  for(const file of files){try{parsed.push(parseMarkdownPaper(await file.text(),file.name));}catch(e){alert(`${file.name} 解析失败：${e.message}`);}}
+  const byId=new Map(stagedPapers.map(p=>[p.id,p]));parsed.forEach(p=>byId.set(p.id,p));stagedPapers=[...byId.values()];renderBatch();
+}
+
+function simpleSelect(options,value,onChange){const e=make('select');options.forEach(([v,t])=>{const o=make('option','',t);o.value=v;e.appendChild(o);});e.value=String(value);e.onchange=()=>onChange(e.value);return e;}
+function renderBatch(){
+  batchList.innerHTML='';let choices=0,subjective=0,missing=0;
+  stagedPapers.forEach((paper,paperIndex)=>{
+    const choiceQuestions=paper.questions.filter(q=>q.kind==='choice');const subjectiveQuestions=paper.questions.filter(q=>q.kind==='subjective');choices+=choiceQuestions.length;subjective+=subjectiveQuestions.length;missing+=choiceQuestions.filter(q=>q.ans<0).length;
+    const details=make('details','paper-preview');details.open=true;details.appendChild(make('summary','',`${paper.filename} · ${choiceQuestions.length} 道选择题 / ${subjectiveQuestions.length} 道主观题`));
+    const tools=make('div','paper-tools');const keyInput=make('input');keyInput.placeholder='粘贴答案串，如 BCDAC...';keyInput.value=choiceQuestions.every(q=>q.ans>=0)?choiceQuestions.map(q=>'ABCD'[q.ans]).join(''):'';
+    const apply=make('button','btn','应用答案串');apply.type='button';apply.onclick=()=>{const key=keyInput.value.toUpperCase().replace(/[^A-D]/g,'');choiceQuestions.forEach((q,i)=>{if(key[i])q.ans='ABCD'.indexOf(key[i]);});renderBatch();};tools.append(labeled('答案速填（按题号顺序）',keyInput),apply);details.appendChild(tools);
+    const qList=make('div','paper-question-list');
+    choiceQuestions.forEach(question=>{
+      const row=make('div','import-question');const stem=make('div','import-stem');stem.append(make('strong','',`${question.number}. `),document.createTextNode(question.q));
+      const optText=question.opts.map((opt,i)=>`${'ABCD'[i]}.${opt}`).join('　');stem.appendChild(make('small',question.ans<0?'warning':'',optText));row.appendChild(stem);
+      const mapControl=simpleSelect(editorMaps.map((m,i)=>[i,m.name]),question.mapIndex,value=>{question.mapIndex=Number(value);question.unitIndex=0;renderBatch();});
+      const unitControl=simpleSelect(editorMaps[question.mapIndex].units.map((u,i)=>[i,u.name]),question.unitIndex,value=>{question.unitIndex=Number(value);});
+      const answerControl=simpleSelect([[-1,'待补充'],[0,'A'],[1,'B'],[2,'C'],[3,'D']],question.ans,value=>{question.ans=Number(value);renderBatch();});
+      row.append(mapControl,unitControl,answerControl);qList.appendChild(row);
+    });
+    details.appendChild(qList);if(subjectiveQuestions.length)details.appendChild(make('div','subjective-note',`${subjectiveQuestions.length} 道材料题/问答题将随整卷归档，不进入自动判分练习。`));batchList.appendChild(details);
+  });
+  batchSummary.textContent=stagedPapers.length?`已读取 ${stagedPapers.length} 份试卷：${choices} 道选择题、${subjective} 道主观题；${missing} 道选择题尚未填写答案。`:`尚未选择文件。当前题库已保存 ${editorPapers.length} 份试卷档案。`;
+  renderArchiveList();
+}
+
+function renderArchiveList(){
+  const archiveCount=document.getElementById('archive-count');if(archiveCount)archiveCount.textContent=editorPapers.length;const host=document.getElementById('archive-list');host.innerHTML='';
+  if(!editorPapers.length){host.appendChild(make('div','archive-item','暂无整卷档案'));return;}
+  editorPapers.forEach((paper,index)=>{const item=make('div','archive-item');const title=make('div','',paper.label||paper.title);title.appendChild(make('span','',`　${paper.choiceCount||0} 道选择题 / ${paper.subjectiveCount||0} 道主观题`));const del=make('button','mini-btn delete','移除档案');del.type='button';del.onclick=()=>{if(confirm(`确定移除“${paper.label||paper.title}”的整卷档案吗？题库中的选择题不会自动删除。`)){editorPapers.splice(index,1);scheduleSave();renderBatch();renderSummary();}};item.append(title,del);host.appendChild(item);});
+}
+
+function archiveFromStage(paper){
+  const questions=paper.questions.map(question=>question.kind==='choice'?{number:question.number,kind:'choice',q:question.q,opts:question.opts,ans:question.ans,answer:question.ans>=0?'ABCD'[question.ans]:'',map:editorMaps[question.mapIndex]?.name||'',unit:editorMaps[question.mapIndex]?.units[question.unitIndex]?.name||'',explanation:question.ans>=0?`【答案 ${'ABCD'[question.ans]}】${question.opts[question.ans]}`:''}:{number:question.number,kind:'subjective',body:question.body});
+  return{id:paper.id,title:paper.title,label:paper.title,year:Number(paper.title.match(/20\d{2}/)?.[0])||null,category:/模/.test(paper.title)?'模拟题':'导入试卷',answerStatus:'由题库编辑器导入，请按原卷答案人工复核',sourceFile:paper.filename,choiceCount:questions.filter(q=>q.kind==='choice').length,subjectiveCount:questions.filter(q=>q.kind==='subjective').length,questions,raw:paper.raw};
+}
+
+function importStaged(importChoices){
+  if(!stagedPapers.length){alert('请先选择至少一份 Markdown 试卷。');return;}
+  const lookup=new Map();editorMaps.forEach((map,mapIndex)=>map.units.forEach((unit,unitIndex)=>unit.questions.forEach((question,questionIndex)=>lookup.set(normalize(question.q),{question,mapIndex,unitIndex,questionIndex}))));
+  let added=0,reused=0,skipped=0;
+  stagedPapers.forEach(paper=>{
+    if(importChoices)paper.questions.filter(q=>q.kind==='choice').forEach(question=>{
+      if(question.ans<0){skipped++;return;}const source=`${paper.title}·第${question.number}题`;const duplicate=lookup.get(normalize(question.q));
+      if(duplicate){const sources=new Set(String(duplicate.question.source||'').split('；').filter(Boolean));sources.add(source);duplicate.question.source=[...sources].join('；');reused++;return;}
+      const target=editorMaps[question.mapIndex]?.units[question.unitIndex];if(!target){skipped++;return;}const newQuestion={type:guessType(`${question.q}\n${question.opts.join('\n')}`),q:question.q,opts:question.opts,ans:question.ans,explanation:`【答案 ${'ABCD'[question.ans]}】${question.opts[question.ans]}。可在章节编辑页继续补充解析。`,source};target.questions.push(newQuestion);lookup.set(normalize(question.q),{question:newQuestion,mapIndex:question.mapIndex,unitIndex:question.unitIndex,questionIndex:target.questions.length-1});added++;
+    });
+    const archive=archiveFromStage(paper);const oldIndex=editorPapers.findIndex(item=>item.id===archive.id);if(oldIndex>=0)editorPapers.splice(oldIndex,1,archive);else editorPapers.push(archive);
+  });
+  scheduleSave(importChoices?`批量导入完成：新增 ${added} 道，复用 ${reused} 道，待补答案 ${skipped} 道`:`已保存 ${stagedPapers.length} 份整卷档案`);stagedPapers=[];renderBatch();fillMaps();fillUnits();renderQuestions();
+  batchSummary.textContent=importChoices?`导入完成：新增 ${added} 道选择题，发现并复用 ${reused} 道重复题，${skipped} 道因答案缺失未进入练习；整卷均已归档。`:`整卷档案已保存，题库选择题未变更。`;
+}
+
+mapSelect.addEventListener('change',()=>{currentMap=Number(mapSelect.value);currentUnit=0;searchInput.value='';fillUnits();renderQuestions();});
+unitSelect.addEventListener('change',()=>{currentUnit=Number(unitSelect.value);searchInput.value='';renderQuestions();});
+searchInput.addEventListener('input',renderQuestions);
+document.getElementById('add-question').onclick=()=>{const unit=editorMaps[currentMap].units[currentUnit];unit.questions.push({type:'basic',q:'请输入题干',opts:['选项A','选项B','选项C','选项D'],ans:0,explanation:'请输入答案解析'});searchInput.value='';scheduleSave();renderQuestions();window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});};
+document.getElementById('batch-open').onclick=()=>{renderBatch();batchDialog.showModal();};
+document.getElementById('batch-close').onclick=()=>batchDialog.close();
+batchDialog.addEventListener('click',event=>{if(event.target===batchDialog)batchDialog.close();});
+paperFiles.addEventListener('change',()=>stageFiles([...paperFiles.files]));
+['dragenter','dragover'].forEach(name=>uploadZone.addEventListener(name,event=>{event.preventDefault();uploadZone.classList.add('dragover');}));
+['dragleave','drop'].forEach(name=>uploadZone.addEventListener(name,event=>{event.preventDefault();uploadZone.classList.remove('dragover');}));
+uploadZone.addEventListener('drop',event=>stageFiles([...event.dataTransfer.files].filter(file=>/\.(md|markdown)$/i.test(file.name))));
+document.getElementById('archive-only').onclick=()=>importStaged(false);
+document.getElementById('import-ready').onclick=()=>importStaged(true);
+document.getElementById('clear-draft').onclick=()=>{if(confirm('确定清除编辑器草稿并恢复到当前题库文件吗？')){localStorage.removeItem(DRAFT_KEY);localStorage.removeItem(STALE_DRAFT_KEY);localStorage.removeItem(LEGACY_DRAFT_KEY);editorMaps=clone(MAPS);editorPapers=clone(basePapers);currentMap=0;currentUnit=0;fillMaps();fillUnits();renderQuestions();renderBatch();statusEl.textContent='草稿已清除';}};
+document.getElementById('export-bank').onclick=()=>{const content=`/* 历史长河题库：由题库编辑器导出 */\nconst IMG_DATA = ${JSON.stringify(IMG_DATA,null,2)};\n\nconst EXAM_OUTLINE = ${JSON.stringify(editorOutline,null,2)};\n\nconst PAPERS = ${JSON.stringify(editorPapers,null,2)};\n\nconst MAPS = ${JSON.stringify(editorMaps,null,2)};\n`;const blob=new Blob([content],{type:'text/javascript;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='题库.js';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);statusEl.textContent='题库文件已导出（含试卷档案与考试大纲）';};
+
+fillMaps();fillUnits();renderQuestions();renderBatch();statusEl.textContent=localStorage.getItem(DRAFT_KEY)||localStorage.getItem(LEGACY_DRAFT_KEY)?'已恢复上次编辑草稿':'已加载正式题库';
+</script>
+<footer style="width:100%;text-align:center;padding:20px 20px 28px;color:var(--muted);font-size:11px;letter-spacing:.3px;line-height:1.6;border-top:1px solid var(--line)">内容由网络公开资料及AI辅助生成，仅供学习参考，请以官方教材为准。© 学科融合David</footer>
+</body>
+</html>
