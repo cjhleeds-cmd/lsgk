@@ -2,13 +2,362 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=历史长河.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>历史长河 - 高考历史闯关</title>
   <link rel="icon" href="assets/首页/中国古代史.webp" type="image/webp">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F5F0E8;
+      --bg2: #EDE6D6;
+      --primary: #8B4513;
+      --primary2: #A0522D;
+      --secondary: #D4A574;
+      --secondary2: #C4A882;
+      --text: #3E2723;
+      --text2: #5D4037;
+      --gold: #DAA520;
+      --border: #BCAAA4;
+      --card-bg: #FAF6EE;
+      --shadow: rgba(62,39,35,.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; min-height: 100%;
+      font-family: 'Noto Serif SC', 'SimSun', serif;
+      color: var(--text);
+    }
+
+    /* 背景：米色渐变 + 淡化轮播 */
+    .bg-slideshow {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, #E8DCC8 100%);
+    }
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 4s ease-in-out;
+      filter: saturate(0.6) brightness(1.15);
+      mix-blend-mode: multiply;
+    }
+    .bg-slide.active { opacity: 0.22; }
+
+    /* 全局遮罩纹理 */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212,165,116,.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(139,69,19,.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* 主容器 */
+    .main-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* 标题区域 */
+    .title-section {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeInDown 1.2s ease-out both;
+    }
+
+    .title-deco-top, .title-deco-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--secondary);
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      opacity: 0.8;
+    }
+
+    .title-deco-top { margin-bottom: 0.8rem; }
+    .title-deco-bottom { margin-top: 0.6rem; }
+
+    .deco-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    }
+
+    .main-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.15em;
+      text-shadow: 2px 2px 4px rgba(139,69,19,.2);
+      line-height: 1.2;
+    }
+
+    .sub-title {
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      color: var(--text2);
+      letter-spacing: 0.5em;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    /* 省份选择区域 */
+    .province-section {
+      animation: fadeInUp 1.2s ease-out 0.4s both;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .section-label {
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.85rem;
+      letter-spacing: 0.4em;
+      margin-bottom: 1.5rem;
+      opacity: 0.7;
+    }
+
+    .province-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .province-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+      .main-container { padding: 1.5rem; }
+    }
+
+    /* 省份卡片 */
+    .province-card {
+      position: relative;
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 0.8rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    .province-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary2), var(--secondary));
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+
+    .province-card:hover {
+      border-color: var(--primary2);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 28px rgba(139,69,19,.25);
+    }
+
+    .province-card:hover::before { opacity: 1; }
+
+    .province-card:active {
+      transform: translateY(-2px);
+      transition-duration: 0.1s;
+    }
+
+    .province-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.15em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .province-code {
+      font-size: 0.7rem;
+      color: var(--text2);
+      opacity: 0.7;
+      margin-top: 0.3rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .province-enter {
+      font-size: 0.65rem;
+      color: var(--primary2);
+      opacity: 0;
+      margin-top: 0.4rem;
+      letter-spacing: 0.2em;
+      transition: opacity 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .province-card:hover .province-enter { opacity: 0.9; }
+
+    /* 角标装饰 */
+    .province-card .corner {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: var(--secondary);
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+    }
+    .province-card:hover .corner { opacity: 0.8; }
+    .corner-tl { top: 6px; left: 6px; border-top: 1px solid; border-left: 1px solid; }
+    .corner-tr { top: 6px; right: 6px; border-top: 1px solid; border-right: 1px solid; }
+    .corner-bl { bottom: 6px; left: 6px; border-bottom: 1px solid; border-left: 1px solid; }
+    .corner-br { bottom: 6px; right: 6px; border-bottom: 1px solid; border-right: 1px solid; }
+
+    /* 底部信息 */
+    .footer-info {
+      text-align: center;
+      color: var(--border);
+      opacity: 0.8;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      margin-top: 2rem;
+      animation: fadeIn 2s ease-out 1.2s both;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 0.8; }
+    }
+  </style>
 </head>
 <body>
-  <p>正在进入《历史长河》……如果没有自动跳转，请<a href="历史长河.html">点击这里</a>。</p>
-  <script>location.replace('历史长河.html'+location.search+location.hash);</script>
+
+  <!-- 背景轮播 -->
+  <div class="bg-slideshow" id="bgSlideshow"></div>
+
+  <!-- 纹理遮罩 -->
+  <div class="overlay"></div>
+
+  <!-- 主内容 -->
+  <div class="main-container">
+
+    <!-- 标题区 -->
+    <div class="title-section">
+      <h1 class="main-title">历史长河</h1>
+      <p class="sub-title">高考历史闯关</p>
+
+      <div class="title-deco-bottom">
+        <span class="deco-line"></span>
+        <span>溯洄从之 · 道阻且长</span>
+        <span class="deco-line"></span>
+      </div>
+
+    </div>
+
+    <!-- 省份选择 -->
+    <div class="province-section">
+      <p class="section-label">请选择省份</p>
+      <div class="province-grid" id="provinceGrid"></div>
+    </div>
+
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-info">溯游从之 · 宛在水中央</div>
+
+  <script>
+    // 背景图片轮播（使用现有素材）
+    const bgImages = [
+      'assets/首页/中国古代史.webp',
+      'assets/古代史/中华文明起源.webp',
+      'assets/古代史/夏商周.webp',
+      'assets/古代史/隋唐.webp',
+      'assets/古代史/宋元时期.webp',
+      'assets/古代史/明清.webp',
+      'assets/近代史/两次鸦片战争.webp',
+      'assets/近代史/武昌起义清帝退位.webp',
+      'assets/近代史/开国大典抗美援朝.webp',
+      'assets/首页/中外历史纲要（上）.webp',
+      'assets/首页/中外历史纲要（下）.webp',
+    ];
+
+    const slideshow = document.getElementById('bgSlideshow');
+    bgImages.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'bg-slide' + (i === 0 ? ' active' : '');
+      div.style.backgroundImage = `url(${src})`;
+      slideshow.appendChild(div);
+    });
+
+    let currentSlide = 0;
+    setInterval(() => {
+      const slides = slideshow.querySelectorAll('.bg-slide');
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+
+    // 省份数据（与注册表一致）
+    const provinces = [
+      { code: 'guangdong', name: '广东', tag: '岭南文化' },
+      { code: 'fujian',    name: '福建', tag: '八闽故地' },
+      { code: 'hubei',     name: '湖北', tag: '荆楚之地' },
+      { code: 'shandong',  name: '山东', tag: '齐鲁文化' },
+      { code: 'henan',     name: '河南', tag: '中原腹地' },
+      { code: 'jiangxi',   name: '江西', tag: '赣鄱红土' },
+      { code: 'hebei',     name: '河北', tag: '燕赵大地' },
+      { code: 'jiangsu',   name: '江苏', tag: '吴越江南' },
+    ];
+
+    // 渲染省份卡片
+    const grid = document.getElementById('provinceGrid');
+    provinces.forEach((p, i) => {
+      const card = document.createElement('a');
+      card.className = 'province-card';
+      card.href = `历史长河.html?province=${p.code}`;
+      card.style.animationDelay = `${0.6 + i * 0.08}s`;
+      card.innerHTML = `
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <div class="province-name">${p.name}</div>
+        <div class="province-code">${p.tag}</div>
+        <div class="province-enter">点击进入 &#10132;</div>
+      `;
+      grid.appendChild(card);
+    });
+
+
+  </script>
+
 </body>
 </html>
