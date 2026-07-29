@@ -3,10 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>历史长河 - 高考历史闯关（广东版）</title>
+<title id="page-title">历史长河 - 高考历史闯关</title>
+<script src="data/provinces/registry.js?v=9"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const province = params.get('province') || (PROVINCE_REGISTRY?.default || 'guangdong');
+  const name = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getName(province).replace('省', '') : province;
+  document.getElementById('page-title').textContent = '历史长河 - 高考历史闯关（' + name + '版）';
+})();
+</script>
 <link rel="icon" href="assets/首页/中国古代史.webp" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 <body>
 <div class="texture-overlay"></div>
@@ -16,9 +25,22 @@
 <div class="menu-title">
 <h1 class="heading">历史长河</h1>
 <div class="subtitle">高考历史闯关<span class="province-inline">
-<select id="province-select" onchange="switchProvince(this.value)">
-<option value="guangdong" selected>广东（统编版）</option>
-</select>
+<select id="province-select" onchange="switchProvince(this.value)"></select>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search).get('province') || (PROVINCE_REGISTRY?.default || 'guangdong');
+  var s = document.getElementById('province-select');
+  if (s && PROVINCE_REGISTRY) {
+    PROVINCE_REGISTRY.list().forEach(function(prov) {
+      var opt = document.createElement('option');
+      opt.value = prov.code;
+      opt.textContent = prov.name.replace('省', '');
+      s.appendChild(opt);
+    });
+    if (s.querySelector('option[value="'+p+'"]')) s.value = p;
+  }
+})();
+</script>
 </span></div>
 </div>
 <div class="menu-deco"><div class="diamond"></div></div>
@@ -86,11 +108,11 @@
 </section>
 <nav class="teach-catalog-filters" aria-label="历史类别筛选">
 <button data-teach-filter="all" onclick="setTeachCatalogFilter('all')">全部</button>
-<button data-teach-filter="gangyao-shang" onclick="setTeachCatalogFilter('gangyao-shang')">纲要（上）</button>
-<button data-teach-filter="gangyao-xia" onclick="setTeachCatalogFilter('gangyao-xia')">纲要（下）</button>
-<button data-teach-filter="xuanbi1" onclick="setTeachCatalogFilter('xuanbi1')">选必1</button>
-<button data-teach-filter="xuanbi2" onclick="setTeachCatalogFilter('xuanbi2')">选必2</button>
-<button data-teach-filter="xuanbi3" onclick="setTeachCatalogFilter('xuanbi3')">选必3</button>
+<button data-teach-filter="gangyao-shang" onclick="setTeachCatalogFilter('gangyao-shang')">中国史</button>
+<button data-teach-filter="gangyao-xia" onclick="setTeachCatalogFilter('gangyao-xia')">世界史</button>
+<button data-teach-filter="xuanbi1" onclick="setTeachCatalogFilter('xuanbi1')">制度治理</button>
+<button data-teach-filter="xuanbi2" onclick="setTeachCatalogFilter('xuanbi2')">经济生活</button>
+<button data-teach-filter="xuanbi3" onclick="setTeachCatalogFilter('xuanbi3')">文化交流</button>
 </nav>
 <div class="teach-catalog-grid" id="teach-catalog-grid"></div>
 </div>
@@ -200,11 +222,58 @@
 <div class="confetti-container" id="confetti-container"></div>
 <footer class="global-footer">内容由网络公开资料及AI辅助生成，仅供学习参考，请以官方教材为准。© 学科融合David</footer>
 
-<script src="data/题库.js?v=5"></script>
-<!-- 省份题库数据：切换省份时更换此文件即可 -->
-<script src="data/province-guangdong.js?v=5"></script>
-<script src="data/讲历史.js?v=5"></script>
-<script src="data/游戏机制.js?v=5"></script>
-<script src="js/app.js?v=5"></script>
+<script src="data/provinces/registry.js?v=9"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const province = params.get('province') || (PROVINCE_REGISTRY?.default || 'guangdong');
+  const provinceName = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getName(province) : (province + '省');
+  window.__PROVINCE = province;
+  window.__PROVINCE_NAME = provinceName;
+  const filePath = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getFilePath(province) : ('data/provinces/' + province + '.js');
+  document.write('<script src="' + filePath + '?v=9"><\/script>');
+})();
+</script>
+<script src="data/讲历史.js?v=9"></script>
+<script src="data/游戏机制.js?v=9"></script>
+<script>
+// 根据省份题库容量和省份场景映射配置自动禁用无题目且无历史现场的地图
+(function(){
+  if (typeof HISTORY_GAME_CONFIG !== 'undefined' && typeof MAPS !== 'undefined') {
+    var mapKeys = ['gangyao-shang','gangyao-xia','xuanbi1','xuanbi2','xuanbi3'];
+    // 优先使用省份文件中的 PROVINCE_SCENE_MAP，其次使用旧的 PROVINCE_SCENE_OVERRIDES
+    var provConfig = null;
+    if (typeof PROVINCE_SCENE_MAP !== 'undefined' && PROVINCE_SCENE_MAP) {
+      provConfig = PROVINCE_SCENE_MAP;
+    } else if (typeof PROVINCE_SCENE_OVERRIDES !== 'undefined' && window.__PROVINCE) {
+      provConfig = PROVINCE_SCENE_OVERRIDES[window.__PROVINCE];
+    }
+    for (var i = 0; i < mapKeys.length; i++) {
+      var cfg = HISTORY_GAME_CONFIG[mapKeys[i]];
+      if (!cfg || !cfg.enabled) continue;
+      var totalQ = 0;
+      var totalScenes = 0;
+      var mapData = MAPS[cfg.mapIndex];
+      if (mapData && mapData.units) {
+        for (var j = 0; j < mapData.units.length; j++) {
+          totalQ += (mapData.units[j].questions || []).length;
+          var sceneIds = null;
+          if (provConfig && provConfig[mapKeys[i]]) {
+            sceneIds = provConfig[mapKeys[i]][j];
+          }
+          if (!sceneIds && cfg.units && cfg.units[j]) {
+            sceneIds = cfg.units[j].sceneIds;
+          }
+          totalScenes += (sceneIds || []).length;
+        }
+      }
+      if (totalQ === 0 && totalScenes === 0) {
+        cfg.enabled = false;
+      }
+    }
+  }
+})();
+</script>
+<script src="js/app.js?v=8"></script>
 </body>
 </html>

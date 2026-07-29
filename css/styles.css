@@ -76,14 +76,18 @@ linear-gradient(180deg,#F5F0E8 0%,#EDE6D6 50%,#E8DCC8 100%);
 /* Level nodes */
 .level-node{position:absolute;width:72px;height:72px;transform:translate(-50%,-50%);cursor:pointer;z-index:2;transition:all .3s ease}
 .level-node:hover{transform:translate(-50%,-50%) scale(1.1)}
-.level-node.locked{opacity:.45;cursor:not-allowed}
+.level-node.locked{opacity:.78;cursor:not-allowed}
 .level-node.locked:hover{transform:translate(-50%,-50%)}
+.level-node.scene-only{opacity:.78}
+.level-node.unlocked{opacity:.78}
 
 .node-bg{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;transition:all .3s;overflow:hidden;background:var(--card-bg)}
 .node-bg img{width:100%;height:100%;object-fit:cover;border-radius:inherit;position:absolute;top:0;left:0}
 .node-bg .node-img-lock{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(200,192,180,.7);border-radius:inherit;z-index:1}
 .level-node.unlocked .node-bg{border:3px solid #B0A89C;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.level-node.unlocked .node-bg img{filter:grayscale(80%) brightness(.75)}
+.level-node.locked .node-bg img,
+.level-node.scene-only .node-bg img,
+.level-node.unlocked .node-bg img{filter:grayscale(.58) sepia(.16)}
 .level-node.completed .node-bg{border:3px solid var(--correct);box-shadow:0 4px 16px rgba(85,139,47,.25)}
 .level-node.completed .node-bg img{filter:none}
 
@@ -799,6 +803,7 @@ var(--bg);
 .map-level-grid .level-node.locked,.map-level-grid .level-node.locked:hover{transform:none;cursor:not-allowed;opacity:.68;box-shadow:0 2px 8px rgba(62,39,35,.07)}
 .map-level-grid .level-node.unlocked{border-color:#d4a117;background:#fffaf0;box-shadow:0 5px 18px rgba(184,132,15,.18)}
 .map-level-grid .level-node.completed{border-color:#719653;background:#f7fbf3;box-shadow:0 5px 18px rgba(85,139,47,.15)}
+.map-level-grid .level-node.scene-only{border-color:#8b6dc8;background:#f6f1fd;box-shadow:0 5px 18px rgba(124,92,184,.15)}
 .map-level-grid .node-bg,.map-ancient .map-level-grid .node-bg,.map-modern .map-level-grid .node-bg,.map-world .map-level-grid .node-bg{position:relative;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:12px 12px 0 0;overflow:hidden;background:#eee5d7;box-shadow:none}
 .map-level-grid .node-bg img{position:absolute;inset:0;width:100%;height:100%;border-radius:0;object-fit:cover}
 .map-level-grid .node-bg::before{display:none}
@@ -811,6 +816,8 @@ var(--bg);
 .map-level-grid .node-status{display:inline-flex;align-items:center;min-height:24px;padding:3px 8px;border-radius:999px;background:#eee8df;color:#71675d;font-size:11px;font-weight:700;white-space:nowrap}
 .map-level-grid .level-node.unlocked .node-status{background:#fff0bd;color:#80540a}
 .map-level-grid .level-node.completed .node-status{background:#dcebd2;color:#466a33}
+.map-level-grid .level-node.scene-only .node-status{background:#ece4f9;color:#5e3aa0}
+.map-level-grid .level-node.scene-only .node-number{background:#7355b3}
 .map-level-grid .node-label,.map-ancient .map-level-grid .node-label,.map-modern .map-level-grid .node-label,.map-world .map-level-grid .node-label{position:static;width:auto;max-width:none;min-height:2.8em;transform:none;overflow:visible;color:var(--text);font:700 17px/1.4 "Noto Serif SC",serif;white-space:normal;text-overflow:clip}
 .map-level-grid .node-stars,.map-ancient .map-level-grid .node-stars,.map-modern .map-level-grid .node-stars,.map-world .map-level-grid .node-stars{position:static;display:flex;flex:none;gap:2px;transform:none}
 .map-level-grid .node-star{font-size:14px;line-height:1;color:var(--gold);filter:none}
@@ -860,6 +867,7 @@ var(--bg);
 .map-ancient .level-node.completed .node-bg img,.map-modern .level-node.completed .node-bg img,.map-world .level-node.completed .node-bg img{filter:none;opacity:1}
 .map-ancient .map-level-grid .level-node.unlocked .node-bg img,.map-modern .map-level-grid .level-node.unlocked .node-bg img,.map-world .map-level-grid .level-node.unlocked .node-bg img{filter:grayscale(.58) sepia(.16);opacity:.78}
 .map-ancient .map-level-grid .level-node.completed .node-bg img,.map-modern .map-level-grid .level-node.completed .node-bg img,.map-world .map-level-grid .level-node.completed .node-bg img{filter:none;opacity:1}
+.map-level-grid .level-node.scene-only .node-bg img{filter:none;opacity:1}
 .node-fracture{position:absolute;z-index:5;right:9px;top:9px;padding:4px 7px;border-radius:999px;background:#a33e32;color:#fff;font-size:10px;font-weight:800;box-shadow:0 2px 8px rgba(120,35,29,.3)}
 .map-level-grid .level-node.has-fracture{border-color:#b75747}
 .node-reward{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:8px;border-top:1px solid #eadfce;font-size:10px}

@@ -55,12 +55,13 @@ button,input,select,textarea{font:inherit}
 </head>
 <body>
 <header class="topbar"><div class="topbar-inner">
-  <div class="brand"><h1>历史长河 · 题库编辑器</h1><p>修改会自动保存为浏览器草稿，导出后才会生成正式题库文件</p></div>
-  <div class="header-actions"><a class="link-btn" href="历史长河.html">打开游戏</a><button class="btn" id="batch-open">批量导入试卷</button><button class="btn btn-danger" id="clear-draft">清除草稿</button><button class="btn btn-primary" id="export-bank">导出题库.js</button></div>
+  <div class="brand"><h1>历史长河 · 题库编辑器</h1><p>当前省份：<span id="current-province-label">广东</span> · 修改会自动保存为浏览器草稿，导出后才会生成正式题库文件</p></div>
+  <div class="header-actions"><a class="link-btn" href="历史长河.html" id="open-game-link">打开游戏</a><button class="btn" id="batch-open">批量导入试卷</button><button class="btn btn-danger" id="clear-draft">清除草稿</button><button class="btn btn-primary" id="export-bank">导出题库.js</button></div>
 </div></header>
 
 <main class="layout">
   <aside class="sidebar">
+    <div class="field"><label for="province-select">省份</label><select id="province-select"></select></div>
     <div class="field"><label for="map-select">历史地图</label><select id="map-select"></select></div>
     <div class="field"><label for="unit-select">章节</label><select id="unit-select"></select></div>
     <div class="field"><label for="search">搜索当前章节</label><input id="search" placeholder="输入题干、选项或解析"></div>
@@ -76,7 +77,7 @@ button,input,select,textarea{font:inherit}
 </main>
 
 <div class="help">
-  导出后会得到一个新的 <code>题库.js</code>。请用它替换项目中 <code>data/题库.js</code>，再重新打开游戏。批量导入支持 Markdown 整卷；选择题进入练习题库，材料题和问答题会随整卷保存在试卷档案中。
+  导出后会得到一个新的 <code>题库.js</code>。请用它替换项目中 <code>data/provinces/{省份代码}.js</code>，再重新打开游戏。批量导入支持 Markdown 整卷；选择题进入练习题库，材料题和问答题会随整卷保存在试卷档案中。
 </div>
 
 <dialog class="batch-dialog" id="batch-dialog">
@@ -94,22 +95,40 @@ button,input,select,textarea{font:inherit}
   <div class="dialog-foot"><button class="btn" id="archive-only">仅保存整卷档案</button><button class="btn btn-primary" id="import-ready">归档并导入已填答案的选择题</button></div>
 </dialog>
 
-<script src="data/题库.js"></script>
+<script src="data/provinces/registry.js"></script>
+<script>
+// 动态加载省份题库
+(function(){
+  const params = new URLSearchParams(location.search);
+  const province = params.get('province') || (PROVINCE_REGISTRY?.default || 'guangdong');
+  window.__EDITOR_PROVINCE = province;
+  const filePath = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getFilePath(province) : ('data/provinces/' + province + '.js');
+  document.write('<script src="' + filePath + '"><\/script>');
+})();
+</script>
 <script>
 const TYPE_LABELS={basic:'基础题',material:'材料题',visual:'图表/时空题',thinking:'历史思维题'};
-const DRAFT_KEY='historyQuizEditorDraftV3';
-const STALE_DRAFT_KEY='historyQuizEditorDraftV2';
+const DRAFT_KEY_PREFIX='historyQuizEditorDraftV4';
+const DRAFT_KEY=DRAFT_KEY_PREFIX + '_' + (window.__EDITOR_PROVINCE || 'guangdong');
+const STALE_DRAFT_KEY='historyQuizEditorDraftV3';
 const LEGACY_DRAFT_KEY='historyQuizEditorDraftV1';
 const clone=value=>JSON.parse(JSON.stringify(value));
 const basePapers=typeof PAPERS==='undefined'?[]:PAPERS;
 const editorOutline=typeof EXAM_OUTLINE==='undefined'?{title:'历史考试大纲',maps:[],raw:''}:clone(EXAM_OUTLINE);
 let editorMaps=clone(MAPS),editorPapers=clone(basePapers),stagedPapers=[];
 let currentMap=0,currentUnit=0,saveTimer=null;
+let currentProvince = window.__EDITOR_PROVINCE || 'guangdong';
 
+// 尝试从当前省份的草稿恢复，否则尝试旧版本草稿
 try{
   const saved=JSON.parse(localStorage.getItem(DRAFT_KEY));
   if(saved?.maps){editorMaps=saved.maps;editorPapers=saved.papers||[];}
-  else{const legacy=JSON.parse(localStorage.getItem(LEGACY_DRAFT_KEY));if(Array.isArray(legacy))editorMaps=legacy;}
+  else{
+    // 旧版本草稿迁移（仅当没有新版本草稿时）
+    const v3saved=JSON.parse(localStorage.getItem(STALE_DRAFT_KEY));
+    if(v3saved?.maps){editorMaps=v3saved.maps;editorPapers=v3saved.papers||[];}
+    else{const legacy=JSON.parse(localStorage.getItem(LEGACY_DRAFT_KEY));if(Array.isArray(legacy))editorMaps=legacy;}
+  }
 }catch(e){}
 
 const mapSelect=document.getElementById('map-select');
@@ -275,6 +294,40 @@ function importStaged(importChoices){
   batchSummary.textContent=importChoices?`导入完成：新增 ${added} 道选择题，发现并复用 ${reused} 道重复题，${skipped} 道因答案缺失未进入练习；整卷均已归档。`:`整卷档案已保存，题库选择题未变更。`;
 }
 
+// 填充省份选择器
+function fillProvinces(){
+  const provinceSelect = document.getElementById('province-select');
+  if(!provinceSelect || !PROVINCE_REGISTRY) return;
+  provinceSelect.innerHTML = '';
+  PROVINCE_REGISTRY.list().forEach(prov => {
+    const o = make('option', '', prov.name);
+    o.value = prov.code;
+    provinceSelect.appendChild(o);
+  });
+  provinceSelect.value = currentProvince;
+  // 更新标签
+  const label = document.getElementById('current-province-label');
+  if(label) label.textContent = PROVINCE_REGISTRY.getName(currentProvince).replace('省', '');
+  // 更新打开游戏链接
+  const gameLink = document.getElementById('open-game-link');
+  if(gameLink) gameLink.href = '历史长河.html?province=' + encodeURIComponent(currentProvince);
+}
+
+// 切换省份
+function switchEditorProvince(provinceCode){
+  if(provinceCode === currentProvince) return;
+  if(!confirm('切换省份将重新加载页面，当前草稿已自动保存。确定切换吗？')){
+    document.getElementById('province-select').value = currentProvince;
+    return;
+  }
+  // 先保存当前省份的草稿
+  scheduleSave('正在保存草稿...');
+  // 跳转
+  setTimeout(() => {
+    location.href = '题库编辑器.html?province=' + encodeURIComponent(provinceCode);
+  }, 300);
+}
+
 mapSelect.addEventListener('change',()=>{currentMap=Number(mapSelect.value);currentUnit=0;searchInput.value='';fillUnits();renderQuestions();});
 unitSelect.addEventListener('change',()=>{currentUnit=Number(unitSelect.value);searchInput.value='';renderQuestions();});
 searchInput.addEventListener('input',renderQuestions);
@@ -288,10 +341,62 @@ paperFiles.addEventListener('change',()=>stageFiles([...paperFiles.files]));
 uploadZone.addEventListener('drop',event=>stageFiles([...event.dataTransfer.files].filter(file=>/\.(md|markdown)$/i.test(file.name))));
 document.getElementById('archive-only').onclick=()=>importStaged(false);
 document.getElementById('import-ready').onclick=()=>importStaged(true);
-document.getElementById('clear-draft').onclick=()=>{if(confirm('确定清除编辑器草稿并恢复到当前题库文件吗？')){localStorage.removeItem(DRAFT_KEY);localStorage.removeItem(STALE_DRAFT_KEY);localStorage.removeItem(LEGACY_DRAFT_KEY);editorMaps=clone(MAPS);editorPapers=clone(basePapers);currentMap=0;currentUnit=0;fillMaps();fillUnits();renderQuestions();renderBatch();statusEl.textContent='草稿已清除';}};
-document.getElementById('export-bank').onclick=()=>{const content=`/* 历史长河题库：由题库编辑器导出 */\nconst IMG_DATA = ${JSON.stringify(IMG_DATA,null,2)};\n\nconst EXAM_OUTLINE = ${JSON.stringify(editorOutline,null,2)};\n\nconst PAPERS = ${JSON.stringify(editorPapers,null,2)};\n\nconst MAPS = ${JSON.stringify(editorMaps,null,2)};\n`;const blob=new Blob([content],{type:'text/javascript;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='题库.js';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);statusEl.textContent='题库文件已导出（含试卷档案与考试大纲）';};
+document.getElementById('clear-draft').onclick=()=>{if(confirm('确定清除当前省份的编辑器草稿并恢复到当前题库文件吗？')){localStorage.removeItem(DRAFT_KEY);editorMaps=clone(MAPS);editorPapers=clone(basePapers);currentMap=0;currentUnit=0;fillMaps();fillUnits();renderQuestions();renderBatch();statusEl.textContent='草稿已清除';}};
+document.getElementById('export-bank').onclick=()=>{
+  const provName = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getName(currentProvince) : (currentProvince + '省');
+  // 保留原有的场景映射和题量配置
+  const sceneMap = typeof PROVINCE_SCENE_MAP !== 'undefined' ? PROVINCE_SCENE_MAP : null;
+  const quizConfig = typeof PROVINCE_QUIZ_CONFIG !== 'undefined' ? PROVINCE_QUIZ_CONFIG : null;
+  const content = `/* ${provName}题库与配置 — 历史长河 */
+/* 由题库编辑器导出 */
+/* 省份代码: ${currentProvince} */
 
-fillMaps();fillUnits();renderQuestions();renderBatch();statusEl.textContent=localStorage.getItem(DRAFT_KEY)||localStorage.getItem(LEGACY_DRAFT_KEY)?'已恢复上次编辑草稿':'已加载正式题库';
+// ===== 省份标识 =====
+const PROVINCE_CODE = '${currentProvince}';
+const PROVINCE_NAME = '${provName}';
+
+// ===== 图片映射 =====
+const IMG_DATA = ${JSON.stringify(IMG_DATA,null,2)};
+
+// ===== 考试大纲 =====
+const EXAM_OUTLINE = ${JSON.stringify(editorOutline,null,2)};
+
+// ===== 整卷档案 =====
+const PAPERS = ${JSON.stringify(editorPapers,null,2)};
+
+// ===== 选择题库 =====
+const MAPS = ${JSON.stringify(editorMaps,null,2)};
+
+// ===== 单元场景映射 =====
+const PROVINCE_SCENE_MAP = ${JSON.stringify(sceneMap,null,2)};
+
+// ===== 单元题量配置 =====
+const PROVINCE_QUIZ_CONFIG = ${JSON.stringify(quizConfig,null,2)};
+`;
+  const blob=new Blob([content],{type:'text/javascript;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download = currentProvince + '.js';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  statusEl.textContent=`${provName}题库文件已导出（含试卷档案、考试大纲、场景映射、题量配置）`;
+};
+
+fillProvinces();
+fillMaps();
+fillUnits();
+renderQuestions();
+renderBatch();
+statusEl.textContent=localStorage.getItem(DRAFT_KEY)?`已恢复${PROVINCE_REGISTRY?.getName(currentProvince) || ''}的编辑草稿`:'已加载正式题库';
+
+// 省份选择器事件
+const provinceSelectEl = document.getElementById('province-select');
+if(provinceSelectEl){
+  provinceSelectEl.addEventListener('change', () => {
+    switchEditorProvince(provinceSelectEl.value);
+  });
+}
 </script>
 <footer style="width:100%;text-align:center;padding:20px 20px 28px;color:var(--muted);font-size:11px;letter-spacing:.3px;line-height:1.6;border-top:1px solid var(--line)">内容由网络公开资料及AI辅助生成，仅供学习参考，请以官方教材为准。© 学科融合David</footer>
 </body>
