@@ -655,16 +655,23 @@ utterance.onend=utterance.onerror=()=>{button.classList.remove('playing');label.
 window.speechSynthesis.speak(utterance);
 }
 
-function setupTeachSpeech(){
+function checkSpeechSupport(){
 const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-const button=document.getElementById('btn-teach-mic');
 if(!SpeechRecognition){
-button.disabled=true;
-document.getElementById('teach-mic-label').textContent='语音暂不可用';
-document.getElementById('teach-status').textContent='当前浏览器不支持语音转文字，请改用近期版本的 Chrome 或 Edge，也可以直接输入讲述。';
-return;
+const button=document.getElementById('btn-teach-mic');
+if(button){button.disabled=true;}
+const label=document.getElementById('teach-mic-label');
+if(label){label.textContent='语音暂不可用';}
+const status=document.getElementById('teach-status');
+if(status){status.textContent='当前浏览器不支持语音转文字，请改用近期版本的 Chrome 或 Edge，也可以直接输入讲述。';}
+return false;
 }
-button.disabled=false;
+return true;
+}
+
+function createTeachRecognition(){
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(!SpeechRecognition)return null;
 const recognition=new SpeechRecognition();
 recognition.lang='zh-CN';
 recognition.continuous=true;
@@ -683,7 +690,8 @@ recognition.onerror=(event)=>{
 const messages={"not-allowed":"没有获得麦克风权限，可直接输入讲述。","audio-capture":"没有检测到可用的麦克风。","no-speech":"没有听到声音，请再试一次。"};
 let message=messages[event.error]||'语音识别暂时中断，可继续输入或重新开始。';
 if(event.error==='not-allowed'&&location.protocol==='file:')message='本地文件模式没有获得麦克风权限。请通过 GitHub Pages（HTTPS）或 localhost 打开网页，也可以直接输入讲述。';
-document.getElementById('teach-status').textContent=message;
+const statusEl=document.getElementById('teach-status');
+if(statusEl)statusEl.textContent=message;
 };
 recognition.onend=()=>{
 if(teachState.listening&&teachState.seconds<90){
@@ -691,7 +699,12 @@ try{recognition.start();return;}catch(e){}
 }
 setTeachListening(false);
 };
-teachState.recognition=recognition;
+return recognition;
+}
+
+function setupTeachSpeech(){
+if(!checkSpeechSupport())return;
+teachState.recognition=createTeachRecognition();
 }
 
 async function requestTeachMicrophoneAccess(){
@@ -728,7 +741,8 @@ async function toggleTeachMicFor(inputId){
 if(teachState.listening){stopTeachMic();return;}
 const hasPermission=await requestTeachMicrophoneAccess();
 if(!hasPermission)return;
-if(!teachState.recognition){setupTeachSpeech();}
+if(!checkSpeechSupport())return;
+teachState.recognition=createTeachRecognition();
 if(!teachState.recognition)return;
 teachState.inputId=inputId;
 const activeInput=document.getElementById(inputId);
