@@ -1,4 +1,12 @@
 import fs from 'node:fs';
+import path from 'node:path';
+
+const root=process.cwd();
+// 优先使用新的省份文件路径，回退到旧路径
+const newBankPath='data/provinces/guangdong.js';
+const oldBankPath='data/广东省题库.js';
+const bankFile=fs.existsSync(path.join(root,newBankPath))?newBankPath:oldBankPath;
+
 import vm from 'node:vm';
 
 class FakeElement {
@@ -23,7 +31,7 @@ const context={
   setTimeout:fn=>{fn();return 1;},clearTimeout(){},setInterval:()=>1,clearInterval(){},Math,Date,JSON,Map,Set
 };
 vm.createContext(context);
-for(const file of ['data/题库.js','data/讲历史.js','data/游戏机制.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context,{filename:file});
+for(const file of [bankFile,'data/讲历史.js','data/游戏机制.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context,{filename:file});
 const app=fs.readFileSync('js/app.js','utf8')+`\n;globalThis.__gameTest={
   progress,maps:MAPS,teachScenes:TEACH_SCENES,
   setState(value){Object.assign(state,value)},

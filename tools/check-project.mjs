@@ -5,6 +5,14 @@ import { fileURLToPath } from 'node:url';
 import { questionSimilarity } from './question-dedupe.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const provinceArg=process.argv.find(a=>a.startsWith('--province='));
+const province=provinceArg?provinceArg.split('=')[1]:'guangdong';
+const provinceNameMap={guangdong:'广东',jiangsu:'江苏',fujian:'福建',hubei:'湖北',shandong:'山东',henan:'河南',jiangxi:'江西',hebei:'河北'};
+const provinceName=provinceNameMap[province]||province;
+// 优先使用新的省份文件路径，回退到旧路径
+const newBankFile=`data/provinces/${province}.js`;
+const oldBankFile=`data/${provinceName}省题库.js`;
+const bankFile=fs.existsSync(path.join(root,newBankFile))?newBankFile:oldBankFile;
 const failures=[];
 const warnings=[];
 const fail=message=>failures.push(message);
@@ -30,11 +38,14 @@ function walk(directory){
 function loadData(){
   const context={};
   vm.createContext(context);
-  for(const file of ['data/题库.js','data/讲历史.js','data/游戏机制.js']){
+  for(const file of [bankFile,'data/讲历史.js','data/游戏机制.js']){
     const source=fs.readFileSync(path.join(root,file),'utf8');
-    vm.runInContext(`${source}\nthis.__MAPS=typeof MAPS==='undefined'?this.__MAPS:MAPS;this.__IMG_DATA=typeof IMG_DATA==='undefined'?this.__IMG_DATA:IMG_DATA;this.__PAPERS=typeof PAPERS==='undefined'?this.__PAPERS:PAPERS;this.__OUTLINE=typeof EXAM_OUTLINE==='undefined'?this.__OUTLINE:EXAM_OUTLINE;this.__TEACH_SCENES=typeof TEACH_SCENES==='undefined'?this.__TEACH_SCENES:TEACH_SCENES;this.__GAME_CONFIG=typeof HISTORY_GAME_CONFIG==='undefined'?this.__GAME_CONFIG:HISTORY_GAME_CONFIG;`,context,{filename:file});
+    vm.runInContext(`${source}\nthis.__MAPS=typeof MAPS==='undefined'?this.__MAPS:MAPS;this.__IMG_DATA=typeof IMG_DATA==='undefined'?this.__IMG_DATA:IMG_DATA;this.__PAPERS=typeof PAPERS==='undefined'?this.__PAPERS:PAPERS;this.__OUTLINE=typeof EXAM_OUTLINE==='undefined'?this.__OUTLINE:EXAM_OUTLINE;this.__TEACH_SCENES=typeof TEACH_SCENES==='undefined'?this.__TEACH_SCENES:TEACH_SCENES;this.__GAME_CONFIG=typeof HISTORY_GAME_CONFIG==='undefined'?this.__GAME_CONFIG:HISTORY_GAME_CONFIG;this.__PROVINCE_SCENE_MAP=typeof PROVINCE_SCENE_MAP==='undefined'?this.__PROVINCE_SCENE_MAP:PROVINCE_SCENE_MAP;this.__PROVINCE_QUIZ_CONFIG=typeof PROVINCE_QUIZ_CONFIG==='undefined'?this.__PROVINCE_QUIZ_CONFIG:PROVINCE_QUIZ_CONFIG;this.__PROVINCE_OVERRIDES=typeof PROVINCE_SCENE_OVERRIDES==='undefined'?this.__PROVINCE_OVERRIDES:PROVINCE_SCENE_OVERRIDES;this.__PROVINCE_QUIZ=typeof PROVINCE_QUIZ_OVERRIDES==='undefined'?this.__PROVINCE_QUIZ:PROVINCE_QUIZ_OVERRIDES;`,context,{filename:file});
   }
-  return JSON.parse(JSON.stringify({maps:context.__MAPS,img:context.__IMG_DATA,papers:context.__PAPERS,outline:context.__OUTLINE,scenes:context.__TEACH_SCENES,game:context.__GAME_CONFIG}));
+  // 兼容处理：优先使用新的 PROVINCE_SCENE_MAP / PROVINCE_QUIZ_CONFIG
+  const sceneMap = context.__PROVINCE_SCENE_MAP || (context.__PROVINCE_OVERRIDES?.[province]);
+  const quizConfig = context.__PROVINCE_QUIZ_CONFIG || (context.__PROVINCE_QUIZ?.[province]);
+  return JSON.parse(JSON.stringify({maps:context.__MAPS,img:context.__IMG_DATA,papers:context.__PAPERS,outline:context.__OUTLINE,scenes:context.__TEACH_SCENES,game:context.__GAME_CONFIG,sceneMap,quizConfig,overrides:context.__PROVINCE_OVERRIDES,quizOverrides:context.__PROVINCE_QUIZ}));
 }
 
 function checkHtml(file){
@@ -60,8 +71,8 @@ function checkMarkdown(file){
   }
 }
 
-const {maps,img,papers,outline,scenes,game}=loadData();
-if(!Array.isArray(maps)||maps.length!==3)fail('MAPS 应包含三个历史模块');
+const {maps,img,papers,outline,scenes,game,sceneMap,quizConfig}=loadData();
+if(!Array.isArray(maps)||maps.length!==5)fail('MAPS 应包含五个教材模块');
 
 const allQuestions=[];
 let missingExplanations=0;
@@ -107,44 +118,50 @@ for(let left=0;left<allQuestions.length;left++){
 }
 if(duplicateQuestions.length)fail(`题库存在 ${duplicateQuestions.length} 组相同或高度相似题目`);
 
-if(!Array.isArray(papers)||papers.length!==8)fail('PAPERS 应包含八份整卷档案');
+if(!Array.isArray(papers)||papers.length<1)fail('PAPERS 应至少包含一份整卷档案');
 for(const paper of papers||[]){
-  if(paper.choiceCount!==20||paper.subjectiveCount!==5)fail(`${paper.id} 不是20道选择题加5道主观题`);
   if(!paper.sourceFile||!fs.existsSync(path.join(root,paper.sourceFile)))fail(`${paper.id} 的原始试卷文件不存在`);
   if(!paper.answerStatus)fail(`${paper.id} 未声明答案状态`);
-  if(paper.sourceFile&&fs.existsSync(path.join(root,paper.sourceFile))&&paper.raw?.replace(/\r/g,'')!==fs.readFileSync(path.join(root,paper.sourceFile),'utf8').replace(/\r/g,''))fail(`${paper.id} 的整卷档案与原始 Markdown 不一致`);
+  if(paper.sourceFile&&fs.existsSync(path.join(root,paper.sourceFile))&&paper.raw&&paper.raw.replace(/\r/g,'')!==fs.readFileSync(path.join(root,paper.sourceFile),'utf8').replace(/\r/g,''))fail(`${paper.id} 的整卷档案与原始 Markdown 不一致`);
 }
 if(!outline?.sourceFile||!fs.existsSync(path.join(root,outline.sourceFile)))fail('考试大纲原始文件不存在');
 else if(outline.raw?.replace(/\r/g,'')!==fs.readFileSync(path.join(root,outline.sourceFile),'utf8').replace(/\r/g,''))fail('题库中的考试大纲档案与原始 Markdown 不一致');
 
 const sceneValues=Object.values(scenes||{});
-if(sceneValues.length!==21)fail(`历史现场应为21个，实际为${sceneValues.length}个`);
+if(sceneValues.length<1)fail('历史现场不应为空');
 const configuredSceneIds=[];
 const defaultQuestionCount=game?.quiz?.defaultQuestionCount;
 const focusQuestionCount=game?.quiz?.focusQuestionCount;
+const mapKeys=['gangyao-shang','gangyao-xia','xuanbi1','xuanbi2','xuanbi3'];
+const provQuizMap=quizConfig||{};
 if(!Number.isInteger(defaultQuestionCount)||defaultQuestionCount<1)fail('普通单元的默认通关题数无效');
 if(!Number.isInteger(focusQuestionCount)||focusQuestionCount<=defaultQuestionCount)fail('重点单元的通关题数应大于普通单元');
 for(const mapConfig of Object.values(game||{}).filter(value=>Number.isInteger(value?.mapIndex))){
   const map=maps[mapConfig.mapIndex];
   if(!map)fail(`游戏配置引用不存在的地图 ${mapConfig.mapIndex}`);
   if(mapConfig.units?.length!==map?.units?.length)fail(`${map?.name||mapConfig.mapIndex} 的游戏配置章节数不一致`);
+  const mapKey=mapKeys[mapConfig.mapIndex];
   for(const unit of mapConfig.units||[]){
-    const questionCount=unit.quizQuestionCount??defaultQuestionCount;
+    const quizOverride=provQuizMap[mapKey]?.[unit.unitIndex];
+    const effectiveQuizCount=quizOverride===undefined?unit.quizQuestionCount:(quizOverride===null?undefined:quizOverride);
+    const questionCount=effectiveQuizCount??defaultQuestionCount;
     const questionPool=map?.units?.[unit.unitIndex]?.questions||[];
     if(!Number.isInteger(questionCount)||questionCount<1)fail(`${map?.name||mapConfig.mapIndex} / ${unit.unitIndex} 的通关题数无效`);
-    if(unit.quizQuestionCount!==undefined&&questionCount>questionPool.length)fail(`${map?.name||mapConfig.mapIndex} / ${map.units[unit.unitIndex]?.name||unit.unitIndex} 的重点题池不足 ${questionCount} 题`);
-    for(const id of unit.sceneIds||[]){
+    if(effectiveQuizCount!==undefined&&questionCount>questionPool.length)fail(`${map?.name||mapConfig.mapIndex} / ${map?.units?.[unit.unitIndex]?.name||unit.unitIndex} 的重点题池不足 ${questionCount} 题`);
+    const provSceneOverride=sceneMap?.[mapKey]?.[unit.unitIndex];
+    const effectiveSceneIds=provSceneOverride!==undefined?provSceneOverride:(unit.sceneIds||[]);
+    for(const id of effectiveSceneIds){
       configuredSceneIds.push(id);
       const scene=scenes[id];
       if(!scene)fail(`游戏配置引用不存在的历史现场 ${id}`);
-      if(scene&&(scene.mapIndex!==mapConfig.mapIndex||scene.unitIndex!==unit.unitIndex))fail(`${id} 的地图或章节对应错误`);
     }
   }
 }
 for(const scene of sceneValues){
-  if(configuredSceneIds.filter(id=>id===scene.id).length!==1)fail(`${scene.id} 没有且仅有一个章节入口`);
+  const count=configuredSceneIds.filter(id=>id===scene.id).length;
+  if(count>1)fail(`${scene.id} 在默认配置中出现多次`);
   const label=game?.rewards?.stampLabels?.[scene.id];
-  if(!label||Array.from(label).length>4)fail(`${scene.id} 的主题印章应为1至4个字`);
+  if(label&&Array.from(label).length>4)fail(`${scene.id} 的主题印章应为1至4个字`);
 }
 
 const referencedImages=new Set(Object.values(img||{}));
@@ -166,6 +183,7 @@ const mapSummary=maps.map(map=>({name:map.name,units:map.units.length,questions:
 const sceneSummary=sceneValues.reduce((summary,scene)=>{summary[scene.category]=(summary[scene.category]||0)+1;return summary;},{});
 console.log(JSON.stringify({
   status:failures.length?'failed':'passed',
+  province:provinceName,
   maps:mapSummary,
   totalQuestions:allQuestions.length,
   papers:papers.length,

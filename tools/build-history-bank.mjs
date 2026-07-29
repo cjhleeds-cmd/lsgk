@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const bankFile = path.join(root, 'data', '题库.js');
+const bankFile = path.join(root, 'data', '广东省题库.js');
 const configFile = path.join(root, 'tools', 'paper-config.json');
 const distractorFile = path.join(root, 'tools', 'distractor-notes.json');
 const letters = 'ABCD';
@@ -261,11 +261,15 @@ for (const paperConfig of config.papers) {
   const sourcePath = path.join(root, paperConfig.file);
   const parsed = parsePaper(sourcePath);
   const choiceQuestions = parsed.questions.filter(question => question.kind === 'choice');
-  if (choiceQuestions.length !== 20) {
-    throw new Error(`${paperConfig.file} 应有 20 道选择题，实际解析出 ${choiceQuestions.length} 道。`);
+  const expectedCount = paperConfig.answers.length;
+  if (expectedCount < 1 || expectedCount > 25) {
+    throw new Error(`${paperConfig.id} 的 answers 长度 ${expectedCount} 不在合理范围内。`);
   }
-  if (paperConfig.answers.length !== 20 || paperConfig.locations.length !== 20 || paperConfig.reasons.length !== 20) {
-    throw new Error(`${paperConfig.id} 的答案、归类和解析必须各有 20 项。`);
+  if (choiceQuestions.length !== expectedCount) {
+    throw new Error(`${paperConfig.file} 应有 ${expectedCount} 道选择题，实际解析出 ${choiceQuestions.length} 道。`);
+  }
+  if (paperConfig.locations.length !== expectedCount || paperConfig.reasons.length !== expectedCount) {
+    throw new Error(`${paperConfig.id} 的归类和解析必须各有 ${expectedCount} 项。`);
   }
 
   const archivedQuestions = parsed.questions.map(rawQuestion => {

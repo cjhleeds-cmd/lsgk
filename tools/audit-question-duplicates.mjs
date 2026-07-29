@@ -7,7 +7,7 @@ import { questionSimilarity } from './question-dedupe.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const context={};
 vm.createContext(context);
-vm.runInContext(`${fs.readFileSync(path.join(root,'data','题库.js'),'utf8')}\nthis.__maps=MAPS;`,context);
+vm.runInContext(`${fs.readFileSync(path.join(root,'data','广东省题库.js'),'utf8')}\nthis.__maps=MAPS;`,context);
 const maps=JSON.parse(JSON.stringify(context.__maps));
 const questions=[];
 maps.forEach((map,mapIndex)=>map.units.forEach((unit,unitIndex)=>
