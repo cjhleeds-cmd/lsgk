@@ -144,7 +144,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】西周中期至春秋采邑数量增多，说明生产力发展推动分封规模扩大，社会生产持续发展。\n【来源】2021年河南高考历史真题（全国乙卷）·第24题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】西周中期至春秋采邑数量增多，说明生产力发展推动分封规模扩大，社会生产持续发展。",
         "optionExplanations": [
           "",
           "",
@@ -167,7 +167,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】西汉末至东汉中期长江以南豫章、零陵等郡民户成倍增长，反映长江以南经济发展加速。\n【来源】2021年河南高考历史真题（全国乙卷）·第25题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】西汉末至东汉中期长江以南豫章、零陵等郡民户成倍增长，反映长江以南经济发展加速。",
         "optionExplanations": [
           "",
           "",
@@ -190,7 +190,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】宋代官府重农抑商而苏辙、郑至道强调士农工商皆本业，反映社会群体间流动性增强。\n【来源】2021年河南高考历史真题（全国乙卷）·第26题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】宋代官府重农抑商而苏辙、郑至道强调士农工商皆本业，反映社会群体间流动性增强。",
         "optionExplanations": [
           "",
           "",
@@ -213,7 +213,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】明清善书内容为传统儒家思想，其流行强化了社会主流的价值观。\n【来源】2021年河南高考历史真题（全国乙卷）·第27题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】明清善书内容为传统儒家思想，其流行强化了社会主流的价值观。",
         "optionExplanations": [
           "",
           "",
@@ -236,7 +236,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1898年书商经历废八股到维新失败的投资波动，反映政局变化迅速。\n【来源】2021年河南高考历史真题（全国乙卷）·第28题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1898年书商经历废八股到维新失败的投资波动，反映政局变化迅速。",
         "optionExplanations": [
           "",
           "",
@@ -259,7 +259,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】1934年毛泽东强调改进工作方法，意在发动群众参加革命战争。\n【来源】2021年河南高考历史真题（全国乙卷）·第29题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】1934年毛泽东强调改进工作方法，意在发动群众参加革命战争。",
         "optionExplanations": [
           "",
           "",
@@ -282,7 +282,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】土改后太行山区农民买驴须与妻子商量，反映家庭成员经济地位发生变化。\n【来源】2021年河南高考历史真题（全国乙卷）·第30题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】土改后太行山区农民买驴须与妻子商量，反映家庭成员经济地位发生变化。",
         "optionExplanations": [
           "",
           "",
@@ -305,7 +305,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】上海和天津工人占比大而陕西和新疆劳动农民出身多，反映内地与沿海原有工业基础差距大。\n【来源】2021年河南高考历史真题（全国乙卷）·第31题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】上海和天津工人占比大而陕西和新疆劳动农民出身多，反映内地与沿海原有工业基础差距大。",
         "optionExplanations": [
           "",
           "",
@@ -328,7 +328,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】16至18世纪欧洲多国创办特许公司，说明殖民扩张呈现竞争格局。\n【来源】2021年河南高考历史真题（全国乙卷）·第32题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】16至18世纪欧洲多国创办特许公司，说明殖民扩张呈现竞争格局。",
         "optionExplanations": [
           "",
           "",
@@ -351,7 +351,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】法国国民议会保护子女权利、限制父权，体现个人与国家间的契约关系。\n【来源】2021年河南高考历史真题（全国乙卷）·第33题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】法国国民议会保护子女权利、限制父权，体现个人与国家间的契约关系。",
         "optionExplanations": [
           "",
           "",
@@ -374,7 +374,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1900年开尔文仍认为物理学只需修补，说明经典物理学仍然处于统治地位。\n【来源】2021年河南高考历史真题（全国乙卷）·第34题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1900年开尔文仍认为物理学只需修补，说明经典物理学仍然处于统治地位。",
         "optionExplanations": [
           "",
           "",
@@ -397,7 +397,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】美国中情局推崇纽约画派并资助海外展览，表明美国政府借助艺术领域渗透冷战思维。\n【来源】2021年河南高考历史真题（全国乙卷）·第35题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】美国中情局推崇纽约画派并资助海外展览，表明美国政府借助艺术领域渗透冷战思维。",
         "optionExplanations": [
           "",
           "",
@@ -459,7 +459,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】盛唐书法刚健丰伟、庄重博大，楷书字体方正笔画工整，与米芾描述相符。\n【来源】2022年河南高考历史真题（全国乙卷）·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】盛唐书法刚健丰伟、庄重博大，楷书字体方正笔画工整，与米芾描述相符。",
         "optionExplanations": [
           "",
           "",
@@ -482,7 +482,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】宋朝通判协理政事、审核监督，设置的主要目的在于规范地方行政。\n【来源】2022年河南高考历史真题（全国乙卷）·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】宋朝通判协理政事、审核监督，设置的主要目的在于规范地方行政。",
         "optionExplanations": [
           "",
           "",
@@ -505,7 +505,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】明后期江南营建园林、好名喜夸之风，是市镇工商业繁荣的产物。\n【来源】2022年河南高考历史真题（全国乙卷）·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】明后期江南营建园林、好名喜夸之风，是市镇工商业繁荣的产物。",
         "optionExplanations": [
           "",
           "",
@@ -528,7 +528,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】陈宝箴奏请销毁《孔子改制考》以减少守旧派阻挠，有助于减少变法的阻力。\n【来源】2022年河南高考历史真题（全国乙卷）·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】陈宝箴奏请销毁《孔子改制考》以减少守旧派阻挠，有助于减少变法的阻力。",
         "optionExplanations": [
           "",
           "",
@@ -551,7 +551,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】五四后对古今中外不再一概否定或肯定，反映思想解放运动方向发生变化。\n【来源】2022年河南高考历史真题（全国乙卷）·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】五四后对古今中外不再一概否定或肯定，反映思想解放运动方向发生变化。",
         "optionExplanations": [
           "",
           "",
@@ -574,7 +574,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】20世纪30年代中共调整政策拉拢其他阶级，适应建立抗日民族统一战线的需要。\n【来源】2022年河南高考历史真题（全国乙卷）·第7题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】20世纪30年代中共调整政策拉拢其他阶级，适应建立抗日民族统一战线的需要。",
         "optionExplanations": [
           "",
           "",
@@ -621,7 +621,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】雅典官员任职资格审查涉及亲属村社等，前提条件是本邦籍贯、成年男性。\n【来源】2022年河南高考历史真题（全国乙卷）·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】雅典官员任职资格审查涉及亲属村社等，前提条件是本邦籍贯、成年男性。",
         "optionExplanations": [
           "",
           "",
@@ -644,7 +644,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】16世纪法国人用俗语写作并捍卫法国文化，缘于人文主义思想的广泛传播。\n【来源】2022年河南高考历史真题（全国乙卷）·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】16世纪法国人用俗语写作并捍卫法国文化，缘于人文主义思想的广泛传播。",
         "optionExplanations": [
           "",
           "",
@@ -667,7 +667,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】1879至1900年德国船队吨位猛增、航运业发展，助长其海外扩张。\n【来源】2022年河南高考历史真题（全国乙卷）·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】1879至1900年德国船队吨位猛增、航运业发展，助长其海外扩张。",
         "optionExplanations": [
           "",
           "",
@@ -690,7 +690,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1917年3月加米涅夫、斯大林对临时政府妥协，表明布尔什维克党对革命形势认识尚不明晰。\n【来源】2022年河南高考历史真题（全国乙卷）·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1917年3月加米涅夫、斯大林对临时政府妥协，表明布尔什维克党对革命形势认识尚不明晰。",
         "optionExplanations": [
           "",
           "",
@@ -728,7 +728,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】孟子描绘小农生产生活景象，依托战国时期铁犁牛耕等农业生产技术的发展。\n【来源】2023年河南高考历史真题（全国乙卷）·第1题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】孟子描绘小农生产生活景象，依托战国时期铁犁牛耕等农业生产技术的发展。",
         "optionExplanations": [
           "",
           "",
@@ -751,7 +751,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】唐中后期江南成为诗歌唱和主题，得益于南方相对稳定的地方秩序。\n【来源】2023年河南高考历史真题（全国乙卷）·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】唐中后期江南成为诗歌唱和主题，得益于南方相对稳定的地方秩序。",
         "optionExplanations": [
           "",
           "",
@@ -774,7 +774,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】南宋文人刻书蔚然成风，书籍作为文化载体推动了社会文化水平的提升。\n【来源】2023年河南高考历史真题（全国乙卷）·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】南宋文人刻书蔚然成风，书籍作为文化载体推动了社会文化水平的提升。",
         "optionExplanations": [
           "",
           "",
@@ -797,7 +797,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】明初朱元璋要求百姓互相知晓丁数职业，意在加强对民间的控制。\n【来源】2023年河南高考历史真题（全国乙卷）·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】明初朱元璋要求百姓互相知晓丁数职业，意在加强对民间的控制。",
         "optionExplanations": [
           "",
           "",
@@ -820,7 +820,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】19世纪70年代后中国茶叶价格随伦敦市场波动，削弱了中国茶叶的国际市场地位。\n【来源】2023年河南高考历史真题（全国乙卷）·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】19世纪70年代后中国茶叶价格随伦敦市场波动，削弱了中国茶叶的国际市场地位。",
         "optionExplanations": [
           "",
           "",
@@ -843,7 +843,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1920年陈独秀主张劳力者治人、建立劳动阶级国家，反映无产阶级登上政治舞台。\n【来源】2023年河南高考历史真题（全国乙卷）·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1920年陈独秀主张劳力者治人、建立劳动阶级国家，反映无产阶级登上政治舞台。",
         "optionExplanations": [
           "",
           "",
@@ -890,7 +890,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1981年北京京剧团按劳分配改革使职工收入增加，反映新的分配方式有利于激发职工积极性。\n【来源】2023年河南高考历史真题（全国乙卷）·第8题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1981年北京京剧团按劳分配改革使职工收入增加，反映新的分配方式有利于激发职工积极性。",
         "optionExplanations": [
           "",
           "",
@@ -913,7 +913,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】庇西特拉图依法律理政、关怀农民，得益于梭伦改革的制度基础。\n【来源】2023年河南高考历史真题（全国乙卷）·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】庇西特拉图依法律理政、关怀农民，得益于梭伦改革的制度基础。",
         "optionExplanations": [
           "",
           "",
@@ -936,7 +936,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】1661年英国民兵法案强调军权属于国王，说明国王力图巩固统治权力。\n【来源】2023年河南高考历史真题（全国乙卷）·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】1661年英国民兵法案强调军权属于国王，说明国王力图巩固统治权力。",
         "optionExplanations": [
           "",
           "",
@@ -959,7 +959,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】20世纪30年代美国法西斯组织增多，反映经济大危机冲击社会秩序。\n【来源】2023年河南高考历史真题（全国乙卷）·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】20世纪30年代美国法西斯组织增多，反映经济大危机冲击社会秩序。",
         "optionExplanations": [
           "",
           "",
@@ -982,7 +982,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】1960至1970年发展中国家出口额比重下降，说明发展中国家的经济地位下降。\n【来源】2023年河南高考历史真题（全国乙卷）·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】1960至1970年发展中国家出口额比重下降，说明发展中国家的经济地位下降。",
         "optionExplanations": [
           "",
           "",
@@ -1019,7 +1019,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】史前遗址墓葬分级且大型墓出土成套礼器，可推断处于新石器时代晚期。\n【来源】2024年河南高考历史真题（新课标卷）·第1题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】史前遗址墓葬分级且大型墓出土成套礼器，可推断处于新石器时代晚期。",
         "optionExplanations": [
           "",
           "",
@@ -1042,7 +1042,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】春秋战国诸子呼吁选贤与能，道家主张无为而治不认同这一理念。\n【来源】2024年河南高考历史真题（新课标卷）·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】春秋战国诸子呼吁选贤与能，道家主张无为而治不认同这一理念。",
         "optionExplanations": [
           "",
           "",
@@ -1065,7 +1065,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】三国魏代汉、西晋代魏的禅让实质上维护了特权阶层利益。\n【来源】2024年河南高考历史真题（新课标卷）·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】三国魏代汉、西晋代魏的禅让实质上维护了特权阶层利益。",
         "optionExplanations": [
           "",
           "",
@@ -1088,7 +1088,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】《三朝北盟会编》成书于南宋中期，征引文献二百多种，时间最接近南宋初年宋金和战，史料价值最高。\n【来源】2024年河南高考历史真题（新课标卷）·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】《三朝北盟会编》成书于南宋中期，征引文献二百多种，时间最接近南宋初年宋金和战，史料价值最高。",
         "optionExplanations": [
           "",
           "",
@@ -1111,7 +1111,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】清乾隆卖田以佃田反映租佃关系盛行，延续了个体农耕方式。\n【来源】2024年河南高考历史真题（新课标卷）·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】清乾隆卖田以佃田反映租佃关系盛行，延续了个体农耕方式。",
         "optionExplanations": [
           "",
           "",
@@ -1134,7 +1134,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】新军军官中国内学生和士人占大多数，受过教育且思想相对解放，容易接受民主革命思想，助推了民主革命发展。\n【来源】2024年河南高考历史真题（新课标卷）·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】新军军官中国内学生和士人占大多数，受过教育且思想相对解放，容易接受民主革命思想，助推了民主革命发展。",
         "optionExplanations": [
           "",
           "",
@@ -1157,7 +1157,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】公元前5世纪波斯契约以土地收成等实物支付租费，说明地租的征收以实物为主。\n【来源】2024年河南高考历史真题（新课标卷）·第7题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】公元前5世纪波斯契约以土地收成等实物支付租费，说明地租的征收以实物为主。",
         "optionExplanations": [
           "",
           "",
@@ -1180,7 +1180,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】16至17世纪航海活动连接美洲与亚洲，促进了贵金属的全球流动。\n【来源】2024年河南高考历史真题（新课标卷）·第8题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】16至17世纪航海活动连接美洲与亚洲，促进了贵金属的全球流动。",
         "optionExplanations": [
           "",
           "",
@@ -1203,7 +1203,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】17世纪法国细布工场分工细致，说明生产方式变革的条件渐趋成熟。\n【来源】2024年河南高考历史真题（新课标卷）·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】17世纪法国细布工场分工细致，说明生产方式变革的条件渐趋成熟。",
         "optionExplanations": [
           "",
           "",
@@ -1226,7 +1226,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】19世纪末非洲土著权利保护团体相继成立，促进了民族独立思想的传播。\n【来源】2024年河南高考历史真题（新课标卷）·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】19世纪末非洲土著权利保护团体相继成立，促进了民族独立思想的传播。",
         "optionExplanations": [
           "",
           "",
@@ -1249,7 +1249,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】1917年10月布尔什维克在苏维埃中占主导，奠定了十月革命胜利的组织基础。\n【来源】2024年河南高考历史真题（新课标卷）·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】1917年10月布尔什维克在苏维埃中占主导，奠定了十月革命胜利的组织基础。",
         "optionExplanations": [
           "",
           "",
@@ -1272,7 +1272,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】1956年美国抛售英镑迫使英国停止干涉埃及，反映美元占据国际货币体系主导地位。\n【来源】2024年河南高考历史真题（新课标卷）·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】1956年美国抛售英镑迫使英国停止干涉埃及，反映美元占据国际货币体系主导地位。",
         "optionExplanations": [
           "",
           "",
@@ -1333,7 +1333,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】诸子百家通过构建不同历史叙述为政治主张提供理论依据，以应对社会变动。\n【来源】2025年河南高考历史真题（河南卷）·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】诸子百家通过构建不同历史叙述为政治主张提供理论依据，以应对社会变动。",
         "optionExplanations": [
           "",
           "",
@@ -1356,7 +1356,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】唐宪宗、唐文宗限制商贾蓄钱，旨在促进货币流通、维护正常的金融秩序。\n【来源】2025年河南高考历史真题（河南卷）·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】唐宪宗、唐文宗限制商贾蓄钱，旨在促进货币流通、维护正常的金融秩序。",
         "optionExplanations": [
           "",
           "",
@@ -1379,7 +1379,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】金朝周昂、孟奎从基层因政绩升迁，说明官员选任注重地方治理能力和经验。\n【来源】2025年河南高考历史真题（河南卷）·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】金朝周昂、孟奎从基层因政绩升迁，说明官员选任注重地方治理能力和经验。",
         "optionExplanations": [
           "",
           "",
@@ -1402,7 +1402,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】山西商人分家书中商号改为兄弟合伙经营，说明财产分配影响产业代际传承。\n【来源】2025年河南高考历史真题（河南卷）·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】山西商人分家书中商号改为兄弟合伙经营，说明财产分配影响产业代际传承。",
         "optionExplanations": [
           "",
           "",
@@ -1426,7 +1426,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】1897年时人批评科举策题仍为纸上之陈，印证讲求新知已成为社会风尚。\n【来源】2025年河南高考历史真题（河南卷）·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】1897年时人批评科举策题仍为纸上之陈，印证讲求新知已成为社会风尚。",
         "optionExplanations": [
           "",
           "",
@@ -1449,7 +1449,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】一战后国际局势变动促使中国企业尝试运用泰勒科学管理理论进行管理变革。\n【来源】2025年河南高考历史真题（河南卷）·第7题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】一战后国际局势变动促使中国企业尝试运用泰勒科学管理理论进行管理变革。",
         "optionExplanations": [
           "",
           "",
@@ -1472,7 +1472,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】1949年2月毛泽东指示印制长江以南地图，为民主革命的胜利做准备。\n【来源】2025年河南高考历史真题（河南卷）·第8题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】1949年2月毛泽东指示印制长江以南地图，为民主革命的胜利做准备。",
         "optionExplanations": [
           "",
           "",
@@ -1495,7 +1495,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1953年工人和干部表示为国家积累财富，反映劳动者使命担当意识增强。\n【来源】2025年河南高考历史真题（河南卷）·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1953年工人和干部表示为国家积累财富，反映劳动者使命担当意识增强。",
         "optionExplanations": [
           "",
           "",
@@ -1518,7 +1518,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】20世纪60年代工厂从黑龙江迁至河南，兼顾国防建设和经济发展需求。\n【来源】2025年河南高考历史真题（河南卷）·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】20世纪60年代工厂从黑龙江迁至河南，兼顾国防建设和经济发展需求。",
         "optionExplanations": [
           "",
           "",
@@ -1541,7 +1541,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】屋大维时期古老贵族被各行省骑士家族取代，反映政权的统治基础日益扩大。\n【来源】2025年河南高考历史真题（河南卷）·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】屋大维时期古老贵族被各行省骑士家族取代，反映政权的统治基础日益扩大。",
         "optionExplanations": [
           "",
           "",
@@ -1564,7 +1564,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】16世纪廷巴克图汇集撒哈拉食盐、南方黄金和欧洲布匹，经济发展得益于商品交换。\n【来源】2025年河南高考历史真题（河南卷）·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】16世纪廷巴克图汇集撒哈拉食盐、南方黄金和欧洲布匹，经济发展得益于商品交换。",
         "optionExplanations": [
           "",
           "",
@@ -1587,7 +1587,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】怀特海指出法国人将英国思想扩大普及，强调法国的启蒙思想具有世界性意义。\n【来源】2025年河南高考历史真题（河南卷）·第13题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】怀特海指出法国人将英国思想扩大普及，强调法国的启蒙思想具有世界性意义。",
         "optionExplanations": [
           "",
           "",
@@ -1610,7 +1610,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】19世纪西方废除奴隶制而拉美仍输入奴隶，反映世界经济发展的不平衡性加剧。\n【来源】2025年河南高考历史真题（河南卷）·第14题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】19世纪西方废除奴隶制而拉美仍输入奴隶，反映世界经济发展的不平衡性加剧。",
         "optionExplanations": [
           "",
           "",
@@ -1657,7 +1657,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】艾森豪威尔认为自由放任已终，最可能推行扩大社会保险范围的措施。\n【来源】2025年河南高考历史真题（河南卷）·第16题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】艾森豪威尔认为自由放任已终，最可能推行扩大社会保险范围的措施。",
         "optionExplanations": [
           "",
           "",
@@ -1718,7 +1718,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】魏晋南北朝南北政权对峙但人员往来不断，说明南北文化交流突破了政治对立的阻隔。\n【来源】2026年河南高考历史真题（河南卷）·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】魏晋南北朝南北政权对峙但人员往来不断，说明南北文化交流突破了政治对立的阻隔。",
         "optionExplanations": [
           "",
           "",
@@ -1741,7 +1741,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】唐朝中央新历送达西州后当地依规补支粮草，反映中央政令与制度权威有效抵达边疆。\n【来源】2026年河南高考历史真题（河南卷）·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】唐朝中央新历送达西州后当地依规补支粮草，反映中央政令与制度权威有效抵达边疆。",
         "optionExplanations": [
           "",
           "",
@@ -1764,7 +1764,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】金朝强制使用交钞并对各地差异化安排，说明经济政策带有强制性且区域经济发展不均衡。\n【来源】2026年河南高考历史真题（河南卷）·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】金朝强制使用交钞并对各地差异化安排，说明经济政策带有强制性且区域经济发展不均衡。",
         "optionExplanations": [
           "",
           "",
@@ -1787,7 +1787,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】1823年林则徐设牛局收购饲养耕牛，重在保护核心农业生产资料、恢复农耕秩序。\n【来源】2026年河南高考历史真题（河南卷）·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】1823年林则徐设牛局收购饲养耕牛，重在保护核心农业生产资料、恢复农耕秩序。",
         "optionExplanations": [
           "",
           "",
@@ -1810,7 +1810,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】京张铁路沿线集镇商旅辐辏、商铺增加，推动沿线城镇商业发展与区域流通。\n【来源】2026年河南高考历史真题（河南卷）·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】京张铁路沿线集镇商旅辐辏、商铺增加，推动沿线城镇商业发展与区域流通。",
         "optionExplanations": [
           "",
           "",
@@ -1833,7 +1833,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】1948年郑州商户主动接纳中州币，反映人民政权的经济政策获得民众支持。\n【来源】2026年河南高考历史真题（河南卷）·第7题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】1948年郑州商户主动接纳中州币，反映人民政权的经济政策获得民众支持。",
         "optionExplanations": [
           "",
           "",
@@ -1856,7 +1856,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】20世纪50年代初海军开展学习和技术训练，体现巩固新生人民政权的决心。\n【来源】2026年河南高考历史真题（河南卷）·第8题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】20世纪50年代初海军开展学习和技术训练，体现巩固新生人民政权的决心。",
         "optionExplanations": [
           "",
           "",
@@ -1879,7 +1879,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1994年国家对农资免税优惠和宏观调控，体现了市场经济的特征。\n【来源】2026年河南高考历史真题（河南卷）·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1994年国家对农资免税优惠和宏观调控，体现了市场经济的特征。",
         "optionExplanations": [
           "",
           "",
@@ -1902,7 +1902,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】古典时代雅典手工业商业繁荣使社会不再轻视手工经商，源于工商业经济持续繁荣和社会观念开放。\n【来源】2026年河南高考历史真题（河南卷）·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】古典时代雅典手工业商业繁荣使社会不再轻视手工经商，源于工商业经济持续繁荣和社会观念开放。",
         "optionExplanations": [
           "",
           "",
@@ -1925,7 +1925,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】雅典为参与公共事务的公民发放津贴，主要作用是保障平民参政、巩固民主政治。\n【来源】2026年河南高考历史真题（河南卷）·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】雅典为参与公共事务的公民发放津贴，主要作用是保障平民参政、巩固民主政治。",
         "optionExplanations": [
           "",
           "",
@@ -1948,7 +1948,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】9世纪阿拉伯学者融合波斯和希腊知识绘制世界地图，说明跨区域的知识整合推动科学进步。\n【来源】2026年河南高考历史真题（河南卷）·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】9世纪阿拉伯学者融合波斯和希腊知识绘制世界地图，说明跨区域的知识整合推动科学进步。",
         "optionExplanations": [
           "",
           "",
@@ -1971,7 +1971,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】巴黎气候记录从模糊经验描述转向量化数据，反映理性思维促进认知观念转变。\n【来源】2026年河南高考历史真题（河南卷）·第13题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】巴黎气候记录从模糊经验描述转向量化数据，反映理性思维促进认知观念转变。",
         "optionExplanations": [
           "",
           "",
@@ -1994,7 +1994,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】19世纪80年代起意西法海外商会占比下降，是资本主义发展转型的影响。\n【来源】2026年河南高考历史真题（河南卷）·第14题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】19世纪80年代起意西法海外商会占比下降，是资本主义发展转型的影响。",
         "optionExplanations": [
           "",
           "",
@@ -2017,7 +2017,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】慕尼黑协定后巴黎司机乐观认为和平到来，反映绥靖政策滋生民众不切实际的和平幻想。\n【来源】2026年河南高考历史真题（河南卷）·第15题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】慕尼黑协定后巴黎司机乐观认为和平到来，反映绥靖政策滋生民众不切实际的和平幻想。",
         "optionExplanations": [
           "",
           "",
@@ -2040,7 +2040,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】20世纪60年代美国推出青年领袖项目拉拢亚非拉青年，本质上服务于美国冷战全球战略需求。\n【来源】2026年河南高考历史真题（河南卷）·第16题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】20世纪60年代美国推出青年领袖项目拉拢亚非拉青年，本质上服务于美国冷战全球战略需求。",
         "optionExplanations": [
           "",
           "",
@@ -2077,7 +2077,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】王庄遗址出土大量精美玉器等高规格随葬品且有墓葬分级，说明社会已出现明显贫富分化和阶级分化。\n【来源】2025年河南省五市高三第一次联考历史试题·第1题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】王庄遗址出土大量精美玉器等高规格随葬品且有墓葬分级，说明社会已出现明显贫富分化和阶级分化。",
         "optionExplanations": [
           "",
           "",
@@ -2100,7 +2100,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】楚国国君名号从早期'熊绎''霄敖'等非华夏称谓到春秋时期称'武王''文王'，反映华夏认同观念逐渐产生。\n【来源】2025年河南省五市高三第一次联考历史试题·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】楚国国君名号从早期'熊绎''霄敖'等非华夏称谓到春秋时期称'武王''文王'，反映华夏认同观念逐渐产生。",
         "optionExplanations": [
           "",
           "",
@@ -2123,7 +2123,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】两位学者从不同角度对同一文物产地提出不同看法，说明多元研究路径可以丰富历史认知。\n【来源】2025年河南省五市高三第一次联考历史试题·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】两位学者从不同角度对同一文物产地提出不同看法，说明多元研究路径可以丰富历史认知。",
         "optionExplanations": [
           "",
           "",
@@ -2146,7 +2146,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】从汉代'卖子为奴'到唐代'计佣折直''立年限为约'，人身依附关系松弛，反映商品经济发展。\n【来源】2025年河南省五市高三第一次联考历史试题·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】从汉代'卖子为奴'到唐代'计佣折直''立年限为约'，人身依附关系松弛，反映商品经济发展。",
         "optionExplanations": [
           "",
           "",
@@ -2169,7 +2169,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】清朝在蒙古实行盟旗制度、在新疆设伊犁将军，根据不同地区特点采取不同治理方式，体现因地制宜。\n【来源】2025年河南省五市高三第一次联考历史试题·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】清朝在蒙古实行盟旗制度、在新疆设伊犁将军，根据不同地区特点采取不同治理方式，体现因地制宜。",
         "optionExplanations": [
           "",
           "",
@@ -2192,7 +2192,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】各省自行铸造银元且仅上缴部分利税，说明地方财权扩大，削弱了中央政府权威。\n【来源】2025年河南省五市高三第一次联考历史试题·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】各省自行铸造银元且仅上缴部分利税，说明地方财权扩大，削弱了中央政府权威。",
         "optionExplanations": [
           "",
           "",
@@ -2215,7 +2215,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】《新青年》从关注青年修养到关注国政再到批判帝国主义和资本主义，始终紧跟时代变化。\n【来源】2025年河南省五市高三第一次联考历史试题·第7题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】《新青年》从关注青年修养到关注国政再到批判帝国主义和资本主义，始终紧跟时代变化。",
         "optionExplanations": [
           "",
           "",
@@ -2238,7 +2238,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】四渡赤水中红军声东击西、迂回曲折，看似退却实为前进，符合螺旋形曲线的前进方式。\n【来源】2025年河南省五市高三第一次联考历史试题·第8题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】四渡赤水中红军声东击西、迂回曲折，看似退却实为前进，符合螺旋形曲线的前进方式。",
         "optionExplanations": [
           "",
           "",
@@ -2261,7 +2261,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】通过儿童刊物进行抗战宣传，说明抗战宣传注重动员包括儿童在内的社会力量。\n【来源】2025年河南省五市高三第一次联考历史试题·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】通过儿童刊物进行抗战宣传，说明抗战宣传注重动员包括儿童在内的社会力量。",
         "optionExplanations": [
           "",
           "",
@@ -2284,7 +2284,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1953年正值一五计划开始，增产节约和劳动竞赛有利于推进国家工业化建设。\n【来源】2025年河南省五市高三第一次联考历史试题·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1953年正值一五计划开始，增产节约和劳动竞赛有利于推进国家工业化建设。",
         "optionExplanations": [
           "",
           "",
@@ -2307,7 +2307,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】1985年城市经济体制改革时期，扩大企业经营自主权是企业扭亏为盈的主要原因。\n【来源】2025年河南省五市高三第一次联考历史试题·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】1985年城市经济体制改革时期，扩大企业经营自主权是企业扭亏为盈的主要原因。",
         "optionExplanations": [
           "",
           "",
@@ -2330,7 +2330,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】养子继承制兼顾军队、元老院和元首各方利益，是各方势力妥协的结果。\n【来源】2025年河南省五市高三第一次联考历史试题·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】养子继承制兼顾军队、元老院和元首各方利益，是各方势力妥协的结果。",
         "optionExplanations": [
           "",
           "",
@@ -2353,7 +2353,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】《垦田永年私财法》允许土地私有，豪族大肆垦荒兼并形成庄园，为保护庄园催生武士集团。\n【来源】2025年河南省五市高三第一次联考历史试题·第13题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】《垦田永年私财法》允许土地私有，豪族大肆垦荒兼并形成庄园，为保护庄园催生武士集团。",
         "optionExplanations": [
           "",
           "",
@@ -2376,7 +2376,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】1873年全球经济危机导致利物浦棉花价格下跌进而影响印度并引发饥荒，说明世界经济联系日益紧密。\n【来源】2025年河南省五市高三第一次联考历史试题·第14题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】1873年全球经济危机导致利物浦棉花价格下跌进而影响印度并引发饥荒，说明世界经济联系日益紧密。",
         "optionExplanations": [
           "",
           "",
@@ -2399,7 +2399,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】1947年战后苏联农业困难，缩小劳动组织规模、包产到组等探索反映了社会摆脱困境的愿望。\n【来源】2025年河南省五市高三第一次联考历史试题·第15题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】1947年战后苏联农业困难，缩小劳动组织规模、包产到组等探索反映了社会摆脱困境的愿望。",
         "optionExplanations": [
           "",
           "",
@@ -2422,7 +2422,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】中美之间的关税博弈和WTO诉讼体现经济全球化进程中的矛盾与斗争。\n【来源】2025年河南省五市高三第一次联考历史试题·第16题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】中美之间的关税博弈和WTO诉讼体现经济全球化进程中的矛盾与斗争。",
         "optionExplanations": [
           "",
           "",
@@ -2459,7 +2459,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】二里头遗址出土的牙璋与四川金沙遗址的仿制品和微型铜牙璋，说明中原文化向周边地区扩散传播。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第1题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】二里头遗址出土的牙璋与四川金沙遗址的仿制品和微型铜牙璋，说明中原文化向周边地区扩散传播。",
         "optionExplanations": [
           "",
           "",
@@ -2482,7 +2482,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】南郡'除其恶俗'和泰山刻石'男女礼顺'都指向端正民间礼俗。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第2题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】南郡'除其恶俗'和泰山刻石'男女礼顺'都指向端正民间礼俗。",
         "optionExplanations": [
           "",
           "",
@@ -2505,7 +2505,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】镇从单纯市场发展为拥有司法权限的行政单位，反映商品经济发展对基层管理体系的诉求。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第3题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】镇从单纯市场发展为拥有司法权限的行政单位，反映商品经济发展对基层管理体系的诉求。",
         "optionExplanations": [
           "",
           "",
@@ -2528,7 +2528,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】从官府主导到民间兴起再到合法纳税、抽分制，朝廷根据实际情况调整茶马贸易政策，彰显因势而变。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第4题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】从官府主导到民间兴起再到合法纳税、抽分制，朝廷根据实际情况调整茶马贸易政策，彰显因势而变。",
         "optionExplanations": [
           "",
           "",
@@ -2551,7 +2551,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】康熙帝不修长城是因为清朝疆域已远超长城防线，依托于疆域范围的拓展。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第5题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】康熙帝不修长城是因为清朝疆域已远超长城防线，依托于疆域范围的拓展。",
         "optionExplanations": [
           "",
           "",
@@ -2574,7 +2574,7 @@ const PAPERS = [
         ],
         "ans": 3,
         "answer": "D",
-        "explanation": "【答案 D】20世纪初民族危机加深，新史学学者倡导以史学塑造国民意识、激发民族精神，意在挽救民族危亡。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第6题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 D】20世纪初民族危机加深，新史学学者倡导以史学塑造国民意识、激发民族精神，意在挽救民族危亡。",
         "optionExplanations": [
           "",
           "",
@@ -2597,7 +2597,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】迂回曲折、穿插于敌人之间描述遵义会议后红军灵活机动的战略战术，引导了战略转移取得胜利。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第7题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】迂回曲折、穿插于敌人之间描述遵义会议后红军灵活机动的战略战术，引导了战略转移取得胜利。",
         "optionExplanations": [
           "",
           "",
@@ -2620,7 +2620,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】日军大量增兵华北，说明敌后战场对日军构成严重威胁，折射出敌后抗战的战略价值。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第8题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】日军大量增兵华北，说明敌后战场对日军构成严重威胁，折射出敌后抗战的战略价值。",
         "optionExplanations": [
           "",
           "",
@@ -2643,7 +2643,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】工业化是发展生产力，三大改造是调整生产关系，'主体'与'两翼'说明二者相结合。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第9题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】工业化是发展生产力，三大改造是调整生产关系，'主体'与'两翼'说明二者相结合。",
         "optionExplanations": [
           "",
           "",
@@ -2666,7 +2666,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】恢复小商小贩联合会、成立个体劳动者协会，说明个体经济得到承认和发展，所有制结构调整取得成效。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第10题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】恢复小商小贩联合会、成立个体劳动者协会，说明个体经济得到承认和发展，所有制结构调整取得成效。",
         "optionExplanations": [
           "",
           "",
@@ -2689,7 +2689,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】涅伽达墓葬中的荷鲁斯鹰神形象、希拉康坡里的装饰壁画墓和城墙模型，说明古埃及已出现早期文明。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第11题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】涅伽达墓葬中的荷鲁斯鹰神形象、希拉康坡里的装饰壁画墓和城墙模型，说明古埃及已出现早期文明。",
         "optionExplanations": [
           "",
           "",
@@ -2712,7 +2712,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】公元3—6世纪日耳曼人入侵并灭亡西罗马帝国，属于游牧世界对农耕世界的第二次冲击。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第12题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】公元3—6世纪日耳曼人入侵并灭亡西罗马帝国，属于游牧世界对农耕世界的第二次冲击。",
         "optionExplanations": [
           "",
           "",
@@ -2735,7 +2735,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】日常生活品被授予专利垄断权，说明君主滥发专利状以牟利，专制王权阻碍了经济发展。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第13题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】日常生活品被授予专利垄断权，说明君主滥发专利状以牟利，专制王权阻碍了经济发展。",
         "optionExplanations": [
           "",
           "",
@@ -2758,7 +2758,7 @@ const PAPERS = [
         ],
         "ans": 0,
         "answer": "A",
-        "explanation": "【答案 A】巴西经济从巴西木到蔗糖、黄金、棉花的周期性变化均受殖民者主导的国际市场需求驱动，反映国际经济秩序的长期影响。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第14题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 A】巴西经济从巴西木到蔗糖、黄金、棉花的周期性变化均受殖民者主导的国际市场需求驱动，反映国际经济秩序的长期影响。",
         "optionExplanations": [
           "",
           "",
@@ -2781,7 +2781,7 @@ const PAPERS = [
         ],
         "ans": 2,
         "answer": "C",
-        "explanation": "【答案 C】1942年正值二战，英国培训日语、汉语等人才旨在应对战争形势的变化。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第15题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 C】1942年正值二战，英国培训日语、汉语等人才旨在应对战争形势的变化。",
         "optionExplanations": [
           "",
           "",
@@ -2804,7 +2804,7 @@ const PAPERS = [
         ],
         "ans": 1,
         "answer": "B",
-        "explanation": "【答案 B】1960年西德经济崛起，美国面临国际收支逆差要求德国开放市场，反映出国际力量对比的变动。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第16题（documents/试卷/henan_full.md）",
+        "explanation": "【答案 B】1960年西德经济崛起，美国面临国际收支逆差要求德国开放市场，反映出国际力量对比的变动。",
         "optionExplanations": [
           "",
           "",
@@ -2838,11 +2838,11 @@ const MAPS = [
               "社会生产持续发展"
             ],
             "ans": 3,
-            "explanation": "【答案 D】西周中期至春秋采邑数量增多，说明生产力发展推动分封规模扩大，社会生产持续发展。\n【来源】2021年河南高考历史真题（全国乙卷）·第24题（documents/试卷/henan_full.md）",
+            "explanation": "西周中期至春秋采邑数量增多，说明生产力发展推动分封规模扩大，社会生产持续发展",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "井田制在战国改革变法中被废除",
+              "春秋时期，随着诸侯国实力增强，传统分封体制受到冲击，天子权威日益削弱",
+              "材料信息不能直接体现对诸侯国君权力地位的影响",
               ""
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第24题"
@@ -2857,12 +2857,12 @@ const MAPS = [
               "个体农耕经济衰退"
             ],
             "ans": 0,
-            "explanation": "【答案 A】西汉末至东汉中期长江以南豫章、零陵等郡民户成倍增长，反映长江以南经济发展加速。\n【来源】2021年河南高考历史真题（全国乙卷）·第25题（documents/试卷/henan_full.md）",
+            "explanation": "西汉末至东汉中期长江以南豫章、零陵等郡民户成倍增长，反映长江以南经济发展加速",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "东汉时期豪强大族势力逐渐增强",
+              "材料数据无法说明南北经济发展的不平衡",
+              "个体农耕经济衰退不符合材料信息"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第25题"
           },
@@ -2876,11 +2876,11 @@ const MAPS = [
               "新石器时代晚期"
             ],
             "ans": 3,
-            "explanation": "【答案 D】史前遗址墓葬分级且大型墓出土成套礼器，可推断处于新石器时代晚期。\n【来源】2024年河南高考历史真题（新课标卷）·第1题（documents/试卷/henan_full.md）",
+            "explanation": "史前遗址墓葬分级且大型墓出土成套礼器，可推断处于新石器时代晚期",
             "optionExplanations": [
+              "旧石器时代是指以使用打制石器为标志的人类物质文明发展阶段，距今约250万年～约1万年前，从事渔猎和采集，过着群居生活，生产力发展水平有限，并未出现阶级分化",
               "",
-              "",
-              "",
+              "新石器时代早期，考古学文化的石器仍以打制为主，磨制很少，陶器制作粗糙，居民生活以渔猎采集为主，农业和家畜饲养业处于初期阶段，且早期，社会复杂化程度相对较低，发现的大型聚落及墓葬较少",
               ""
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第1题"
@@ -2895,12 +2895,12 @@ const MAPS = [
               "处于母系氏族时代"
             ],
             "ans": 1,
-            "explanation": "【答案 B】王庄遗址出土大量精美玉器等高规格随葬品且有墓葬分级，说明社会已出现明显贫富分化和阶级分化。\n【来源】2025年河南省五市高三第一次联考历史试题·第1题（documents/试卷/henan_full.md）",
+            "explanation": "王庄遗址出土大量精美玉器等高规格随葬品且有墓葬分级，说明社会已出现明显贫富分化和阶级分化",
             "optionExplanations": [
+              "居国内前列\"无法从材料中得出",
               "",
-              "",
-              "",
-              ""
+              "社会分工在材料中",
+              "母系氏族时代与大型墓葬、玉钺等象征权力的随葬品"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第1题"
           },
@@ -2914,12 +2914,12 @@ const MAPS = [
               "逐步建立集权体制"
             ],
             "ans": 0,
-            "explanation": "【答案 A】楚国国君名号从早期'熊绎''霄敖'等非华夏称谓到春秋时期称'武王''文王'，反映华夏认同观念逐渐产生。\n【来源】2025年河南省五市高三第一次联考历史试题·第2题（documents/试卷/henan_full.md）",
+            "explanation": "楚国国君名号从早期'熊绎''霄敖'等非华夏称谓到春秋时期称'武王''文王'，反映华夏认同观念逐渐产生",
             "optionExplanations": [
               "",
+              "逐渐融入\"表述不准确，楚国本身是华夏体系的一部分",
               "",
-              "",
-              ""
+              "集权体制的建立与名号变化无直接关联"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第2题"
           },
@@ -2933,12 +2933,12 @@ const MAPS = [
               "两税法的积极作用"
             ],
             "ans": 0,
-            "explanation": "【答案 A】从汉代'卖子为奴'到唐代'计佣折直''立年限为约'，人身依附关系松弛，反映商品经济发展。\n【来源】2025年河南省五市高三第一次联考历史试题·第4题（documents/试卷/henan_full.md）",
+            "explanation": "从汉代'卖子为奴'到唐代'计佣折直''立年限为约'，人身依附关系松弛，反映商品经济发展",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "律令儒家化与限制人身奴役方向不一致",
+              "门阀世族衰落与材料主旨",
+              "两税法主要涉及赋税制度，不是材料核心"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第4题"
           },
@@ -2952,12 +2952,12 @@ const MAPS = [
               "早期国家的统治疆域"
             ],
             "ans": 0,
-            "explanation": "【答案 A】二里头遗址出土的牙璋与四川金沙遗址的仿制品和微型铜牙璋，说明中原文化向周边地区扩散传播。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第1题（documents/试卷/henan_full.md）",
+            "explanation": "二里头遗址出土的牙璋与四川金沙遗址的仿制品和微型铜牙璋，说明中原文化向周边地区扩散传播",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "\"多元起源\"与材料强调的中原文化传播方向",
+              "华夏认同的形成\"在时间上偏晚",
+              "统治疆域\"将文化传播等同于政治统治，过度推断"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第1题"
           },
@@ -2971,12 +2971,12 @@ const MAPS = [
               "致力于强化中央集权"
             ],
             "ans": 1,
-            "explanation": "【答案 B】南郡'除其恶俗'和泰山刻石'男女礼顺'都指向端正民间礼俗。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第2题（documents/试卷/henan_full.md）",
+            "explanation": "南郡'除其恶俗'和泰山刻石'男女礼顺'都指向端正民间礼俗",
             "optionExplanations": [
+              "巩固统一\"过于宏大，材料聚焦于风俗教化",
               "",
-              "",
-              "",
-              ""
+              "\"缓和矛盾\"在材料中",
+              "强化中央集权\"是深层目的但非材料直接反映的内容"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第2题"
           }
@@ -2995,12 +2995,12 @@ const MAPS = [
               "导致经济重心的南移"
             ],
             "ans": 0,
-            "explanation": "【答案 A】唐中后期江南成为诗歌唱和主题，得益于南方相对稳定的地方秩序。\n【来源】2023年河南高考历史真题（全国乙卷）·第2题（documents/试卷/henan_full.md）",
+            "explanation": "唐中后期江南成为诗歌唱和主题，得益于南方相对稳定的地方秩序",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "唐朝时期坊市制度没有崩溃",
+              "山水田园诗兴起于魏晋时期",
+              "经济重心的南移是因为安史之乱"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第2题"
           },
@@ -3014,12 +3014,12 @@ const MAPS = [
               "巩固了儒学忠孝伦理"
             ],
             "ans": 2,
-            "explanation": "【答案 C】三国魏代汉、西晋代魏的禅让实质上维护了特权阶层利益。\n【来源】2024年河南高考历史真题（新课标卷）·第3题（documents/试卷/henan_full.md）",
+            "explanation": "三国魏代汉、西晋代魏的禅让实质上维护了特权阶层利益",
             "optionExplanations": [
+              "“保障了”的说法太过绝对，不能依赖禅让方式就实现政治的和平稳定",
+              "“放弃了”的说法不符合史实，封建社会政权的延续仍是家天下",
               "",
-              "",
-              "",
-              ""
+              "皇帝下诏主动退位，本质上是被迫的行为，权臣实质上仍是夺取了皇帝的权力，这不符合儒家思想中的“忠”"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第3题"
           },
@@ -3033,12 +3033,12 @@ const MAPS = [
               "分裂局面彻底阻碍了国家统一进程"
             ],
             "ans": 0,
-            "explanation": "【答案 A】魏晋南北朝南北政权对峙但人员往来不断，说明南北文化交流突破了政治对立的阻隔。\n【来源】2026年河南高考历史真题（河南卷）·第2题（documents/试卷/henan_full.md）",
+            "explanation": "魏晋南北朝南北政权对峙但人员往来不断，说明南北文化交流突破了政治对立的阻隔",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "：题干未提及\"全面推行汉化\"的具体政策",
+              "：题干未对南北文化发展水平进行比较",
+              "：\"彻底阻碍\"说法过于绝对，分裂中也孕育着统一的因素"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第2题"
           },
@@ -3052,12 +3052,12 @@ const MAPS = [
               "后期学者的研究比传统观点可信"
             ],
             "ans": 1,
-            "explanation": "【答案 B】两位学者从不同角度对同一文物产地提出不同看法，说明多元研究路径可以丰富历史认知。\n【来源】2025年河南省五市高三第一次联考历史试题·第3题（documents/试卷/henan_full.md）",
+            "explanation": "两位学者从不同角度对同一文物产地提出不同看法，说明多元研究路径可以丰富历史认知",
             "optionExplanations": [
+              "\"甄别史料\"与题意",
               "",
-              "",
-              "",
-              ""
+              "洞悉历史真相\"过于绝对",
+              "后期学者更可信\"缺乏依据"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第3题"
           }
@@ -3076,12 +3076,12 @@ const MAPS = [
               "四民社会地位相同"
             ],
             "ans": 2,
-            "explanation": "【答案 C】宋代官府重农抑商而苏辙、郑至道强调士农工商皆本业，反映社会群体间流动性增强。\n【来源】2021年河南高考历史真题（全国乙卷）·第26题（documents/试卷/henan_full.md）",
+            "explanation": "宋代官府重农抑商而苏辙、郑至道强调士农工商皆本业，反映社会群体间流动性增强",
             "optionExplanations": [
+              "这一情况是商品经济发展的结果",
+              "重农抑商政策是封建国家的国策",
               "",
-              "",
-              "",
-              ""
+              "“四民社会地位相同”的说法错误"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第26题"
           },
@@ -3095,12 +3095,12 @@ const MAPS = [
               "《宋史纪事本末》"
             ],
             "ans": 1,
-            "explanation": "【答案 B】《三朝北盟会编》成书于南宋中期，征引文献二百多种，时间最接近南宋初年宋金和战，史料价值最高。\n【来源】2024年河南高考历史真题（新课标卷）·第4题（documents/试卷/henan_full.md）",
+            "explanation": "《三朝北盟会编》成书于南宋中期，征引文献二百多种，时间最接近南宋初年宋金和战，史料价值最高",
             "optionExplanations": [
+              "《宋史》篇幅浩繁，且元朝后期成书，成书时间距离南宋初年较远，可能受到元朝政治立场的影响，因此不是最直接、最原始的史料",
               "",
-              "",
-              "",
-              ""
+              "《建炎以来系年要录》是宋代李心传撰写的记述宋高宗赵构一朝时事的编年史书，是南宋后期的作品，虽然也是根据南宋高宗朝的国史和文集编成的，但是成书时间比《三朝北盟会编》晚，可能受到后来政治和社会环境的影响",
+              "《宋史纪事本末》是明朝陈邦瞻创作的断代纪事本末体史书，《宋史纪事本末》作为《宋史》的缩写本，在写作过程中，虽然也参考了许多其他《宋史》中所没有的资料，但基本上还是以《宋史》为蓝本，许多观点明显还是沿袭《宋史》而来，且《宋史纪事本末》是明朝后期的作品，成书时间最晚"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第4题"
           },
@@ -3114,12 +3114,12 @@ const MAPS = [
               "基层治理的完善"
             ],
             "ans": 1,
-            "explanation": "【答案 B】镇从单纯市场发展为拥有司法权限的行政单位，反映商品经济发展对基层管理体系的诉求。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第3题（documents/试卷/henan_full.md）",
+            "explanation": "镇从单纯市场发展为拥有司法权限的行政单位，反映商品经济发展对基层管理体系的诉求",
             "optionExplanations": [
+              "地方权力扩张\"表述负面，非材料主旨",
               "",
-              "",
-              "",
-              ""
+              "经济重心南移是宏观趋势，与市镇司法权变化无直接因果",
+              "基层治理完善\"过于笼统"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第3题"
           }
@@ -3138,12 +3138,12 @@ const MAPS = [
               "削减了国家赋税来源"
             ],
             "ans": 0,
-            "explanation": "【答案 A】清乾隆卖田以佃田反映租佃关系盛行，延续了个体农耕方式。\n【来源】2024年河南高考历史真题（新课标卷）·第5题（documents/试卷/henan_full.md）",
+            "explanation": "清乾隆卖田以佃田反映租佃关系盛行，延续了个体农耕方式",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "“遏制了”的表述太过绝对，且租佃制的发展，会扩大土地兼并",
+              "材料所述是农业方面的内容，未涉及商业货币经济的内容",
+              "清朝雍正年间摊丁入亩政策的实行，以占有的土地作为课税依据,材料所述现象并非削减了国家赋税来源"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第5题"
           },
@@ -3157,12 +3157,12 @@ const MAPS = [
               "促进了边疆开放发展"
             ],
             "ans": 2,
-            "explanation": "【答案 C】清朝在蒙古实行盟旗制度、在新疆设伊犁将军，根据不同地区特点采取不同治理方式，体现因地制宜。\n【来源】2025年河南省五市高三第一次联考历史试题·第5题（documents/试卷/henan_full.md）",
+            "explanation": "清朝在蒙古实行盟旗制度、在新疆设伊犁将军，根据不同地区特点采取不同治理方式，体现因地制宜",
             "optionExplanations": [
+              "创新\"不够准确，盟旗制度有其历史渊源",
+              "保障了\"过于绝对",
               "",
-              "",
-              "",
-              ""
+              "\"开放发展\"在材料中"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第5题"
           },
@@ -3176,12 +3176,12 @@ const MAPS = [
               "平衡了边疆治理与经济发展"
             ],
             "ans": 2,
-            "explanation": "【答案 C】从官府主导到民间兴起再到合法纳税、抽分制，朝廷根据实际情况调整茶马贸易政策，彰显因势而变。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第4题（documents/试卷/henan_full.md）",
+            "explanation": "从官府主导到民间兴起再到合法纳税、抽分制，朝廷根据实际情况调整茶马贸易政策，彰显因势而变",
             "optionExplanations": [
+              "优化财税结构\"是次要目的",
+              "茶马互市属于边疆贸易而非一般外贸",
               "",
-              "",
-              "",
-              ""
+              "\"平衡了\"过于理想化，材料"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第4题"
           },
@@ -3195,12 +3195,12 @@ const MAPS = [
               "有利于民族平等的实现"
             ],
             "ans": 1,
-            "explanation": "【答案 B】康熙帝不修长城是因为清朝疆域已远超长城防线，依托于疆域范围的拓展。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第5题（documents/试卷/henan_full.md）",
+            "explanation": "康熙帝不修长城是因为清朝疆域已远超长城防线，依托于疆域范围的拓展",
             "optionExplanations": [
+              "\"对外政策\"与长城性质",
               "",
-              "",
-              "",
-              ""
+              "\"因地制宜\"与修长城议题",
+              "民族平等\"表述不当，清朝民族政策并非平等"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第5题"
           }
@@ -3219,12 +3219,12 @@ const MAPS = [
               "西学深入民心"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1898年书商经历废八股到维新失败的投资波动，反映政局变化迅速。\n【来源】2021年河南高考历史真题（全国乙卷）·第28题（documents/试卷/henan_full.md）",
+            "explanation": "1898年书商经历废八股到维新失败的投资波动，反映政局变化迅速",
             "optionExplanations": [
+              "清末儒学的地位尚未被颠覆",
+              "根据该书商的经历并不足以说明列强的侵略加剧",
               "",
-              "",
-              "",
-              ""
+              "清末西学尚未深入人心说法过于夸张，排除"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第28题"
           },
@@ -3238,12 +3238,12 @@ const MAPS = [
               "意在彻底否定变法理论基础"
             ],
             "ans": 2,
-            "explanation": "【答案 C】陈宝箴奏请销毁《孔子改制考》以减少守旧派阻挠，有助于减少变法的阻力。\n【来源】2022年河南高考历史真题（全国乙卷）·第5题（documents/试卷/henan_full.md）",
+            "explanation": "陈宝箴奏请销毁《孔子改制考》以减少守旧派阻挠，有助于减少变法的阻力",
             "optionExplanations": [
+              "新旧势力的合流，不符合史实",
+              "材料体现的是其奏请销毁《孔子改制考》，是为了减少变法的阻力，不是为了突破“中体西用”束缚",
               "",
-              "",
-              "",
-              ""
+              "彻底否定，过于绝对，不符合史实"
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第5题"
           },
@@ -3257,11 +3257,11 @@ const MAPS = [
               "助推了民主革命发展"
             ],
             "ans": 3,
-            "explanation": "【答案 D】新军军官中国内学生和士人占大多数，受过教育且思想相对解放，容易接受民主革命思想，助推了民主革命发展。\n【来源】2024年河南高考历史真题（新课标卷）·第6题（documents/试卷/henan_full.md）",
+            "explanation": "新军军官中国内学生和士人占大多数，受过教育且思想相对解放，容易接受民主革命思想，助推了民主革命发展",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "新军的建立并没有起到抵制了列强入侵的作用",
+              "材料只提到新军军官来源构成，军阀势力扩大与新军的来源无关",
+              "近代军阀混战的根源是半殖民地半封建的社会性质，北洋政府时期袁世凯去世后军阀混战才开始",
               ""
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第6题"
@@ -3276,12 +3276,12 @@ const MAPS = [
               "学堂选官制度存在一定弊端"
             ],
             "ans": 0,
-            "explanation": "【答案 A】1897年时人批评科举策题仍为纸上之陈，印证讲求新知已成为社会风尚。\n【来源】2025年河南高考历史真题（河南卷）·第6题（documents/试卷/henan_full.md）",
+            "explanation": "1897年时人批评科举策题仍为纸上之陈，印证讲求新知已成为社会风尚",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "废止八股\"材料未涉及",
+              "清末新政\"始于1901年，晚于1897年",
+              "学堂选官制度\"当时尚未建立"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第6题"
           },
@@ -3295,12 +3295,12 @@ const MAPS = [
               "推动了民族资本主义经济的发展"
             ],
             "ans": 2,
-            "explanation": "【答案 C】各省自行铸造银元且仅上缴部分利税，说明地方财权扩大，削弱了中央政府权威。\n【来源】2025年河南省五市高三第一次联考历史试题·第6题（documents/试卷/henan_full.md）",
+            "explanation": "各省自行铸造银元且仅上缴部分利税，说明地方财权扩大，削弱了中央政府权威",
             "optionExplanations": [
+              "结束了\"过于绝对，货币混乱并未终结",
+              "虽有银元铸造，但材料重点在地方分权而非接轨国际",
               "",
-              "",
-              "",
-              ""
+              "推动民族资本主义发展在材料中"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第6题"
           },
@@ -3314,11 +3314,11 @@ const MAPS = [
               "塑造国民意识，挽救民族危亡"
             ],
             "ans": 3,
-            "explanation": "【答案 D】20世纪初民族危机加深，新史学学者倡导以史学塑造国民意识、激发民族精神，意在挽救民族危亡。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第6题（documents/试卷/henan_full.md）",
+            "explanation": "20世纪初民族危机加深，新史学学者倡导以史学塑造国民意识、激发民族精神，意在挽救民族危亡",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "平民史学\"只是手段而非目的",
+              "唯物史观的传播在20世纪初尚处早期",
+              "宣传维新思想\"在20世纪初已过时",
               ""
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第6题"
@@ -3342,12 +3342,12 @@ const MAPS = [
               "动员社会各界进行抗战"
             ],
             "ans": 0,
-            "explanation": "【答案 A】1934年毛泽东强调改进工作方法，意在发动群众参加革命战争。\n【来源】2021年河南高考历史真题（全国乙卷）·第29题（documents/试卷/henan_full.md）",
+            "explanation": "1934年毛泽东强调改进工作方法，意在发动群众参加革命战争",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "1927年井冈山革命根据地的创建已经说明中国革命新道路的开辟",
+              "建立广泛的革命统一战线是在1924年国民党第一次代表大会召开以后，1927年随着国民革命的失败已经不复存在",
+              "1934年是局部抗战时期，此时中国社会的主要矛盾是国共两党间的阶级矛盾，因此他并不是在动员社会各界进行抗战"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第29题"
           },
@@ -3361,11 +3361,11 @@ const MAPS = [
               "思想解放运动方向发生变化"
             ],
             "ans": 3,
-            "explanation": "【答案 D】五四后对古今中外不再一概否定或肯定，反映思想解放运动方向发生变化。\n【来源】2022年河南高考历史真题（全国乙卷）·第6题（documents/试卷/henan_full.md）",
+            "explanation": "五四后对古今中外不再一概否定或肯定，反映思想解放运动方向发生变化",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "“由此引发”表述错误",
+              "“开始受到批判”是在新文化运动时期",
+              "“得以消除”表述错误",
               ""
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第6题"
@@ -3380,12 +3380,12 @@ const MAPS = [
               "工农运动的蓬勃发展"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1920年陈独秀主张劳力者治人、建立劳动阶级国家，反映无产阶级登上政治舞台。\n【来源】2023年河南高考历史真题（全国乙卷）·第6题（documents/试卷/henan_full.md）",
+            "explanation": "1920年陈独秀主张劳力者治人、建立劳动阶级国家，反映无产阶级登上政治舞台",
             "optionExplanations": [
+              "材料中没有明确叙述工人的待遇得到极大改善",
+              "新文化运动前期宣传“民主与科学”，与材料内容无关",
               "",
-              "",
-              "",
-              ""
+              "北伐战争时期，工农运动蓬勃发展，与材料时间内容不符"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第6题"
           },
@@ -3399,11 +3399,11 @@ const MAPS = [
               "密切把握时代发展脉搏"
             ],
             "ans": 3,
-            "explanation": "【答案 D】《新青年》从关注青年修养到关注国政再到批判帝国主义和资本主义，始终紧跟时代变化。\n【来源】2025年河南省五市高三第一次联考历史试题·第7题（documents/试卷/henan_full.md）",
+            "explanation": "《新青年》从关注青年修养到关注国政再到批判帝国主义和资本主义，始终紧跟时代变化",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "巨变\"不准确，其救国宗旨始终未变",
+              "1919年前并非无产阶级立场",
+              "青年是宣传对象而非\"革命主力军",
               ""
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第7题"
@@ -3418,12 +3418,12 @@ const MAPS = [
               "皖南事变后中共对统一战线的维护"
             ],
             "ans": 2,
-            "explanation": "【答案 C】四渡赤水中红军声东击西、迂回曲折，看似退却实为前进，符合螺旋形曲线的前进方式。\n【来源】2025年河南省五市高三第一次联考历史试题·第8题（documents/试卷/henan_full.md）",
+            "explanation": "四渡赤水中红军声东击西、迂回曲折，看似退却实为前进，符合螺旋形曲线的前进方式",
             "optionExplanations": [
+              "赎回辽东是外交妥协，不属于\"退却即前进",
+              "孙中山退让是革命挫折而非\"退却即前进",
               "",
-              "",
-              "",
-              ""
+              "维护统一战线是策略调整，但"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第8题"
           },
@@ -3437,12 +3437,12 @@ const MAPS = [
               "提出了党的工作重心转向城市"
             ],
             "ans": 1,
-            "explanation": "【答案 B】迂回曲折、穿插于敌人之间描述遵义会议后红军灵活机动的战略战术，引导了战略转移取得胜利。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第7题（documents/试卷/henan_full.md）",
+            "explanation": "迂回曲折、穿插于敌人之间描述遵义会议后红军灵活机动的战略战术，引导了战略转移取得胜利",
             "optionExplanations": [
+              "遵义会议纠正的是\"左\"倾",
               "",
-              "",
-              "",
-              ""
+              "确立毛泽东思想指导地位是中共七大",
+              "工作重心转向城市是七届二中全会"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第7题"
           }
@@ -3461,12 +3461,12 @@ const MAPS = [
               "传统的社会伦理秩序被颠覆"
             ],
             "ans": 1,
-            "explanation": "【答案 B】土改后太行山区农民买驴须与妻子商量，反映家庭成员经济地位发生变化。\n【来源】2021年河南高考历史真题（全国乙卷）·第30题（documents/试卷/henan_full.md）",
+            "explanation": "土改后太行山区农民买驴须与妻子商量，反映家庭成员经济地位发生变化",
             "optionExplanations": [
+              "土改后，男尊女卑观念并没有完全消失",
               "",
-              "",
-              "",
-              ""
+              "在公有制范围内，多老多得少老少得的原则是按劳分配，材料与按劳分配无关",
+              "传统的社会伦理包括父子、君臣、夫妇、朋友等关系，这些在土改后并没有颠覆"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第30题"
           },
@@ -3480,12 +3480,12 @@ const MAPS = [
               "为建立民主联合政府争取广泛的支持"
             ],
             "ans": 0,
-            "explanation": "【答案 A】20世纪30年代中共调整政策拉拢其他阶级，适应建立抗日民族统一战线的需要。\n【来源】2022年河南高考历史真题（全国乙卷）·第7题（documents/试卷/henan_full.md）",
+            "explanation": "20世纪30年代中共调整政策拉拢其他阶级，适应建立抗日民族统一战线的需要",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "材料涉及的抗战，不是武装反抗国民党",
+              "材料未涉及党的中心工作的变化",
+              "1944年才提出建立民主联合政府，时间不符"
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第7题"
           },
@@ -3499,11 +3499,11 @@ const MAPS = [
               "为民主革命的胜利做准备"
             ],
             "ans": 3,
-            "explanation": "【答案 D】1949年2月毛泽东指示印制长江以南地图，为民主革命的胜利做准备。\n【来源】2025年河南高考历史真题（河南卷）·第8题（documents/试卷/henan_full.md）",
+            "explanation": "1949年2月毛泽东指示印制长江以南地图，为民主革命的胜利做准备",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "工作重心转向城市\"是在1949年3月中共七届二中全会上提出的，且与印制军事地图无直接关系",
+              "\"土地改革\"与军事地图",
+              "国家建设\"此时尚未提上日程，战争尚未结束",
               ""
             ],
             "source": "2025年河南高考历史真题（河南卷）·第8题"
@@ -3518,12 +3518,12 @@ const MAPS = [
               "商业资本主导了战后地方治理"
             ],
             "ans": 1,
-            "explanation": "【答案 B】1948年郑州商户主动接纳中州币，反映人民政权的经济政策获得民众支持。\n【来源】2026年河南高考历史真题（河南卷）·第7题（documents/试卷/henan_full.md）",
+            "explanation": "1948年郑州商户主动接纳中州币，反映人民政权的经济政策获得民众支持",
             "optionExplanations": [
+              "：1948年国民党统治区正面临严重的通货膨胀和经济崩溃，此选项与史实",
               "",
-              "",
-              "",
-              ""
+              "：全国货币统一是在新中国成立之后逐步实现的，1948年尚未完成",
+              "：这一说法夸大了商业资本的作用"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第7题"
           },
@@ -3537,12 +3537,12 @@ const MAPS = [
               "儿童成为抗日救亡的主力军"
             ],
             "ans": 1,
-            "explanation": "【答案 B】通过儿童刊物进行抗战宣传，说明抗战宣传注重动员包括儿童在内的社会力量。\n【来源】2025年河南省五市高三第一次联考历史试题·第9题（documents/试卷/henan_full.md）",
+            "explanation": "通过儿童刊物进行抗战宣传，说明抗战宣传注重动员包括儿童在内的社会力量",
             "optionExplanations": [
+              "\"全面抗战路线\"特指中共路线，材料",
               "",
-              "",
-              "",
-              ""
+              "重庆是大后方而非抗日根据地",
+              "\"儿童成为主力军\"表述"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第9题"
           },
@@ -3556,12 +3556,12 @@ const MAPS = [
               "体现了日军速胜战略的破产"
             ],
             "ans": 2,
-            "explanation": "【答案 C】日军大量增兵华北，说明敌后战场对日军构成严重威胁，折射出敌后抗战的战略价值。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第8题（documents/试卷/henan_full.md）",
+            "explanation": "日军大量增兵华北，说明敌后战场对日军构成严重威胁，折射出敌后抗战的战略价值",
             "optionExplanations": [
+              "太平洋战争1941年才爆发",
+              "抗战进入相持阶段的标志是武汉会战结束，而非日军兵力部署调整",
               "",
-              "",
-              "",
-              ""
+              "速胜战略破产\"是相持阶段到来的原因之一，但非材料直接反映的内容"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第8题"
           }
@@ -3580,12 +3580,12 @@ const MAPS = [
               "沿海地区工业发展更为迅速"
             ],
             "ans": 0,
-            "explanation": "【答案 A】上海和天津工人占比大而陕西和新疆劳动农民出身多，反映内地与沿海原有工业基础差距大。\n【来源】2021年河南高考历史真题（全国乙卷）·第31题（documents/试卷/henan_full.md）",
+            "explanation": "上海和天津工人占比大而陕西和新疆劳动农民出身多，反映内地与沿海原有工业基础差距大",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "通过材料得不出西部改造相关信息",
+              "1956年三大改造完成，我国进入社会主义初级阶段，与材料涉及的1950年不符",
+              "材料是静态的数据，看不出工业发展变化"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第31题"
           },
@@ -3599,12 +3599,12 @@ const MAPS = [
               "恢复国民经济的任务已迫在眉睫"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1953年工人和干部表示为国家积累财富，反映劳动者使命担当意识增强。\n【来源】2025年河南高考历史真题（河南卷）·第9题（documents/试卷/henan_full.md）",
+            "explanation": "1953年工人和干部表示为国家积累财富，反映劳动者使命担当意识增强",
             "optionExplanations": [
+              "落后面貌得以改变\"在1953年\"一五计划\"初期尚不明显",
+              "社会主义制度建立\"是在1956年三大改造完成后",
               "",
-              "",
-              "",
-              ""
+              "恢复国民经济\"的任务在1952年底已基本完成"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第9题"
           },
@@ -3618,11 +3618,11 @@ const MAPS = [
               "兼顾国防建设和经济发展需求"
             ],
             "ans": 3,
-            "explanation": "【答案 D】20世纪60年代工厂从黑龙江迁至河南，兼顾国防建设和经济发展需求。\n【来源】2025年河南高考历史真题（河南卷）·第10题（documents/试卷/henan_full.md）",
+            "explanation": "20世纪60年代工厂从黑龙江迁至河南，兼顾国防建设和经济发展需求",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "国际格局根本变化\"过于笼统",
+              "\"计划经济体制被突破\"",
+              "现代企业制度\"是改革开放后的概念",
               ""
             ],
             "source": "2025年河南高考历史真题（河南卷）·第10题"
@@ -3637,12 +3637,12 @@ const MAPS = [
               "响应建设\"四个现代化\"的号召"
             ],
             "ans": 2,
-            "explanation": "【答案 C】20世纪50年代初海军开展学习和技术训练，体现巩固新生人民政权的决心。\n【来源】2026年河南高考历史真题（河南卷）·第8题（documents/试卷/henan_full.md）",
+            "explanation": "20世纪50年代初海军开展学习和技术训练，体现巩固新生人民政权的决心",
             "optionExplanations": [
+              "：材料体现的是军事训练而非社会主义建设",
+              "：\"海洋强国\"战略是新时代提出的发展理念",
               "",
-              "",
-              "",
-              ""
+              "：\"四个现代化\"在1964年正式提出"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第8题"
           },
@@ -3656,12 +3656,12 @@ const MAPS = [
               "表明全国经济发生严重困难"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1953年正值一五计划开始，增产节约和劳动竞赛有利于推进国家工业化建设。\n【来源】2025年河南省五市高三第一次联考历史试题·第10题（documents/试卷/henan_full.md）",
+            "explanation": "1953年正值一五计划开始，增产节约和劳动竞赛有利于推进国家工业化建设",
             "optionExplanations": [
+              "抗美援朝1953年7月已结束",
+              "增产节约属于生产力范畴而非生产关系革新",
               "",
-              "",
-              "",
-              ""
+              "\"经济严重困难\"与史实"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第10题"
           },
@@ -3675,12 +3675,12 @@ const MAPS = [
               "工业发展兼顾经济效益和民生改善"
             ],
             "ans": 2,
-            "explanation": "【答案 C】工业化是发展生产力，三大改造是调整生产关系，'主体'与'两翼'说明二者相结合。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第9题（documents/试卷/henan_full.md）",
+            "explanation": "工业化是发展生产力，三大改造是调整生产关系，'主体'与'两翼'说明二者相结合",
             "optionExplanations": [
+              "新民主主义与社会主义是不同阶段而非\"融合",
+              "工业与农业相互促进\"不准确，材料强调的是工业化与改造的关系",
               "",
-              "",
-              "",
-              ""
+              "\"经济效益和民生改善\"在材料中"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第9题"
           }
@@ -3699,12 +3699,12 @@ const MAPS = [
               "社会主义市场经济体制改革目标确立"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1981年北京京剧团按劳分配改革使职工收入增加，反映新的分配方式有利于激发职工积极性。\n【来源】2023年河南高考历史真题（全国乙卷）·第8题（documents/试卷/henan_full.md）",
+            "explanation": "1981年北京京剧团按劳分配改革使职工收入增加，反映新的分配方式有利于激发职工积极性",
             "optionExplanations": [
+              "材料中的改革反映出新的分配方式有利于激发职工积极性，未体现非公有资本投资文化建设",
+              "材料仅涉及职工工资、福利以及经费改革，不能说明国有文化事业单位整体改制为企业",
               "",
-              "",
-              "",
-              ""
+              "1992年党的十四大明确把建立社会主义市场经济体制作为经济体制改革的目标"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第8题"
           },
@@ -3718,12 +3718,12 @@ const MAPS = [
               "扩大了企业的生产经营自主权"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1994年国家对农资免税优惠和宏观调控，体现了市场经济的特征。\n【来源】2026年河南高考历史真题（河南卷）·第9题（documents/试卷/henan_full.md）",
+            "explanation": "1994年国家对农资免税优惠和宏观调控，体现了市场经济的特征",
             "optionExplanations": [
+              "：\"确保\"说法过于绝对",
+              "：材料未体现集约化农业效率提升",
               "",
-              "",
-              "",
-              ""
+              "：材料体现的是政府政策支持，而非扩大企业经营自主权"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第9题"
           },
@@ -3737,11 +3737,11 @@ const MAPS = [
               "企业经营自主权的扩大"
             ],
             "ans": 3,
-            "explanation": "【答案 D】1985年城市经济体制改革时期，扩大企业经营自主权是企业扭亏为盈的主要原因。\n【来源】2025年河南省五市高三第一次联考历史试题·第11题（documents/试卷/henan_full.md）",
+            "explanation": "1985年城市经济体制改革时期，扩大企业经营自主权是企业扭亏为盈的主要原因",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "现代企业制度建立是90年代后的事",
+              "市场需求增加是外部因素而非主要原因",
+              "贵阳工具厂属内地面而非沿海开放城市",
               ""
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第11题"
@@ -3756,12 +3756,12 @@ const MAPS = [
               "承包经营责任制促进商业发展"
             ],
             "ans": 1,
-            "explanation": "【答案 B】恢复小商小贩联合会、成立个体劳动者协会，说明个体经济得到承认和发展，所有制结构调整取得成效。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第10题（documents/试卷/henan_full.md）",
+            "explanation": "恢复小商小贩联合会、成立个体劳动者协会，说明个体经济得到承认和发展，所有制结构调整取得成效",
             "optionExplanations": [
+              "城市经济体制改革全面展开是1984年后的事",
               "",
-              "",
-              "",
-              ""
+              "市场经济体制确立是1992年后的事",
+              "承包经营责任制主要针对国有企业而非个体经济"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第10题"
           }
@@ -3789,11 +3789,11 @@ const MAPS = [
               "本邦籍贯、成年男性"
             ],
             "ans": 3,
-            "explanation": "【答案 D】雅典官员任职资格审查涉及亲属村社等，前提条件是本邦籍贯、成年男性。\n【来源】2022年河南高考历史真题（全国乙卷）·第9题（documents/试卷/henan_full.md）",
+            "explanation": "雅典官员任职资格审查涉及亲属村社等，前提条件是本邦籍贯、成年男性",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "“信仰、品质、能力、财力、血统”只是成为官员的“加分项”，不是“必须项”",
+              "任职资格审查主要考察出身、纳税、兵役等，演说能力是公民大会的需要而非任官前提",
+              "丰厚财力和贵族血统不是任官必要条件，梭伦改革后财产资格取代了血统门槛",
               ""
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第9题"
@@ -3808,12 +3808,12 @@ const MAPS = [
               "贵族特权被彻底铲除"
             ],
             "ans": 0,
-            "explanation": "【答案 A】庇西特拉图依法律理政、关怀农民，得益于梭伦改革的制度基础。\n【来源】2023年河南高考历史真题（全国乙卷）·第9题（documents/试卷/henan_full.md）",
+            "explanation": "庇西特拉图依法律理政、关怀农民，得益于梭伦改革的制度基础",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "克里斯提尼执政时期，雅典民主政治确立起来，在公元前6世纪末",
+              "克里斯提尼执政时期，确立了五百人议事会",
+              "“贵族特权被彻底铲除”的表述太过绝对，只是打击了贵族特权"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第9题"
           },
@@ -3827,12 +3827,12 @@ const MAPS = [
               "国王占有全部生产资料"
             ],
             "ans": 1,
-            "explanation": "【答案 B】公元前5世纪波斯契约以土地收成等实物支付租费，说明地租的征收以实物为主。\n【来源】2024年河南高考历史真题（新课标卷）·第7题（documents/试卷/henan_full.md）",
+            "explanation": "公元前5世纪波斯契约以土地收成等实物支付租费，说明地租的征收以实物为主",
             "optionExplanations": [
+              "材料未明确商人经营借贷业务的“开始”出现的时间，且除商人外，还有国王承租的土地、水源等，开始出现经营借贷业务的商人也不能涵盖材料内容",
               "",
-              "",
-              "",
-              ""
+              "材料未与其他西亚国家进行对比，不能得出最早使用契约",
+              "材料除国王占有生产资料外，还涉及了商人占有生产资料如种子等"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第7题"
           },
@@ -3846,12 +3846,12 @@ const MAPS = [
               "出现了封君封臣制雏形"
             ],
             "ans": 0,
-            "explanation": "【答案 A】屋大维时期古老贵族被各行省骑士家族取代，反映政权的统治基础日益扩大。\n【来源】2025年河南高考历史真题（河南卷）·第11题（documents/试卷/henan_full.md）",
+            "explanation": "屋大维时期古老贵族被各行省骑士家族取代，反映政权的统治基础日益扩大",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "民主制度\"错误，屋大维时代罗马已从共和制转向帝制",
+              "寡头政治强化\"与材料中统治基础扩大的趋势相反",
+              "\"封君封臣制\"是中世纪西欧封建制度的特征，与罗马帝国"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第11题"
           },
@@ -3865,12 +3865,12 @@ const MAPS = [
               "农业生产完全陷入停滞"
             ],
             "ans": 1,
-            "explanation": "【答案 B】古典时代雅典手工业商业繁荣使社会不再轻视手工经商，源于工商业经济持续繁荣和社会观念开放。\n【来源】2026年河南高考历史真题（河南卷）·第10题（documents/试卷/henan_full.md）",
+            "explanation": "古典时代雅典手工业商业繁荣使社会不再轻视手工经商，源于工商业经济持续繁荣和社会观念开放",
             "optionExplanations": [
+              "：雅典的海外殖民活动与社会风气的转变没有直接的因果关系",
               "",
-              "",
-              "",
-              ""
+              "：雅典民主政治保障的是成年男性公民的权利，并非\"全体居民\"（如奴隶、女性、外邦人被",
+              "：此说法过于绝对"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第10题"
           },
@@ -3884,12 +3884,12 @@ const MAPS = [
               "扩大外邦人的政治权利"
             ],
             "ans": 1,
-            "explanation": "【答案 B】雅典为参与公共事务的公民发放津贴，主要作用是保障平民参政、巩固民主政治。\n【来源】2026年河南高考历史真题（河南卷）·第11题（documents/试卷/henan_full.md）",
+            "explanation": "雅典为参与公共事务的公民发放津贴，主要作用是保障平民参政、巩固民主政治",
             "optionExplanations": [
+              "：发放津贴在一定程度上有助于缩小贫富差距，而非加剧",
               "",
-              "",
-              "",
-              ""
+              "：这是客观影响，而非主要作用",
+              "：雅典的政治权利仅限于公民，外邦人无权参与"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第11题"
           },
@@ -3903,12 +3903,12 @@ const MAPS = [
               "旨在选拔优秀的继承人"
             ],
             "ans": 1,
-            "explanation": "【答案 B】养子继承制兼顾军队、元老院和元首各方利益，是各方势力妥协的结果。\n【来源】2025年河南省五市高三第一次联考历史试题·第12题（documents/试卷/henan_full.md）",
+            "explanation": "养子继承制兼顾军队、元老院和元首各方利益，是各方势力妥协的结果",
             "optionExplanations": [
+              "罗马人并非血缘观念淡漠",
               "",
-              "",
-              "",
-              ""
+              "共和传统下并非\"缺乏\"而是\"不适用\"皇位继承",
+              "旨在\"选拔优秀继承人是表面原因而非本质"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第12题"
           },
@@ -3922,10 +3922,10 @@ const MAPS = [
               "艺术水平高超"
             ],
             "ans": 0,
-            "explanation": "【答案 A】涅伽达墓葬中的荷鲁斯鹰神形象、希拉康坡里的装饰壁画墓和城墙模型，说明古埃及已出现早期文明。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第11题（documents/试卷/henan_full.md）",
+            "explanation": "涅伽达墓葬中的荷鲁斯鹰神形象、希拉康坡里的装饰壁画墓和城墙模型，说明古埃及已出现早期文明",
             "optionExplanations": [
               "",
-              "",
+              "君主专制产生于古王国时期，时间偏晚",
               "",
               ""
             ],
@@ -3946,12 +3946,12 @@ const MAPS = [
               "是新航路的重要交通枢纽"
             ],
             "ans": 1,
-            "explanation": "【答案 B】16世纪廷巴克图汇集撒哈拉食盐、南方黄金和欧洲布匹，经济发展得益于商品交换。\n【来源】2025年河南高考历史真题（河南卷）·第12题（documents/试卷/henan_full.md）",
+            "explanation": "16世纪廷巴克图汇集撒哈拉食盐、南方黄金和欧洲布匹，经济发展得益于商品交换",
             "optionExplanations": [
+              "\"环印度洋贸易\"",
               "",
-              "",
-              "",
-              ""
+              "非洲的经济文化中心\"材料只涉及经济，未涉及文化",
+              "\"新航路的重要交通枢纽\""
             ],
             "source": "2025年河南高考历史真题（河南卷）·第12题"
           },
@@ -3965,11 +3965,11 @@ const MAPS = [
               "促成庄园和武士集团的形成"
             ],
             "ans": 3,
-            "explanation": "【答案 D】《垦田永年私财法》允许土地私有，豪族大肆垦荒兼并形成庄园，为保护庄园催生武士集团。\n【来源】2025年河南省五市高三第一次联考历史试题·第13题（documents/试卷/henan_full.md）",
+            "explanation": "《垦田永年私财法》允许土地私有，豪族大肆垦荒兼并形成庄园，为保护庄园催生武士集团",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "商品经济发展与该法无直接关联",
+              "\"封建社会日趋衰落\"",
+              "大化改新在646年已开始，该法是743年颁布",
               ""
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第13题"
@@ -3984,12 +3984,12 @@ const MAPS = [
               "第三次：亚历山大东征灭亡波斯帝国"
             ],
             "ans": 1,
-            "explanation": "【答案 B】公元3—6世纪日耳曼人入侵并灭亡西罗马帝国，属于游牧世界对农耕世界的第二次冲击。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第12题（documents/试卷/henan_full.md）",
+            "explanation": "公元3—6世纪日耳曼人入侵并灭亡西罗马帝国，属于游牧世界对农耕世界的第二次冲击",
             "optionExplanations": [
+              "古希腊殖民属于农耕民族扩张而非游牧冲击",
               "",
-              "",
-              "",
-              ""
+              "雅利安人进入印度是第二次冲击而非第三次",
+              "亚历山大东征是农耕民族扩张而非游牧冲击"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第12题"
           }
@@ -4008,11 +4008,11 @@ const MAPS = [
               "促进了贵金属的全球流动"
             ],
             "ans": 3,
-            "explanation": "【答案 D】16至17世纪航海活动连接美洲与亚洲，促进了贵金属的全球流动。\n【来源】2024年河南高考历史真题（新课标卷）·第8题（documents/试卷/henan_full.md）",
+            "explanation": "16至17世纪航海活动连接美洲与亚洲，促进了贵金属的全球流动",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "“地圆说”在很久以前就已经形成，“地圆说”是此时航海活动的背景",
+              "世界殖民体系的确立是在19世纪末20世纪初",
+              "虽然航海活动兴起，但陆路贸易并没有基本停滞，C项过于绝对",
               ""
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第8题"
@@ -4032,12 +4032,12 @@ const MAPS = [
               "家族利益凌驾于国家利益"
             ],
             "ans": 1,
-            "explanation": "【答案 B】法国国民议会保护子女权利、限制父权，体现个人与国家间的契约关系。\n【来源】2021年河南高考历史真题（全国乙卷）·第33题（documents/试卷/henan_full.md）",
+            "explanation": "法国国民议会保护子女权利、限制父权，体现个人与国家间的契约关系",
             "optionExplanations": [
+              "材料强调的是国家对个人权利的保护",
               "",
-              "",
-              "",
-              ""
+              "材料主旨并未涉及男女政治地位的内容",
+              "材料中政府强制干预家庭和家族内部事务，显然是国家高于家族"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第33题"
           },
@@ -4051,12 +4051,12 @@ const MAPS = [
               "“人民主权”学说深入人心"
             ],
             "ans": 0,
-            "explanation": "【答案 A】16世纪法国人用俗语写作并捍卫法国文化，缘于人文主义思想的广泛传播。\n【来源】2022年河南高考历史真题（全国乙卷）·第10题（documents/试卷/henan_full.md）",
+            "explanation": "16世纪法国人用俗语写作并捍卫法国文化，缘于人文主义思想的广泛传播",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "B项属于人文主义传播带来的影响，题干问的是“发缘于”（起因）",
+              "19世纪的革命风暴、殖民掠夺、工业革命导致了资本主义经济迅猛发展",
+              "启蒙运动时期，“人民主权”学说深入人心"
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第10题"
           },
@@ -4070,12 +4070,12 @@ const MAPS = [
               "君主立宪政体已经确立"
             ],
             "ans": 1,
-            "explanation": "【答案 B】1661年英国民兵法案强调军权属于国王，说明国王力图巩固统治权力。\n【来源】2023年河南高考历史真题（全国乙卷）·第10题（documents/试卷/henan_full.md）",
+            "explanation": "1661年英国民兵法案强调军权属于国王，说明国王力图巩固统治权力",
             "optionExplanations": [
+              "18世纪中后期，随着责任内阁制的不断完善，国王处于“统而不治”的地位",
               "",
-              "",
-              "",
-              ""
+              "1588年，英国打败了西班牙的“无敌舰队”",
+              "1689年《权利法案》的颁布，英国确立了君主立宪政体"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第10题"
           },
@@ -4089,12 +4089,12 @@ const MAPS = [
               "英国资产阶级革命催生启蒙运动"
             ],
             "ans": 1,
-            "explanation": "【答案 B】怀特海指出法国人将英国思想扩大普及，强调法国的启蒙思想具有世界性意义。\n【来源】2025年河南高考历史真题（河南卷）·第13题（documents/试卷/henan_full.md）",
+            "explanation": "怀特海指出法国人将英国思想扩大普及，强调法国的启蒙思想具有世界性意义",
             "optionExplanations": [
+              "保守\"虽然有一定道理，但不是材料强调的核心",
               "",
-              "",
-              "",
-              ""
+              "资本主义发展\"材料未涉及",
+              "英国革命催生启蒙运动\"不是材料的论述重点"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第13题"
           },
@@ -4108,12 +4108,12 @@ const MAPS = [
               "法国大革命推动气象认知精准化"
             ],
             "ans": 2,
-            "explanation": "【答案 C】巴黎气候记录从模糊经验描述转向量化数据，反映理性思维促进认知观念转变。\n【来源】2026年河南高考历史真题（河南卷）·第13题（documents/试卷/henan_full.md）",
+            "explanation": "巴黎气候记录从模糊经验描述转向量化数据，反映理性思维促进认知观念转变",
             "optionExplanations": [
+              "：材料反映的是认知方式转变，而非信息传播方式改变",
+              "：材料未体现生态环境恶化",
               "",
-              "",
-              "",
-              ""
+              "：法国大革命发生在1789年，时间"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第13题"
           },
@@ -4127,12 +4127,12 @@ const MAPS = [
               "君主立宪政体面临挑战"
             ],
             "ans": 0,
-            "explanation": "【答案 A】日常生活品被授予专利垄断权，说明君主滥发专利状以牟利，专制王权阻碍了经济发展。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第13题（documents/试卷/henan_full.md）",
+            "explanation": "日常生活品被授予专利垄断权，说明君主滥发专利状以牟利，专制王权阻碍了经济发展",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "材料反映的是君主垄断而非保护工商业者",
+              "制度变革激发技术创新\"与材料主旨相反",
+              "君主立宪政体尚未建立（光荣革命前）"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第13题"
           }
@@ -4151,12 +4151,12 @@ const MAPS = [
               "量子力学得到物理学界的普遍认可"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1900年开尔文仍认为物理学只需修补，说明经典物理学仍然处于统治地位。\n【来源】2021年河南高考历史真题（全国乙卷）·第34题（documents/试卷/henan_full.md）",
+            "explanation": "1900年开尔文仍认为物理学只需修补，说明经典物理学仍然处于统治地位",
             "optionExplanations": [
+              "物理学领域仍有许多问题未解，如黑体辐射、光电效应等，全部解决的说法过于绝对",
+              "1900年普朗克提出了量子理论，物理学向微观世界延伸",
               "",
-              "",
-              "",
-              ""
+              "1900年量子理论刚提出，尚未被物理学界普遍认可，普朗克本人也曾长期犹豫"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第34题"
           },
@@ -4170,12 +4170,12 @@ const MAPS = [
               "共和政体确立推动经济飞速发展"
             ],
             "ans": 1,
-            "explanation": "【答案 B】1879至1900年德国船队吨位猛增、航运业发展，助长其海外扩张。\n【来源】2022年河南高考历史真题（全国乙卷）·第11题（documents/试卷/henan_full.md）",
+            "explanation": "1879至1900年德国船队吨位猛增、航运业发展，助长其海外扩张",
             "optionExplanations": [
+              "“世界工厂”是对英国的称呼",
               "",
-              "",
-              "",
-              ""
+              "材料不能看出航运飞速发展的原因",
+              "德国是君主立宪制"
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第11题"
           },
@@ -4189,11 +4189,11 @@ const MAPS = [
               "资本主义发展转型的影响"
             ],
             "ans": 3,
-            "explanation": "【答案 D】19世纪80年代起意西法海外商会占比下降，是资本主义发展转型的影响。\n【来源】2026年河南高考历史真题（河南卷）·第14题（documents/试卷/henan_full.md）",
+            "explanation": "19世纪80年代起意西法海外商会占比下降，是资本主义发展转型的影响",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "：商会不是资本输出的主要组织",
+              "：国家垄断资本主义在一战后才大规模发展",
+              "：西欧海外贸易并未萎缩，而是其他国家发展更快",
               ""
             ],
             "source": "2026年河南高考历史真题（河南卷）·第14题"
@@ -4213,11 +4213,11 @@ const MAPS = [
               "殖民扩张呈现竞争格局"
             ],
             "ans": 3,
-            "explanation": "【答案 D】16至18世纪欧洲多国创办特许公司，说明殖民扩张呈现竞争格局。\n【来源】2021年河南高考历史真题（全国乙卷）·第32题（documents/试卷/henan_full.md）",
+            "explanation": "16至18世纪欧洲多国创办特许公司，说明殖民扩张呈现竞争格局",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "第二次工业革命后资本输出才成为主要扩张形式",
+              "题干中国民议会的相关禁令和规定一定程度上保护了子女个人权利，体现了国家肩负起保护个人权利的责任，符合社会契约精神",
+              "材料主旨并未涉及男女政治地位的内容",
               ""
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第32题"
@@ -4232,11 +4232,11 @@ const MAPS = [
               "促进了民族独立思想的传播"
             ],
             "ans": 3,
-            "explanation": "【答案 D】19世纪末非洲土著权利保护团体相继成立，促进了民族独立思想的传播。\n【来源】2024年河南高考历史真题（新课标卷）·第10题（documents/试卷/henan_full.md）",
+            "explanation": "19世纪末非洲土著权利保护团体相继成立，促进了民族独立思想的传播",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "材料仅涉及了反抗殖民团体的成立，未涉及这些团体采用的斗争方式，不能得出和平抗争成为主要斗争方式",
+              "材料仅涉及这些团体的领导者大多数为地方首领和受过西式教育的上层人士，未涉及这些团体的成立促进了政党的产生，且也未有明确时间说明出现“首个”政党",
+              "材料仅涉及成功抵制了西方殖民者把大量土地宣布为“无人居住的土地”的企图，未涉及是否避免了非洲沦为殖民地，1884年柏林会议对非洲大部分地区进行瓜分，并使其大部分地区沦为殖民地",
               ""
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第10题"
@@ -4251,12 +4251,12 @@ const MAPS = [
               "拉美国家工业化需要大量劳动力"
             ],
             "ans": 2,
-            "explanation": "【答案 C】19世纪西方废除奴隶制而拉美仍输入奴隶，反映世界经济发展的不平衡性加剧。\n【来源】2025年河南高考历史真题（河南卷）·第14题（documents/试卷/henan_full.md）",
+            "explanation": "19世纪西方废除奴隶制而拉美仍输入奴隶，反映世界经济发展的不平衡性加剧",
             "optionExplanations": [
+              "经济停滞不前\"不准确，大量输入奴隶说明拉美经济仍在发展",
+              "\"瓜分非洲\"与拉美奴隶贸易的主题",
               "",
-              "",
-              "",
-              ""
+              "\"工业化需要劳动力\""
             ],
             "source": "2025年河南高考历史真题（河南卷）·第14题"
           },
@@ -4270,12 +4270,12 @@ const MAPS = [
               "工业革命导致印度人民贫困"
             ],
             "ans": 0,
-            "explanation": "【答案 A】1873年全球经济危机导致利物浦棉花价格下跌进而影响印度并引发饥荒，说明世界经济联系日益紧密。\n【来源】2025年河南省五市高三第一次联考历史试题·第14题（documents/试卷/henan_full.md）",
+            "explanation": "1873年全球经济危机导致利物浦棉花价格下跌进而影响印度并引发饥荒，说明世界经济联系日益紧密",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "唯一原料产地\"过于绝对",
+              "\"日不落帝国\"与材料主旨",
+              "工业革命是根本原因但材料强调的是经济联系的紧密性"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第14题"
           },
@@ -4289,12 +4289,12 @@ const MAPS = [
               "西方周期性经济危机的冲击"
             ],
             "ans": 0,
-            "explanation": "【答案 A】巴西经济从巴西木到蔗糖、黄金、棉花的周期性变化均受殖民者主导的国际市场需求驱动，反映国际经济秩序的长期影响。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第14题（documents/试卷/henan_full.md）",
+            "explanation": "巴西经济从巴西木到蔗糖、黄金、棉花的周期性变化均受殖民者主导的国际市场需求驱动，反映国际经济秩序的长期影响",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "工业革命仅解释棉花周期",
+              "巴西1822年才独立，大部分周期在殖民时期",
+              "经济危机与周期性商品更替无直接关联"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第14题"
           }
@@ -4313,12 +4313,12 @@ const MAPS = [
               "扩军备战引发统治危机"
             ],
             "ans": 0,
-            "explanation": "【答案 A】20世纪30年代美国法西斯组织增多，反映经济大危机冲击社会秩序。\n【来源】2023年河南高考历史真题（全国乙卷）·第11题（documents/试卷/henan_full.md）",
+            "explanation": "20世纪30年代美国法西斯组织增多，反映经济大危机冲击社会秩序",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "第一次工业革命时期盛行的经济思想为自由主义的经济思想，主张自由竞争、自由贸易和自由发展，且胡佛执政时期一直坚持自由放任主义，“开始”一词不符合史实",
+              "材料未涉及国家对经济的干预措施，其胡佛执政时期主要坚持自由放任主义，对经济干预的力度较弱",
+              "美国此时并未进行扩军备战"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第11题"
           },
@@ -4332,12 +4332,12 @@ const MAPS = [
               "标志著苏维埃政权取代临时政府"
             ],
             "ans": 1,
-            "explanation": "【答案 B】1917年10月布尔什维克在苏维埃中占主导，奠定了十月革命胜利的组织基础。\n【来源】2024年河南高考历史真题（新课标卷）·第11题（documents/试卷/henan_full.md）",
+            "explanation": "1917年10月布尔什维克在苏维埃中占主导，奠定了十月革命胜利的组织基础",
             "optionExplanations": [
+              "资产阶级民主革命的完成是二月革命，材料涉及的时间是1917年的10月，与材料时间不符",
               "",
-              "",
-              "",
-              ""
+              "罗曼诺夫王朝的覆灭是在二月革命后，与材料时间不符",
+              "标志着苏维埃政权取代临时政府的事件是十月革命的胜利"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第11题"
           },
@@ -4351,12 +4351,12 @@ const MAPS = [
               "国际联盟有效维护了欧洲和平"
             ],
             "ans": 1,
-            "explanation": "【答案 B】慕尼黑协定后巴黎司机乐观认为和平到来，反映绥靖政策滋生民众不切实际的和平幻想。\n【来源】2026年河南高考历史真题（河南卷）·第15题（documents/试卷/henan_full.md）",
+            "explanation": "慕尼黑协定后巴黎司机乐观认为和平到来，反映绥靖政策滋生民众不切实际的和平幻想",
             "optionExplanations": [
+              "：协定反而助长了法西斯的侵略气焰，加速了二战的爆发",
               "",
-              "",
-              "",
-              ""
+              "：德国随后吞并了整个捷克斯洛伐克",
+              "：国际联盟在绥靖政策面前显得软弱无力"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第15题"
           },
@@ -4370,12 +4370,12 @@ const MAPS = [
               "适应多极化趋势的发展"
             ],
             "ans": 2,
-            "explanation": "【答案 C】1942年正值二战，英国培训日语、汉语等人才旨在应对战争形势的变化。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第15题（documents/试卷/henan_full.md）",
+            "explanation": "1942年正值二战，英国培训日语、汉语等人才旨在应对战争形势的变化",
             "optionExplanations": [
+              "\"扩大殖民统治\"",
+              "文化交流\"是表面现象而非根本目的",
               "",
-              "",
-              "",
-              ""
+              "多极化趋势是冷战后期的事"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第15题"
           }
@@ -4394,11 +4394,11 @@ const MAPS = [
               "发展中国家的经济地位下降"
             ],
             "ans": 3,
-            "explanation": "【答案 D】1960至1970年发展中国家出口额比重下降，说明发展中国家的经济地位下降。\n【来源】2023年河南高考历史真题（全国乙卷）·第12题（documents/试卷/henan_full.md）",
+            "explanation": "1960至1970年发展中国家出口额比重下降，说明发展中国家的经济地位下降",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "此时世界经济格局并未发生根本性逆转，仍然是发达国家主导",
+              "1995年世界贸易组织的建立，推动了规范化的世界贸易体系的建立",
+              "”可知南北国家之间的经济联系不断增强",
               ""
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第12题"
@@ -4413,12 +4413,12 @@ const MAPS = [
               "实现全球文化均衡交流发展"
             ],
             "ans": 1,
-            "explanation": "【答案 B】20世纪60年代美国推出青年领袖项目拉拢亚非拉青年，本质上服务于美国冷战全球战略需求。\n【来源】2026年河南高考历史真题（河南卷）·第16题（documents/试卷/henan_full.md）",
+            "explanation": "20世纪60年代美国推出青年领袖项目拉拢亚非拉青年，本质上服务于美国冷战全球战略需求",
             "optionExplanations": [
+              "：这只是一个附带的、非主要的影响，绝不是美国的根本目的",
               "",
-              "",
-              "",
-              ""
+              "：美国的目的是分化和拉拢，而不是推动第三世界国家联合起来对抗自己",
+              "：这是一种单向的文化输出，目的是推广美国文化和价值观，并非\"均衡交流"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第16题"
           },
@@ -4432,11 +4432,11 @@ const MAPS = [
               "反映了苏联社会摆脱困境的愿望"
             ],
             "ans": 3,
-            "explanation": "【答案 D】1947年战后苏联农业困难，缩小劳动组织规模、包产到组等探索反映了社会摆脱困境的愿望。\n【来源】2025年河南省五市高三第一次联考历史试题·第15题（documents/试卷/henan_full.md）",
+            "explanation": "1947年战后苏联农业困难，缩小劳动组织规模、包产到组等探索反映了社会摆脱困境的愿望",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "解决了\"过于绝对，苏联农业问题长期存在",
+              "调整国民经济比例是间接目的而非\"旨在",
+              "战后苏联经济改革序幕一般以赫鲁晓夫改革为标志",
               ""
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第15题"
@@ -4451,12 +4451,12 @@ const MAPS = [
               "造成世界经济的不平衡性加剧"
             ],
             "ans": 1,
-            "explanation": "【答案 B】1960年西德经济崛起，美国面临国际收支逆差要求德国开放市场，反映出国际力量对比的变动。\n【来源】2026年郑州市高中毕业年级第二次质量预测历史试卷·第16题（documents/试卷/henan_full.md）",
+            "explanation": "1960年西德经济崛起，美国面临国际收支逆差要求德国开放市场，反映出国际力量对比的变动",
             "optionExplanations": [
+              "旨在阻碍欧洲一体化\"过于狭隘",
               "",
-              "",
-              "",
-              ""
+              "第一次柏林危机在1948年，时间",
+              "造成世界经济不平衡性加剧\"过于绝对"
             ],
             "source": "2026年郑州市高中毕业年级第二次质量预测历史试卷·第16题"
           }
@@ -4475,12 +4475,12 @@ const MAPS = [
               "中国成功限制美国霸权"
             ],
             "ans": 2,
-            "explanation": "【答案 C】中美之间的关税博弈和WTO诉讼体现经济全球化进程中的矛盾与斗争。\n【来源】2025年河南省五市高三第一次联考历史试题·第16题（documents/试卷/henan_full.md）",
+            "explanation": "中美之间的关税博弈和WTO诉讼体现经济全球化进程中的矛盾与斗争",
             "optionExplanations": [
+              "美国超级大国地位并未丧失",
+              "逆全球化成为主流\"过于绝对",
               "",
-              "",
-              "",
-              ""
+              "成功限制\"表述不够准确，材料体现的是斗争而非成功限制"
             ],
             "source": "2025年河南省五市高三第一次联考历史试题·第16题"
           }
@@ -4504,12 +4504,12 @@ const MAPS = [
               "削弱州府权力"
             ],
             "ans": 0,
-            "explanation": "【答案 A】宋朝通判协理政事、审核监督，设置的主要目的在于规范地方行政。\n【来源】2022年河南高考历史真题（全国乙卷）·第3题（documents/试卷/henan_full.md）",
+            "explanation": "宋朝通判协理政事、审核监督，设置的主要目的在于规范地方行政",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "指干预朝政，题干说的是地方；武官任知州较少",
+              "通判一般都是文官，且相互制约，不能提升军事能力",
+              "通判一般都是文官，且相互制约，不能提升军事能力﹔通判与知州一起行使州府权力，州府总体权力未变，只是分散了，削弱的不是州府，而是知州"
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第3题"
           }
@@ -4528,12 +4528,12 @@ const MAPS = [
               "缺乏规范的考核升迁标准"
             ],
             "ans": 1,
-            "explanation": "【答案 B】金朝周昂、孟奎从基层因政绩升迁，说明官员选任注重地方治理能力和经验。\n【来源】2025年河南高考历史真题（河南卷）·第4题（documents/试卷/henan_full.md）",
+            "explanation": "金朝周昂、孟奎从基层因政绩升迁，说明官员选任注重地方治理能力和经验",
             "optionExplanations": [
+              "察举制\"是汉代制度，金朝实行科举选官",
               "",
-              "",
-              "",
-              ""
+              "\"大一统\"与金朝偏安北方的史实",
+              "缺乏规范标准\"与材料中体现的有序升迁过程矛盾"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第4题"
           }
@@ -4552,12 +4552,12 @@ const MAPS = [
               "冲击了儒家经典的神圣性"
             ],
             "ans": 1,
-            "explanation": "【答案 B】明清善书内容为传统儒家思想，其流行强化了社会主流的价值观。\n【来源】2021年河南高考历史真题（全国乙卷）·第27题（documents/试卷/henan_full.md）",
+            "explanation": "明清善书内容为传统儒家思想，其流行强化了社会主流的价值观",
             "optionExplanations": [
+              "理学的主导地位在南宋就已经得到确立",
               "",
-              "",
-              "",
-              ""
+              "儒家思想就是官方的意识形态，所以“阻碍”的说法错误",
+              "善书的流行是强化了儒家思想的地位，没有冲击"
             ],
             "source": "2021年河南高考历史真题（全国乙卷）·第27题"
           }
@@ -4576,12 +4576,12 @@ const MAPS = [
               "地方拥有独立修订历法的权力"
             ],
             "ans": 1,
-            "explanation": "【答案 B】唐朝中央新历送达西州后当地依规补支粮草，反映中央政令与制度权威有效抵达边疆。\n【来源】2026年河南高考历史真题（河南卷）·第3题（documents/试卷/henan_full.md）",
+            "explanation": "唐朝中央新历送达西州后当地依规补支粮草，反映中央政令与制度权威有效抵达边疆",
             "optionExplanations": [
+              "：\"完全脱离\"与题干中当地沿用旧习惯的描述",
               "",
-              "",
-              "",
-              ""
+              "：历法的功能是多方面的，不仅限于农业计时",
+              "：地方依照中央历法行事，说明地方没有独立修订历法的权力"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第3题"
           }
@@ -4600,12 +4600,12 @@ const MAPS = [
               "西方大国间盟友关系破裂"
             ],
             "ans": 0,
-            "explanation": "【答案 A】1956年美国抛售英镑迫使英国停止干涉埃及，反映美元占据国际货币体系主导地位。\n【来源】2024年河南高考历史真题（新课标卷）·第12题（documents/试卷/henan_full.md）",
+            "explanation": "1956年美国抛售英镑迫使英国停止干涉埃及，反映美元占据国际货币体系主导地位",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "题干信息虽涉及埃及民族解放运动，但主要讨论的是美英之间的金融互动及其影响",
+              "布雷顿森林体系走向瓦解是在20世纪70年代，与题干时间不符",
+              "西方大国间的盟友关系虽受到考验，但“破裂”的说法过于绝对"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第12题"
           },
@@ -4619,12 +4619,12 @@ const MAPS = [
               "削弱藩镇的经济实力"
             ],
             "ans": 1,
-            "explanation": "【答案 B】唐宪宗、唐文宗限制商贾蓄钱，旨在促进货币流通、维护正常的金融秩序。\n【来源】2025年河南高考历史真题（河南卷）·第3题（documents/试卷/henan_full.md）",
+            "explanation": "唐宪宗、唐文宗限制商贾蓄钱，旨在促进货币流通、维护正常的金融秩序",
             "optionExplanations": [
+              "打击私铸\"材料未涉及",
               "",
-              "",
-              "",
-              ""
+              "\"助推两税法\"与限制蓄钱的直接目的",
+              "削弱藩镇\"不是这些政策的主要目的"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第3题"
           },
@@ -4638,12 +4638,12 @@ const MAPS = [
               "政府放弃传统重农抑商国策"
             ],
             "ans": 1,
-            "explanation": "【答案 B】金朝强制使用交钞并对各地差异化安排，说明经济政策带有强制性且区域经济发展不均衡。\n【来源】2026年河南高考历史真题（河南卷）·第4题（documents/试卷/henan_full.md）",
+            "explanation": "金朝强制使用交钞并对各地差异化安排，说明经济政策带有强制性且区域经济发展不均衡",
             "optionExplanations": [
+              "：题干未提及民众意愿",
               "",
-              "",
-              "",
-              ""
+              "：白银成为主流货币是在明清时期",
+              "：金朝并未放弃重农抑商政策"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第4题"
           }
@@ -4662,12 +4662,12 @@ const MAPS = [
               "促进经济均衡发展"
             ],
             "ans": 1,
-            "explanation": "【答案 B】明初朱元璋要求百姓互相知晓丁数职业，意在加强对民间的控制。\n【来源】2023年河南高考历史真题（全国乙卷）·第4题（documents/试卷/henan_full.md）",
+            "explanation": "明初朱元璋要求百姓互相知晓丁数职业，意在加强对民间的控制",
             "optionExplanations": [
+              "明清时期，政府厉行重农抑商政策，且邻里之间“知晓丁数、职业”，不能体现政府对农业和商业的态度，不能反映农商皆本",
               "",
-              "",
-              "",
-              ""
+              "明清时期，对人口流动进行严格的限制，但并不禁止人口流动，C项表述过于绝对，与史实不符",
+              "邻里之间“知晓丁数、职业”是为了加强对民间的控制，与经济均衡发展没有直接关系，且邻里之间的相互了解不能促进经济“均衡”发展"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第4题"
           },
@@ -4681,12 +4681,12 @@ const MAPS = [
               "缩减联邦政府财政支出"
             ],
             "ans": 2,
-            "explanation": "【答案 C】艾森豪威尔认为自由放任已终，最可能推行扩大社会保险范围的措施。\n【来源】2025年河南高考历史真题（河南卷）·第16题（documents/试卷/henan_full.md）",
+            "explanation": "艾森豪威尔认为自由放任已终，最可能推行扩大社会保险范围的措施",
             "optionExplanations": [
+              "放弃金本位\"发生在1971年尼克松时期",
+              "\"提高关税\"与承担社会福利义务",
               "",
-              "",
-              "",
-              ""
+              "缩减财政支出\"与\"不能拒绝承担义务\"的观点矛盾"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第16题"
           }
@@ -4710,12 +4710,12 @@ const MAPS = [
               "商业活动的衰退"
             ],
             "ans": 2,
-            "explanation": "【答案 C】孟子描绘小农生产生活景象，依托战国时期铁犁牛耕等农业生产技术的发展。\n【来源】2023年河南高考历史真题（全国乙卷）·第1题（documents/试卷/henan_full.md）",
+            "explanation": "孟子描绘小农生产生活景象，依托战国时期铁犁牛耕等农业生产技术的发展",
             "optionExplanations": [
+              "休养生息政策是源于道家无为而治顺其自然的观点",
+              "这一时期井田制走向瓦解",
               "",
-              "",
-              "",
-              ""
+              "这一时期，工商食官不断崩溃，私营工商业不断发展，商业活动较之前而言是发展的"
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第1题"
           },
@@ -4729,12 +4729,12 @@ const MAPS = [
               "推动农村商品经济快速发展"
             ],
             "ans": 1,
-            "explanation": "【答案 B】1823年林则徐设牛局收购饲养耕牛，重在保护核心农业生产资料、恢复农耕秩序。\n【来源】2026年河南高考历史真题（河南卷）·第5题（documents/试卷/henan_full.md）",
+            "explanation": "1823年林则徐设牛局收购饲养耕牛，重在保护核心农业生产资料、恢复农耕秩序",
             "optionExplanations": [
+              "：这不仅仅是单纯的救济，更着眼于未来的生产恢复",
               "",
-              "",
-              "",
-              ""
+              "：官府此举是应急措施，并非为了垄断畜牧业",
+              "：题干措施主要服务于小农经济，与商品经济发展无直接关联"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第5题"
           }
@@ -4753,12 +4753,12 @@ const MAPS = [
               "工业革命促进女性地位提升"
             ],
             "ans": 0,
-            "explanation": "【答案 A】17世纪法国细布工场分工细致，说明生产方式变革的条件渐趋成熟。\n【来源】2024年河南高考历史真题（新课标卷）·第9题（documents/试卷/henan_full.md）",
+            "explanation": "17世纪法国细布工场分工细致，说明生产方式变革的条件渐趋成熟",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "17世纪主要还是手工工场，并非机器大生产",
+              "现代工厂制度是在工业革命后才确立的，与题干时间不符",
+              "工业革命在18世纪中后期开始，此时还未开始"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第9题"
           },
@@ -4772,12 +4772,12 @@ const MAPS = [
               "国民政府鼓励工厂优化管理"
             ],
             "ans": 0,
-            "explanation": "【答案 A】一战后国际局势变动促使中国企业尝试运用泰勒科学管理理论进行管理变革。\n【来源】2025年河南高考历史真题（河南卷）·第7题（documents/试卷/henan_full.md）",
+            "explanation": "一战后国际局势变动促使中国企业尝试运用泰勒科学管理理论进行管理变革",
             "optionExplanations": [
               "",
-              "",
-              "",
-              ""
+              "实业救国\"兴起于清末民初，不是1922年后变化的原因",
+              "工人运动\"与企业管理科学化的关系不直接",
+              "\"国民政府\"1928年才建立，时间"
             ],
             "source": "2025年河南高考历史真题（河南卷）·第7题"
           }
@@ -4796,11 +4796,11 @@ const MAPS = [
               "江南市镇工商业的繁荣"
             ],
             "ans": 3,
-            "explanation": "【答案 D】明后期江南营建园林、好名喜夸之风，是市镇工商业繁荣的产物。\n【来源】2022年河南高考历史真题（全国乙卷）·第4题（documents/试卷/henan_full.md）",
+            "explanation": "明后期江南营建园林、好名喜夸之风，是市镇工商业繁荣的产物",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "“颠覆”表述过于绝对，士大夫传统观念仍是以儒家思想为主",
+              "宋朝时期甚至更早以前就已有世俗化审美趣味，“初现”表述错误",
+              "明清时期社会结构总体稳定，“解体”表述错误",
               ""
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第4题"
@@ -4815,11 +4815,11 @@ const MAPS = [
               "削弱了中国茶叶的国际市场地位"
             ],
             "ans": 3,
-            "explanation": "【答案 D】19世纪70年代后中国茶叶价格随伦敦市场波动，削弱了中国茶叶的国际市场地位。\n【来源】2023年河南高考历史真题（全国乙卷）·第5题（documents/试卷/henan_full.md）",
+            "explanation": "19世纪70年代后中国茶叶价格随伦敦市场波动，削弱了中国茶叶的国际市场地位",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "材料强调的是中国茶叶出口的价格和销售数量受到国际市场的影响，表明中国被迫卷入资本主义世界体系中，中国茶叶出口的数值在材料中无法得知",
+              "材料反映了中国茶叶出口的销量“随着世界经济的变动而波动”，但没有涉及其他出口商品的数量，也没有涉及中国进口商品的总数量，不能反映中国对外贸易入超状况是否改变，且据所学知识可知，19世纪70年代前后，中国对外贸易入超状况并非改变",
+              "世界经济一体化是指世界各国和地区之间的经济活动相互依存、相互关联，形成世界范围内的有机整体，此时期不是促成世界经济一体化",
               ""
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第5题"
@@ -4843,12 +4843,12 @@ const MAPS = [
               "主要服务于军事国防需求"
             ],
             "ans": 1,
-            "explanation": "【答案 B】京张铁路沿线集镇商旅辐辏、商铺增加，推动沿线城镇商业发展与区域流通。\n【来源】2026年河南高考历史真题（河南卷）·第6题（documents/试卷/henan_full.md）",
+            "explanation": "京张铁路沿线集镇商旅辐辏、商铺增加，推动沿线城镇商业发展与区域流通",
             "optionExplanations": [
+              "：\"彻底改变\"的说法过于绝对，传统自然经济的解体是一个漫长的过程",
               "",
-              "",
-              "",
-              ""
+              "：\"彻底退出\"不符合史实，传统水路运输在部分地区依然存在",
+              "：题干描述的是经济民生，未提及军事国防需求"
             ],
             "source": "2026年河南高考历史真题（河南卷）·第6题"
           }
@@ -4876,12 +4876,12 @@ const MAPS = [
               "草书"
             ],
             "ans": 1,
-            "explanation": "【答案 B】盛唐书法刚健丰伟、庄重博大，楷书字体方正笔画工整，与米芾描述相符。\n【来源】2022年河南高考历史真题（全国乙卷）·第2题（documents/试卷/henan_full.md）",
+            "explanation": "盛唐书法刚健丰伟、庄重博大，楷书字体方正笔画工整，与米芾描述相符",
             "optionExplanations": [
+              "小篆是秦朝时期的字体，且篆书比较舒朗，具有曲线美",
               "",
-              "",
-              "",
-              ""
+              "行书与草书都具有灵活、流动的特点，以适意为主，不要太受法度之限制，与材料信息不相符",
+              "行书与草书具有灵活、流动的特点，与材料信息不相符"
             ],
             "source": "2022年河南高考历史真题（全国乙卷）·第2题"
           },
@@ -4895,12 +4895,12 @@ const MAPS = [
               "法家"
             ],
             "ans": 2,
-            "explanation": "【答案 C】春秋战国诸子呼吁选贤与能，道家主张无为而治不认同这一理念。\n【来源】2024年河南高考历史真题（新课标卷）·第2题（documents/试卷/henan_full.md）",
+            "explanation": "春秋战国诸子呼吁选贤与能，道家主张无为而治不认同这一理念",
             "optionExplanations": [
+              "儒家思想中孟子、荀子分别提出“仁政”“隆礼重法”等思想，代表了新兴的地主阶级的利益，其主张一定程度上迎合了诸侯国变法改革的需要",
+              "墨家代表社会下层小生产者的利益，主张“尚贤”，希望有贤能的人治理国家",
               "",
-              "",
-              "",
-              ""
+              "法家提出了富国强兵、以法治国的思想，主张今必胜昔，因时变革"
             ],
             "source": "2024年河南高考历史真题（新课标卷）·第2题"
           },
@@ -4914,10 +4914,10 @@ const MAPS = [
               "各派寻求理论依据应对社会变动"
             ],
             "ans": 3,
-            "explanation": "【答案 D】诸子百家通过构建不同历史叙述为政治主张提供理论依据，以应对社会变动。\n【来源】2025年河南高考历史真题（河南卷）·第2题（documents/试卷/henan_full.md）",
+            "explanation": "诸子百家通过构建不同历史叙述为政治主张提供理论依据，以应对社会变动",
             "optionExplanations": [
-              "",
-              "",
+              "以复古为目标\"不准确，诸子借古喻今是为了解决现实问题",
+              "学派内部分化\"材料未涉及",
               "",
               ""
             ],
@@ -4938,11 +4938,11 @@ const MAPS = [
               "跨区域的知识整合推动科学进步"
             ],
             "ans": 3,
-            "explanation": "【答案 D】9世纪阿拉伯学者融合波斯和希腊知识绘制世界地图，说明跨区域的知识整合推动科学进步。\n【来源】2026年河南高考历史真题（河南卷）·第12题（documents/试卷/henan_full.md）",
+            "explanation": "9世纪阿拉伯学者融合波斯和希腊知识绘制世界地图，说明跨区域的知识整合推动科学进步",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "：材料强调的是阿拉伯学者的贡献，而非欧洲文化发展",
+              "：阿拉伯学者受希腊文化影响只是材料的一个方面，不是主旨",
+              "：奥斯曼帝国与9世纪的阿拉伯帝国不是同一政权",
               ""
             ],
             "source": "2026年河南高考历史真题（河南卷）·第12题"
@@ -4974,11 +4974,11 @@ const MAPS = [
               "社会文化水平的提升"
             ],
             "ans": 3,
-            "explanation": "【答案 D】南宋文人刻书蔚然成风，书籍作为文化载体推动了社会文化水平的提升。\n【来源】2023年河南高考历史真题（全国乙卷）·第3题（documents/试卷/henan_full.md）",
+            "explanation": "南宋文人刻书蔚然成风，书籍作为文化载体推动了社会文化水平的提升",
             "optionExplanations": [
-              "",
-              "",
-              "",
+              "据所学知识可知，自三国、西晋以来，一些声名显赫的士大夫家族世代把持官位，享受政治、经济等方面的特权，形成了一个特殊的社会阶层，称为士族，所以，士族阶层并非在南宋时期出现",
+              "汉武帝时期，儒学正统地位确立",
+              "隋朝时期确立科举制，唐朝进一步发展",
               ""
             ],
             "source": "2023年河南高考历史真题（全国乙卷）·第3题"

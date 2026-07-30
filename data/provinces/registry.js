@@ -11,7 +11,14 @@ const PROVINCE_REGISTRY = {
     henan: { code: 'henan', name: '河南省', file: 'henan.js' },
     jiangxi: { code: 'jiangxi', name: '江西省', file: 'jiangxi.js' },
     hebei: { code: 'hebei', name: '河北省', file: 'hebei.js' },
-    jiangsu: { code: 'jiangsu', name: '江苏省', file: 'jiangsu.js' }
+    jiangsu: { code: 'jiangsu', name: '江苏省', file: 'jiangsu.js' },
+    hunan: { code: 'hunan', name: '湖南省', file: 'hunan.js' },
+    chongqing: { code: 'chongqing', name: '重庆市', file: 'chongqing.js' },
+    anhui: { code: 'anhui', name: '安徽省', file: 'anhui.js' },
+    guangxi: { code: 'guangxi', name: '广西', file: 'guangxi.js' },
+    tianjin: { code: 'tianjin', name: '天津市', file: 'tianjin.js' },
+    sichuan: { code: 'sichuan', name: '四川省', file: 'sichuan.js' },
+    yunnan: { code: 'yunnan', name: '云南省', file: 'yunnan.js' }
   },
 
   // 获取省份信息
