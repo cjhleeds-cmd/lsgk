@@ -307,7 +307,7 @@ function fillProvinces(){
   provinceSelect.value = currentProvince;
   // 更新标签
   const label = document.getElementById('current-province-label');
-  if(label) label.textContent = PROVINCE_REGISTRY.getName(currentProvince).replace('省', '');
+  if(label) label.textContent = PROVINCE_REGISTRY.getName(currentProvince).replace(/[省市]$/, '');
   // 更新打开游戏链接
   const gameLink = document.getElementById('open-game-link');
   if(gameLink) gameLink.href = '历史长河.html?province=' + encodeURIComponent(currentProvince);

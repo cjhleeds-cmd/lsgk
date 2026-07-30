@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">历史长河 - 高考历史闯关</title>
-<script src="data/provinces/registry.js?v=9"></script>
+<script src="data/provinces/registry.js?v=10"></script>
 <script>
 (function(){
   const params = new URLSearchParams(location.search);
   const province = params.get('province') || (PROVINCE_REGISTRY?.default || 'guangdong');
-  const name = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getName(province).replace('省', '') : province;
+  const name = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getName(province).replace(/[省市]$/, '') : province;
   document.getElementById('page-title').textContent = '历史长河 - 高考历史闯关（' + name + '版）';
 })();
 </script>
 <link rel="icon" href="assets/首页/中国古代史.webp" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=9">
+<link rel="stylesheet" href="css/styles.css?v=10">
 </head>
 <body>
 <div class="texture-overlay"></div>
@@ -34,7 +34,7 @@
     PROVINCE_REGISTRY.list().forEach(function(prov) {
       var opt = document.createElement('option');
       opt.value = prov.code;
-      opt.textContent = prov.name.replace('省', '');
+      opt.textContent = prov.name.replace(/[省市]$/, '');
       s.appendChild(opt);
     });
     if (s.querySelector('option[value="'+p+'"]')) s.value = p;
@@ -222,7 +222,6 @@
 <div class="confetti-container" id="confetti-container"></div>
 <footer class="global-footer">内容由网络公开资料及AI辅助生成，仅供学习参考，请以官方教材为准。© 学科融合David</footer>
 
-<script src="data/provinces/registry.js?v=9"></script>
 <script>
 (function(){
   const params = new URLSearchParams(location.search);
@@ -231,11 +230,11 @@
   window.__PROVINCE = province;
   window.__PROVINCE_NAME = provinceName;
   const filePath = PROVINCE_REGISTRY ? PROVINCE_REGISTRY.getFilePath(province) : ('data/provinces/' + province + '.js');
-  document.write('<script src="' + filePath + '?v=9"><\/script>');
+  document.write('<script src="' + filePath + '?v=10"><\/script>');
 })();
 </script>
-<script src="data/讲历史.js?v=9"></script>
-<script src="data/游戏机制.js?v=9"></script>
+<script src="data/讲历史.js?v=10"></script>
+<script src="data/游戏机制.js?v=10"></script>
 <script>
 // 根据省份题库容量和省份场景映射配置自动禁用无题目且无历史现场的地图
 (function(){
