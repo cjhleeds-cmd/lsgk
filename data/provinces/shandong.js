@@ -3968,16 +3968,17 @@ const PROVINCE_SCENE_MAP = {
     5: ["xuanbi1-household"]
   },
   "xuanbi2": {
-    0: ["xuanbi2-columbian-exchange"],
-    2: ["xuanbi2-silk-road"],
+    0: ["xuanbi2-columbian-exchange", "shandong-yellow-river-forest"],
+    2: ["xuanbi2-silk-road", "shandong-account-book"],
     3: ["xuanbi2-urbanization"],
+    4: ["shandong-time-concept"],
     5: ["xuanbi2-public-health"]
   },
   "xuanbi3": {
     0: ["xuanbi3-confucian-east-asia"],
     1: ["xuanbi3-diverse-civilizations"],
     3: ["xuanbi3-silk-road-culture"],
-    5: ["xuanbi3-heritage"]
+    5: ["xuanbi3-heritage", "shandong-publishing-newculture"]
   }
 };
 
