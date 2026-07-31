@@ -129,6 +129,7 @@ const PAPERS = [
   { year: 2026, name: "2026年高考历史试卷（湖南卷）", type: "高考真题", questionCount: 16, score: 48 },
   { year: 2025, name: "2025年湖南省普通高中学业水平选择性考试模拟卷（历史）", type: "模拟卷", questionCount: 16, score: 48 },
   { year: 2026, name: "2026年湖南省邵阳市高三第一次联考历史模拟卷", type: "模拟卷", questionCount: 16, score: 48 }
+
 ];
 
 // ===== 选择题库 =====
@@ -575,7 +576,7 @@ const MAPS = [
               "西方个性自由思想并非在五四时期才\"首次\"引入中国",
               "",
               "打造\"新青年\"的最终目的是改变国家命运，而非仅仅培育个人独立意识",
-              "的表述过于夸大"
+              ""
             ],
             "source": "2025年湖南省普通高中学业水平选择性考试模拟卷（历史）第8题"
           }
@@ -641,7 +642,7 @@ const MAPS = [
             "ans": 1,
             "explanation": "依据材料\"欧洲统一不会使大国以一种新的形式出现，欧洲统一是引起欧洲变化继而世界变化的一种方法\"可知，二战对欧洲的打击是毁灭性的，二战后，为重振欧洲，必须走向联合来增强自己的实力",
             "optionExplanations": [
-              "与实际不符",
+              "",
               "",
               "意识形态是针对社会主义而言的，与材料主旨不符",
               "材料涉及的是欧洲实力的增强，并不是保卫和平"
@@ -737,7 +738,7 @@ const MAPS = [
             "explanation": "土地改革下，农村宗族、血缘为主的结构被打破，国家借用土改的力量，彻底重组了农村基层社会，对中国农村社会基础进行了再造",
             "optionExplanations": [
               "",
-              "的表述太过绝对",
+              "",
               "1956年三大改造结束后，新中国才确立了社会主义制度，此时并非社会主义制度",
               "新中国成立初期的土改，从地主土地所有制转变为农民土地所有制，其本质还是小农经济，仍然具有分散性"
             ],
@@ -868,8 +869,8 @@ const MAPS = [
     "id": "gangyao-xia",
     "name": "中外历史纲要（下）",
     "icon": "🌍",
-    "bgClass": "map-bg-world",
-    "nodeClass": "map-world",
+    "bgClass": "map-bg-modern",
+    "nodeClass": "map-modern",
     "pathColor": "#6A9BC4",
     "pathColorLight": "rgba(106,155,196,.25)",
     "units": [
@@ -1040,10 +1041,10 @@ const MAPS = [
             "ans": 2,
             "explanation": "该书批判迪士尼卡通中的帝国主义意识形态，在拉美地区发行11种版本，说明拉美地区对文化帝国主义的反思和抵制，体现了拉美文化自主意识增强",
             "optionExplanations": [
-              "过于绝对",
-              "非材料主旨",
               "",
-              "与材料时间不符"
+              "",
+              "",
+              ""
             ],
             "source": "2026年高考历史试卷（湖南卷）第16题"
           }
@@ -1082,8 +1083,8 @@ const MAPS = [
     "id": "xuanbi1",
     "name": "选择性必修1·国家制度与社会治理",
     "icon": "⚖️",
-    "bgClass": "map-bg-system",
-    "nodeClass": "map-system",
+    "bgClass": "map-bg-governance",
+    "nodeClass": "map-governance",
     "pathColor": "#8B6AC4",
     "pathColorLight": "rgba(139,106,196,.25)",
     "units": [
@@ -1495,7 +1496,7 @@ const MAPS = [
             "optionExplanations": [
               "表述错误，材料体现的是两者相互促进",
               "表述错误，应为相互促进",
-              "表述错误",
+              "",
               ""
             ],
             "source": "2022年高考历史试卷（湖南卷）第7题"
@@ -1656,9 +1657,9 @@ const MAPS = [
             "explanation": "从国联到联合国，常任理事国从英法美日意（以欧洲为中心）变为美苏英法中（美苏成为主导，中国加入），说明欧洲中心格局被打破",
             "optionExplanations": [
               "在1945年尚不成立",
-              "表述过早",
               "",
-              "过于绝对"
+              "",
+              ""
             ],
             "source": "2026年高考历史试卷（湖南卷）第15题"
           },
@@ -1884,10 +1885,10 @@ const MAPS = [
             "ans": 1,
             "explanation": "19世纪中叶英国工业革命推动城市化进程加快，对土地产权登记、道路修建、排水工程等提出更高要求，引发大比例尺地图的需求",
             "optionExplanations": [
-              "过于宽泛",
               "",
-              "是条件而非原因",
-              "仅涉及一个方面"
+              "",
+              "",
+              ""
             ],
             "source": "2026年高考历史试卷（湖南卷）第14题"
           },
@@ -2069,10 +2070,10 @@ const MAPS = [
             "ans": 2,
             "explanation": "威尼斯人毛罗在地图中增加非洲海岸、大西洋岛屿和贸易航线的最新信息，反映了当时欧洲人对商业利益的追逐",
             "optionExplanations": [
-              "不是材料主旨",
-              "在材料中未体现",
               "",
-              "过于夸大"
+              "",
+              "",
+              ""
             ],
             "source": "2026年高考历史试卷（湖南卷）第13题"
           },
@@ -2189,8 +2190,8 @@ const MAPS = [
             "ans": 2,
             "explanation": "依据材料\"自秦汉以来几乎被人遗忘的《墨子》重新引起国人的关注与研究\"可知，西学东渐推动了中国传统文化墨学的复兴",
             "optionExplanations": [
-              "表述错误",
-              "表述错误",
+              "",
+              "",
               "",
               "中国古代科技是以经验为主"
             ],
@@ -2404,7 +2405,7 @@ const MAPS = [
             "optionExplanations": [
               "",
               "与作家对埃及神灵的怀疑态度不一致",
-              "在材料中未体现",
+              "",
               ""
             ],
             "source": "2026年高考历史试卷（湖南卷）第12题"
@@ -2441,10 +2442,6 @@ const MAPS = [
     ]
   }
 ];
-
-// ===== 单元场景映射 =====
-// 结构: { mapKey: { unitIndex: [sceneId...] } }
-// 用于覆盖默认 HISTORY_GAME_CONFIG 中的 sceneIds
 const PROVINCE_SCENE_MAP = {
   "gangyao-shang": {
     0: ["shangyang-reform", "qin-centralization", "han-wudi-unification"],
@@ -2484,10 +2481,6 @@ const PROVINCE_SCENE_MAP = {
     5: ["xuanbi3-heritage", "hunan-yuelu-academy"]
   }
 };
-
-// ===== 单元题量配置 =====
-// 结构: { mapKey: { unitIndex: number|null } }
-// null 表示禁用该单元（题量为0）
 const PROVINCE_QUIZ_CONFIG = {
   "gangyao-shang": {
     0: 5,
@@ -2538,9 +2531,3 @@ const PROVINCE_QUIZ_CONFIG = {
     5: 1
   }
 };
-
-// ===== 兼容旧全局变量（过渡用，后续可移除） =====
-if (typeof window !== 'undefined') {
-  window.__PROVINCE = PROVINCE_CODE;
-  window.__PROVINCE_NAME = PROVINCE_NAME;
-}

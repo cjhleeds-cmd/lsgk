@@ -92,6 +92,7 @@
 <div class="question-text" id="question-text"></div>
 </div>
 <div class="options" id="options-container"></div>
+<button class="btn-confirm-multi" id="btn-confirm-multi" hidden onclick="submitMultiAnswer()">确认选择</button>
 <div class="answer-explanation" id="answer-explanation"></div>
 <button class="btn-next" id="btn-next" disabled onclick="nextQuestion()">下一题</button>
 </div>
@@ -240,13 +241,7 @@
 (function(){
   if (typeof HISTORY_GAME_CONFIG !== 'undefined' && typeof MAPS !== 'undefined') {
     var mapKeys = ['gangyao-shang','gangyao-xia','xuanbi1','xuanbi2','xuanbi3'];
-    // 优先使用省份文件中的 PROVINCE_SCENE_MAP，其次使用旧的 PROVINCE_SCENE_OVERRIDES
-    var provConfig = null;
-    if (typeof PROVINCE_SCENE_MAP !== 'undefined' && PROVINCE_SCENE_MAP) {
-      provConfig = PROVINCE_SCENE_MAP;
-    } else if (typeof PROVINCE_SCENE_OVERRIDES !== 'undefined' && window.__PROVINCE) {
-      provConfig = PROVINCE_SCENE_OVERRIDES[window.__PROVINCE];
-    }
+    var provConfig = (typeof PROVINCE_SCENE_MAP !== 'undefined') ? PROVINCE_SCENE_MAP : null;
     for (var i = 0; i < mapKeys.length; i++) {
       var cfg = HISTORY_GAME_CONFIG[mapKeys[i]];
       if (!cfg || !cfg.enabled) continue;

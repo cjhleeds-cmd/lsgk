@@ -7,12 +7,7 @@ import { questionSimilarity } from './question-dedupe.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const provinceArg=process.argv.find(a=>a.startsWith('--province='));
 const province=provinceArg?provinceArg.split('=')[1]:'guangdong';
-const provinceNameMap={guangdong:'广东',jiangsu:'江苏',fujian:'福建',hubei:'湖北',shandong:'山东',henan:'河南',jiangxi:'江西',hebei:'河北'};
-const provinceName=provinceNameMap[province]||province;
-// 优先使用新的省份文件路径，回退到旧路径
-const newBankFile=`data/provinces/${province}.js`;
-const oldBankFile=`data/${provinceName}省题库.js`;
-const bankFile=fs.existsSync(path.join(root,newBankFile))?newBankFile:oldBankFile;
+const bankFile=`data/provinces/${province}.js`;
 const failures=[];
 const warnings=[];
 const fail=message=>failures.push(message);
@@ -40,12 +35,11 @@ function loadData(){
   vm.createContext(context);
   for(const file of [bankFile,'data/讲历史.js','data/游戏机制.js']){
     const source=fs.readFileSync(path.join(root,file),'utf8');
-    vm.runInContext(`${source}\nthis.__MAPS=typeof MAPS==='undefined'?this.__MAPS:MAPS;this.__IMG_DATA=typeof IMG_DATA==='undefined'?this.__IMG_DATA:IMG_DATA;this.__PAPERS=typeof PAPERS==='undefined'?this.__PAPERS:PAPERS;this.__OUTLINE=typeof EXAM_OUTLINE==='undefined'?this.__OUTLINE:EXAM_OUTLINE;this.__TEACH_SCENES=typeof TEACH_SCENES==='undefined'?this.__TEACH_SCENES:TEACH_SCENES;this.__GAME_CONFIG=typeof HISTORY_GAME_CONFIG==='undefined'?this.__GAME_CONFIG:HISTORY_GAME_CONFIG;this.__PROVINCE_SCENE_MAP=typeof PROVINCE_SCENE_MAP==='undefined'?this.__PROVINCE_SCENE_MAP:PROVINCE_SCENE_MAP;this.__PROVINCE_QUIZ_CONFIG=typeof PROVINCE_QUIZ_CONFIG==='undefined'?this.__PROVINCE_QUIZ_CONFIG:PROVINCE_QUIZ_CONFIG;this.__PROVINCE_OVERRIDES=typeof PROVINCE_SCENE_OVERRIDES==='undefined'?this.__PROVINCE_OVERRIDES:PROVINCE_SCENE_OVERRIDES;this.__PROVINCE_QUIZ=typeof PROVINCE_QUIZ_OVERRIDES==='undefined'?this.__PROVINCE_QUIZ:PROVINCE_QUIZ_OVERRIDES;`,context,{filename:file});
+    vm.runInContext(`${source}\nthis.__MAPS=typeof MAPS==='undefined'?this.__MAPS:MAPS;this.__IMG_DATA=typeof IMG_DATA==='undefined'?this.__IMG_DATA:IMG_DATA;this.__PAPERS=typeof PAPERS==='undefined'?this.__PAPERS:PAPERS;this.__OUTLINE=typeof EXAM_OUTLINE==='undefined'?this.__OUTLINE:EXAM_OUTLINE;this.__TEACH_SCENES=typeof TEACH_SCENES==='undefined'?this.__TEACH_SCENES:TEACH_SCENES;this.__GAME_CONFIG=typeof HISTORY_GAME_CONFIG==='undefined'?this.__GAME_CONFIG:HISTORY_GAME_CONFIG;this.__PROVINCE_SCENE_MAP=typeof PROVINCE_SCENE_MAP==='undefined'?this.__PROVINCE_SCENE_MAP:PROVINCE_SCENE_MAP;this.__PROVINCE_QUIZ_CONFIG=typeof PROVINCE_QUIZ_CONFIG==='undefined'?this.__PROVINCE_QUIZ_CONFIG:PROVINCE_QUIZ_CONFIG;`,context,{filename:file});
   }
-  // 兼容处理：优先使用新的 PROVINCE_SCENE_MAP / PROVINCE_QUIZ_CONFIG
-  const sceneMap = context.__PROVINCE_SCENE_MAP || (context.__PROVINCE_OVERRIDES?.[province]);
-  const quizConfig = context.__PROVINCE_QUIZ_CONFIG || (context.__PROVINCE_QUIZ?.[province]);
-  return JSON.parse(JSON.stringify({maps:context.__MAPS,img:context.__IMG_DATA,papers:context.__PAPERS,outline:context.__OUTLINE,scenes:context.__TEACH_SCENES,game:context.__GAME_CONFIG,sceneMap,quizConfig,overrides:context.__PROVINCE_OVERRIDES,quizOverrides:context.__PROVINCE_QUIZ}));
+  const sceneMap = context.__PROVINCE_SCENE_MAP || null;
+  const quizConfig = context.__PROVINCE_QUIZ_CONFIG || null;
+  return JSON.parse(JSON.stringify({maps:context.__MAPS,img:context.__IMG_DATA,papers:context.__PAPERS,outline:context.__OUTLINE,scenes:context.__TEACH_SCENES,game:context.__GAME_CONFIG,sceneMap,quizConfig}));
 }
 
 function checkHtml(file){
@@ -183,7 +177,7 @@ const mapSummary=maps.map(map=>({name:map.name,units:map.units.length,questions:
 const sceneSummary=sceneValues.reduce((summary,scene)=>{summary[scene.category]=(summary[scene.category]||0)+1;return summary;},{});
 console.log(JSON.stringify({
   status:failures.length?'failed':'passed',
-  province:provinceName,
+  province,
   maps:mapSummary,
   totalQuestions:allQuestions.length,
   papers:papers.length,

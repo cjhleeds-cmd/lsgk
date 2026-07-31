@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const bankFile = path.join(root, 'data', '广东省题库.js');
+const bankFile = path.join(root, 'data', 'provinces', 'guangdong.js');
 const configFile = path.join(root, 'tools', 'paper-config.json');
 const distractorFile = path.join(root, 'tools', 'distractor-notes.json');
 const letters = 'ABCD';

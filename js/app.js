@@ -17,13 +17,7 @@ return getGameMapConfig(mapIndex)?.units?.find(unit=>unit.unitIndex===unitIndex)
 
 function getUnitQuizQuestionCount(mapIndex,unitIndex){
 let configured=getGameUnitConfig(mapIndex,unitIndex)?.quizQuestionCount;
-// 优先使用省份文件中的 PROVINCE_QUIZ_CONFIG，其次使用旧的 PROVINCE_QUIZ_OVERRIDES
-let provConfig=null;
-if(typeof PROVINCE_QUIZ_CONFIG!=='undefined'&&PROVINCE_QUIZ_CONFIG){
-  provConfig=PROVINCE_QUIZ_CONFIG;
-}else if(typeof PROVINCE_QUIZ_OVERRIDES!=='undefined'&&window.__PROVINCE){
-  provConfig=PROVINCE_QUIZ_OVERRIDES[window.__PROVINCE];
-}
+const provConfig=typeof PROVINCE_QUIZ_CONFIG!=='undefined'?PROVINCE_QUIZ_CONFIG:null;
 if(provConfig){
 const mapKeys=['gangyao-shang','gangyao-xia','xuanbi1','xuanbi2','xuanbi3'];
 const mapKey=mapKeys[mapIndex];
@@ -39,13 +33,7 @@ return Math.min(desired,poolSize);
 function getUnitScenes(mapIndex,unitIndex){
 const defaultIds=getGameUnitConfig(mapIndex,unitIndex)?.sceneIds||[];
 let ids=defaultIds;
-// 优先使用省份文件中的 PROVINCE_SCENE_MAP，其次使用旧的 PROVINCE_SCENE_OVERRIDES
-let provConfig=null;
-if(typeof PROVINCE_SCENE_MAP!=='undefined'&&PROVINCE_SCENE_MAP){
-  provConfig=PROVINCE_SCENE_MAP;
-}else if(typeof PROVINCE_SCENE_OVERRIDES!=='undefined'&&window.__PROVINCE){
-  provConfig=PROVINCE_SCENE_OVERRIDES[window.__PROVINCE];
-}
+const provConfig=typeof PROVINCE_SCENE_MAP!=='undefined'?PROVINCE_SCENE_MAP:null;
 if(provConfig){
 const mapKeys=['gangyao-shang','gangyao-xia','xuanbi1','xuanbi2','xuanbi3'];
 const mapKey=mapKeys[mapIndex];
@@ -61,13 +49,7 @@ return ids.map(id=>typeof TEACH_SCENES!=='undefined'?TEACH_SCENES[id]:null).filt
 function getProvinceSceneIds(){
 const ids=new Set();
 const mapKeys=['gangyao-shang','gangyao-xia','xuanbi1','xuanbi2','xuanbi3'];
-// 优先使用省份文件中的 PROVINCE_SCENE_MAP，其次使用旧的 PROVINCE_SCENE_OVERRIDES
-let provConfig=null;
-if(typeof PROVINCE_SCENE_MAP!=='undefined'&&PROVINCE_SCENE_MAP){
-  provConfig=PROVINCE_SCENE_MAP;
-}else if(typeof PROVINCE_SCENE_OVERRIDES!=='undefined'&&window.__PROVINCE){
-  provConfig=PROVINCE_SCENE_OVERRIDES[window.__PROVINCE];
-}
+const provConfig=typeof PROVINCE_SCENE_MAP!=='undefined'?PROVINCE_SCENE_MAP:null;
 if(provConfig){
   // 省份有独立配置：只统计省份显式配置的场景（各省完全独立）
   for(let mapIndex=0;mapIndex<mapKeys.length;mapIndex++){
@@ -183,9 +165,12 @@ return a;
 }
 
 function prepareQuestion(q){
-const choices=q.opts.map((text,index)=>({text,correct:index===q.ans,explanation:q.optionExplanations?.[index]||''}));
+const isMulti=Array.isArray(q.ans);
+const correctSet=isMulti?new Set(q.ans):new Set([q.ans]);
+const choices=q.opts.map((text,index)=>({text,correct:correctSet.has(index),explanation:q.optionExplanations?.[index]||''}));
 const mixed=shuffled(choices);
-return {...q,opts:mixed.map(x=>x.text),optionExplanations:mixed.map(x=>x.explanation),ans:mixed.findIndex(x=>x.correct)};
+const newAns=mixed.map((x,i)=>x.correct?i:-1).filter(i=>i>=0);
+return {...q,opts:mixed.map(x=>x.text),optionExplanations:mixed.map(x=>x.explanation),ans:isMulti?newAns:newAns[0],multi:isMulti};
 }
 
 function pickQuizQuestions(unit,questionCount=HISTORY_GAME_CONFIG?.quiz?.defaultQuestionCount||3){
@@ -219,15 +204,20 @@ return String(q.optionExplanations?.[index]||'').trim();
 
 function renderAnswerExplanation(q,selectedIndex){
 const letters=['A','B','C','D'];
+const isMulti=!!q.multi;
+const correctAns=isMulti?(q.ans):[q.ans];
+const correctSet=new Set(correctAns);
 const summary=cleanQuestionExplanation(q.explanation);
 const items=q.opts.map((option,index)=>{
 const rationale=getOptionRationale(q,index);
-if(index===q.ans||!rationale)return '';
+if(correctSet.has(index)||!rationale)return '';
 const classes=['option-rationale'];
-if(index===selectedIndex&&index!==q.ans)classes.push('chosen-wrong');
+if(index===selectedIndex&&!correctSet.has(index))classes.push('chosen-wrong');
 return `<li class="${classes.join(' ')}"><b>${letters[index]}</b><p>${escapeHtml(rationale)}</p></li>`;
 }).filter(Boolean).join('');
-return `<strong>答案：${letters[q.ans]}．${escapeHtml(q.opts[q.ans])}</strong>
+const ansLabel=isMulti?correctAns.map(i=>letters[i]).join(''):letters[q.ans];
+const ansText=isMulti?correctAns.map(i=>q.opts[i]).join('；'):q.opts[q.ans];
+return `<strong>答案：${ansLabel}．${escapeHtml(ansText)}</strong>
 ${summary?`<p class="answer-principle">${escapeHtml(summary)}</p>`:''}
 ${items?`<p class="answer-principle">相关史实与易混项：</p><ul class="option-rationale-list">${items}</ul>`:''}
 ${q.source?`<small class="answer-source">来源：${escapeHtml(q.source)}</small>`:''}`;
@@ -278,7 +268,8 @@ let repairFeedback={};
 function mistakeKey(q){return q.q.replace(/\s+/g,'').slice(0,180);}
 function addMistake(q){
 const key=mistakeKey(q);
-const item={key,q:q.q,opts:q.opts,ans:q.ans,explanation:q.explanation||'该选项符合题干所限定的历史事实。',source:q.source||'',mapIndex:state.currentMap,unitIndex:state.currentUnit,unitName:MAPS[state.currentMap]?.units[state.currentUnit]?.name||'',repairAttempts:0,updatedAt:Date.now()};
+const isMulti=!!q.multi;
+const item={key,q:q.q,opts:q.opts,ans:q.ans,multi:isMulti,explanation:q.explanation||'该选项符合题干所限定的历史事实。',source:q.source||'',mapIndex:state.currentMap,unitIndex:state.currentUnit,unitName:MAPS[state.currentMap]?.units[state.currentUnit]?.name||'',repairAttempts:0,updatedAt:Date.now()};
 const index=mistakes.findIndex(x=>x.key===key);
 if(index>=0)mistakes[index]=item;else mistakes.unshift(item);
 saveMistakes();
@@ -298,6 +289,20 @@ function toggleRepairHint(key){repairFeedback[key]={...(repairFeedback[key]||{})
 function answerRepair(key,selected){
 const item=mistakes.find(record=>record.key===key);
 if(!item)return;
+if(Array.isArray(item.ans)){
+const correct=[...item.ans].sort((a,b)=>a-b);
+const sel=[...selected].sort((a,b)=>a-b);
+const isCorrect=sel.length===correct.length&&sel.every((v,i)=>v===correct[i]);
+if(isCorrect){
+archiveRepairedMistake(item);
+mistakes=mistakes.filter(record=>record.key!==key);
+delete repairFeedback[key];
+saveMistakes();
+renderMistakes();
+renderMenu();
+return;
+}
+}else{
 if(selected===item.ans){
 archiveRepairedMistake(item);
 mistakes=mistakes.filter(record=>record.key!==key);
@@ -307,11 +312,31 @@ renderMistakes();
 renderMenu();
 return;
 }
+}
 item.repairAttempts=Number(item.repairAttempts||0)+1;
 item.updatedAt=Date.now();
 repairFeedback[key]={selected,hint:true};
 saveMistakes();
 renderMistakes();
+}
+function toggleRepairMulti(key,idx){
+const item=mistakes.find(record=>record.key===key);
+if(!item)return;
+const fb=repairFeedback[key]||{selected:[]};
+const sel=fb.selected||[];
+const pos=sel.indexOf(idx);
+if(pos>=0){sel.splice(pos,1);}else{sel.push(idx);}
+fb.selected=sel;
+repairFeedback[key]=fb;
+saveMistakes();
+renderMistakes();
+}
+function submitRepairMulti(key){
+const item=mistakes.find(record=>record.key===key);
+if(!item)return;
+const fb=repairFeedback[key]||{};
+const sel=(fb.selected||[]).sort((a,b)=>a-b);
+answerRepair(key,sel);
 }
 function renderMistakes(){
 const list=document.getElementById('mistakes-list');
@@ -324,9 +349,24 @@ if(!mistakes.length&&!repairedMistakes.length){list.innerHTML='<div class="mista
 const active=mistakes.length?`<section class="repair-section"><div class="repair-section-title"><span>错</span><div><h3>${escapeHtml(activeLabel)}</h3><p>先独立判断，必要时再查看线索。</p></div></div>${mistakes.map((item,index)=>{
 const feedback=repairFeedback[item.key]||{};
 const safeKey=encodeURIComponent(item.key);
-return `<article class="mistake-card repair-active-card"><div class="repair-card-meta"><span>${escapeHtml(item.unitName||'历史关卡')}</span><b>错题 ${index+1}</b></div><div class="mistake-question">${escapeHtml(item.q)}</div><div class="repair-options">${item.opts.map((option,optionIndex)=>`<button type="button" class="repair-option${feedback.selected===optionIndex?' selected-wrong':''}" onclick="answerRepair(decodeURIComponent('${safeKey}'),${optionIndex})"><span>${['A','B','C','D'][optionIndex]}</span>${escapeHtml(option)}</button>`).join('')}</div>${feedback.selected!==undefined?'<div class="repair-feedback wrong">答案还不正确。看看提示，再判断一次。</div>':''}<div class="repair-actions"><button type="button" class="btn-repair-hint" onclick="toggleRepairHint(decodeURIComponent('${safeKey}'))">${feedback.hint?'收起提示':'查看一条线索'}</button><button type="button" class="btn-remove-mistake" onclick="removeMistake(decodeURIComponent('${safeKey}'))">移出队列</button></div>${feedback.hint?`<div class="repair-hint"><b>史官提示</b><p>${escapeHtml(item.source?`这道题来自：${item.source}。先结合题干所处时期判断。`:(repairConfig.defaultHint||'先确认题目限定的时代，再排除不符合的选项。'))}</p></div>`:''}</article>`;
+const isMulti=!!item.multi;
+let optsHtml;
+if(isMulti){
+const sel=feedback.selected||[];
+optsHtml=item.opts.map((option,optionIndex)=>`<button type="button" class="repair-option${sel.includes(optionIndex)?' selected-wrong':''}" onclick="toggleRepairMulti(decodeURIComponent('${safeKey}'),${optionIndex})"><span>${['A','B','C','D'][optionIndex]}</span>${escapeHtml(option)}</button>`).join('');
+optsHtml+=`<button type="button" class="btn-repair-confirm-multi" onclick="submitRepairMulti(decodeURIComponent('${safeKey}'))">确认选择</button>`;
+}else{
+optsHtml=item.opts.map((option,optionIndex)=>`<button type="button" class="repair-option${feedback.selected===optionIndex?' selected-wrong':''}" onclick="answerRepair(decodeURIComponent('${safeKey}'),${optionIndex})"><span>${['A','B','C','D'][optionIndex]}</span>${escapeHtml(option)}</button>`).join('');
+}
+return `<article class="mistake-card repair-active-card"><div class="repair-card-meta"><span>${escapeHtml(item.unitName||'历史关卡')}</span><b>错题 ${index+1}</b>${isMulti?'<i class="multi-tag">多选</i>':''}</div><div class="mistake-question">${escapeHtml(item.q)}</div><div class="repair-options">${optsHtml}</div>${feedback.selected!==undefined?'<div class="repair-feedback wrong">答案还不正确。看看提示，再判断一次。</div>':''}<div class="repair-actions"><button type="button" class="btn-repair-hint" onclick="toggleRepairHint(decodeURIComponent('${safeKey}'))">${feedback.hint?'收起提示':'查看一条线索'}</button><button type="button" class="btn-remove-mistake" onclick="removeMistake(decodeURIComponent('${safeKey}'))">移出队列</button></div>${feedback.hint?`<div class="repair-hint"><b>史官提示</b><p>${escapeHtml(item.source?`这道题来自：${item.source}。先结合题干所处时期判断。`:(repairConfig.defaultHint||'先确认题目限定的时代，再排除不符合的选项。'))}</p></div>`:''}</article>`;
 }).join('')}</section>`:'';
-const repaired=repairedMistakes.length?`<section class="repair-section repaired-section"><div class="repair-section-title"><span>正</span><div><h3>${escapeHtml(archiveLabel)}</h3><p>保留订正结果，方便随时回看。</p></div></div>${repairedMistakes.map(item=>`<article class="mistake-card repaired-card"><div class="repair-card-meta"><span>${escapeHtml(item.unitName||'历史关卡')}</span><b>已订正</b></div><div class="mistake-question">${escapeHtml(item.q)}</div><div class="mistake-answer">正确答案：${['A','B','C','D'][item.ans]}．${escapeHtml(item.opts[item.ans])}</div><div class="mistake-explanation">${escapeHtml(cleanQuestionExplanation(item.explanation))}</div>${item.source?`<div class="mistake-source">来源：${escapeHtml(item.source)}</div>`:''}<time>${formatTeachRecordDate(item.repairedAt)}</time></article>`).join('')}</section>`:'';
+const repaired=repairedMistakes.length?`<section class="repair-section repaired-section"><div class="repair-section-title"><span>正</span><div><h3>${escapeHtml(archiveLabel)}</h3><p>保留订正结果，方便随时回看。</p></div></div>${repairedMistakes.map(item=>{
+const isMulti=Array.isArray(item.ans);
+const letters=['A','B','C','D'];
+const ansLabel=isMulti?item.ans.map(i=>letters[i]).join(''):letters[item.ans];
+const ansText=isMulti?item.ans.map(i=>item.opts[i]).join('；'):item.opts[item.ans];
+return `<article class="mistake-card repaired-card"><div class="repair-card-meta"><span>${escapeHtml(item.unitName||'历史关卡')}</span><b>已订正</b>${isMulti?'<i class="multi-tag">多选</i>':''}</div><div class="mistake-question">${escapeHtml(item.q)}</div><div class="mistake-answer">正确答案：${ansLabel}．${escapeHtml(ansText)}</div><div class="mistake-explanation">${escapeHtml(cleanQuestionExplanation(item.explanation))}</div>${item.source?`<div class="mistake-source">来源：${escapeHtml(item.source)}</div>`:''}<time>${formatTeachRecordDate(item.repairedAt)}</time></article>`;
+}).join('')}</section>`:'';
 list.innerHTML=active+repaired;
 }
 
@@ -1170,11 +1210,24 @@ document.getElementById('quiz-dots').innerHTML=dotsHtml;
 
 document.getElementById('question-text').innerHTML = renderQuestionContent(q.q);
 
+const isMulti=!!q.multi;
+const confirmBtn=document.getElementById('btn-confirm-multi');
+if(isMulti){
+state.multiSelected=[];
+if(confirmBtn){confirmBtn.hidden=false;confirmBtn.disabled=true;}
+let optsHtml='';
+q.opts.forEach((opt,i)=>{
+optsHtml+=`<button class="option-btn option-multi" id="opt-${i}" onclick="toggleMultiOption(${i})"><span class="option-letter">${letters[i]}</span><span>${escapeHtml(opt)}</span></button>`;
+});
+document.getElementById('options-container').innerHTML=optsHtml;
+}else{
+if(confirmBtn)confirmBtn.hidden=true;
 let optsHtml='';
 q.opts.forEach((opt,i)=>{
 optsHtml+=`<button class="option-btn" id="opt-${i}" onclick="selectAnswer(${i})"><span class="option-letter">${letters[i]}</span><span>${escapeHtml(opt)}</span></button>`;
 });
 document.getElementById('options-container').innerHTML=optsHtml;
+}
 const explanation=document.getElementById('answer-explanation');
 explanation.classList.remove('show');
 explanation.innerHTML='';
@@ -1213,6 +1266,45 @@ const explanation=document.getElementById('answer-explanation');
 explanation.innerHTML=renderAnswerExplanation(q,idx);
 explanation.classList.add('show');
 
+document.getElementById('btn-next').disabled=false;
+}
+
+function toggleMultiOption(idx){
+if(state.answered)return;
+const sel=state.multiSelected;
+const pos=sel.indexOf(idx);
+if(pos>=0){sel.splice(pos,1);}else{sel.push(idx);}
+const btn=document.getElementById('opt-'+idx);
+if(btn)btn.classList.toggle('multi-selected');
+const confirmBtn=document.getElementById('btn-confirm-multi');
+if(confirmBtn)confirmBtn.disabled=sel.length===0;
+}
+
+function submitMultiAnswer(){
+if(state.answered)return;
+const sel=[...state.multiSelected].sort((a,b)=>a-b);
+const q=state.quizQuestions[state.currentQ];
+const correct=[...q.ans].sort((a,b)=>a-b);
+const isCorrect=sel.length===correct.length&&sel.every((v,i)=>v===correct[i]);
+state.answered=true;
+if(isCorrect)removeMistakeByQuestion(q);else addMistake(q);
+state.answers.push({selected:sel,correct:isCorrect});
+const correctSet=new Set(correct);
+const btns=document.querySelectorAll('.option-btn');
+btns.forEach((b,i)=>{
+b.classList.add('disabled');
+if(sel.includes(i)&&correctSet.has(i))b.classList.add('selected-correct');
+if(sel.includes(i)&&!correctSet.has(i))b.classList.add('selected-wrong');
+if(!sel.includes(i)&&correctSet.has(i))b.classList.add('show-correct');
+});
+const dots=document.querySelectorAll('.quiz-dot');
+dots[state.currentQ].classList.remove('active');
+dots[state.currentQ].classList.add(isCorrect?'correct':'wrong');
+const explanation=document.getElementById('answer-explanation');
+explanation.innerHTML=renderAnswerExplanation(q,sel);
+explanation.classList.add('show');
+const confirmBtn=document.getElementById('btn-confirm-multi');
+if(confirmBtn)confirmBtn.hidden=true;
 document.getElementById('btn-next').disabled=false;
 }
 

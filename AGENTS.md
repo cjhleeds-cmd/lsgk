@@ -18,8 +18,7 @@
   - `{省份代码}.js`：该省完整配置，包含 IMG_DATA、EXAM_OUTLINE、PAPERS、MAPS、PROVINCE_SCENE_MAP、PROVINCE_QUIZ_CONFIG。
 - `data/讲历史.js`：历史现场情境素材库（所有省份共用）。
 - `data/游戏机制.js`：默认游戏配置（章节、单元、历史现场映射、印章奖励），各省可通过 PROVINCE_SCENE_MAP 和 PROVINCE_QUIZ_CONFIG 覆盖。
-- `data/图片映射.js`：通用单元图片映射（可选，各省份文件中也自带 IMG_DATA）。
-- `README.md` 的“当前状态”是实现、合并、部署与线上验证状态的权威说明。
+- `README.md` 的"当前状态"是实现、合并、部署与线上验证状态的权威说明。
 
 ## 架构说明（新）
 
@@ -48,8 +47,6 @@
 - `MAPS`：选择题库（5本地图 → 单元 → 题目）
 - `PROVINCE_SCENE_MAP`：单元场景映射（覆盖默认配置）
 - `PROVINCE_QUIZ_CONFIG`：单元题量配置（覆盖默认配置）
-
-**旧文件兼容**：`data/{省份}省题库.js` 格式的旧文件仍然保留作为过渡，游戏和工具会优先使用新格式，回退到旧格式。
 
 ## 编辑约定
 

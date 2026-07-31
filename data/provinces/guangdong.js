@@ -878,8 +878,8 @@ const MAPS = [
     "id": "gangyao-xia",
     "name": "中外历史纲要（下）",
     "icon": "🌍",
-    "bgClass": "map-bg-world",
-    "nodeClass": "map-world",
+    "bgClass": "map-bg-modern",
+    "nodeClass": "map-modern",
     "pathColor": "#5B8DB8",
     "pathColorLight": "rgba(91,141,184,.25)",
     "units": [
@@ -1492,8 +1492,8 @@ const MAPS = [
     "id": "xuanbi1",
     "name": "选择性必修1·国家制度与社会治理",
     "icon": "🏛",
-    "bgClass": "map-bg-modern",
-    "nodeClass": "map-modern",
+    "bgClass": "map-bg-governance",
+    "nodeClass": "map-governance",
     "pathColor": "#7B6BA8",
     "pathColorLight": "rgba(123,107,168,.25)",
     "units": [
@@ -1929,8 +1929,8 @@ const MAPS = [
     "id": "xuanbi2",
     "name": "选择性必修2·经济与社会生活",
     "icon": "💰",
-    "bgClass": "map-bg-world",
-    "nodeClass": "map-world",
+    "bgClass": "map-bg-economy",
+    "nodeClass": "map-economy",
     "pathColor": "#2E8B57",
     "pathColorLight": "rgba(46,139,87,.25)",
     "units": [
@@ -2092,8 +2092,8 @@ const MAPS = [
     "id": "xuanbi3",
     "name": "选择性必修3·文化交流与传播",
     "icon": "文化交流",
-    "bgClass": "map-bg-world",
-    "nodeClass": "map-world",
+    "bgClass": "map-bg-culture",
+    "nodeClass": "map-culture",
     "pathColor": "#B8860B",
     "pathColorLight": "rgba(184,134,11,.25)",
     "units": [
@@ -2290,10 +2290,6 @@ const MAPS = [
     ]
   }
 ];
-
-// ===== 单元场景映射 =====
-// 结构: { mapKey: { unitIndex: [sceneId...] } }
-// 用于覆盖默认 HISTORY_GAME_CONFIG 中的 sceneIds
 const PROVINCE_SCENE_MAP = {
   "gangyao-shang": {
     0: ["shangyang-reform", "qin-centralization", "han-wudi-unification", "qin-han-finance"],
@@ -2334,10 +2330,6 @@ const PROVINCE_SCENE_MAP = {
     3: ["xuanbi3-silk-road-culture"]
   }
 };
-
-// ===== 单元题量配置 =====
-// 结构: { mapKey: { unitIndex: number|null } }
-// null 表示禁用该单元（题量为0）
 const PROVINCE_QUIZ_CONFIG = {
   "gangyao-shang": {
     6: 2,
@@ -2353,9 +2345,3 @@ const PROVINCE_QUIZ_CONFIG = {
   },
   "xuanbi3": {}
 };
-
-// ===== 兼容旧全局变量（过渡用，后续可移除） =====
-if (typeof window !== 'undefined') {
-  window.__PROVINCE = PROVINCE_CODE;
-  window.__PROVINCE_NAME = PROVINCE_NAME;
-}

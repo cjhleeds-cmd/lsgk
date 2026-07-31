@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const bankFile = path.join(root, 'data', '河南省题库.js');
+const bankFile = path.join(root, 'data', 'provinces', 'henan.js');
 const configFile = path.join(root, 'tools', 'paper-config-henan.json');
 const letters = 'ABCD';
 

@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const bankFile = path.join(root, 'data', '湖北省题库.js');
+const bankFile = path.join(root, 'data', 'provinces', 'hubei.js');
 const configFile = path.join(root, 'tools', 'paper-config-hubei.json');
 const letters = 'ABCD';
 

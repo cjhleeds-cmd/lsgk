@@ -2,10 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root=process.cwd();
-// 优先使用新的省份文件路径，回退到旧路径
-const newBankPath='data/provinces/guangdong.js';
-const oldBankPath='data/广东省题库.js';
-const bankFile=fs.existsSync(path.join(root,newBankPath))?newBankPath:oldBankPath;
+const bankFile='data/provinces/guangdong.js';
 
 import vm from 'node:vm';
 
